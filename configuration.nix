@@ -103,10 +103,13 @@
     isNormalUser = true;
     description = "marc";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
   };
+
+  programs.zsh.enable = true;
 
   # flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -118,7 +121,10 @@
   #  wget
 	pkgs-unstable.neovim
 	hyprpanel
+    gcc
+    zsh
   ];
+
     fonts.packages = with pkgs; [
   	(nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
