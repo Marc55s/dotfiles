@@ -37,6 +37,7 @@
         defaultEditor = true;
     };
 
+    programs.gh.enable = true;
 
     programs.zsh = {
         enable = true;
