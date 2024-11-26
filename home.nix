@@ -5,7 +5,8 @@
       vscode
       kitty
       starship
-      ags
+      wofi
+
     ];
 
 
@@ -26,6 +27,18 @@
 		push.autoSetupRemote = true;
 	};
     };
+
+    programs.neovim =  {
+    	defaultEditor = true;
+    };
+
+    home.file.".config/nvim" = {
+    	source = ./neovim-config;
+	recursive = true;
+    };
+
+
+
 
     imports = [
 
