@@ -7,6 +7,7 @@
         hyprlock
         hyprpaper
         hypridle
+	kitty
     ];
 
     home.shellAliases = {
@@ -30,12 +31,6 @@
         extraConfig = {
             push.autoSetupRemote = true;
         };
-    };
-
-    programs.kitty = {
-        enable = true;
-        shellIntegration.enableZshIntegration = true;
-        extraConfig = "opacity = 0.9";
     };
 
     programs.ripgrep.enable = true;
