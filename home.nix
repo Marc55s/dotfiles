@@ -3,7 +3,6 @@
         firefox
         spotify
         vscode
-        kitty
         wofi
         hyprlock
         hyprpaper
@@ -31,6 +30,12 @@
         extraConfig = {
             push.autoSetupRemote = true;
         };
+    };
+
+    programs.kitty = {
+        enable = true;
+        shellIntegration.enableZshIntegration = true;
+        extraConfig = "opacity = 0.9";
     };
 
     programs.ripgrep.enable = true;
