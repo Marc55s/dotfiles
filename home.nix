@@ -6,6 +6,8 @@
         kitty
         wofi
         hyprlock
+        hyprpaper
+        hypridle
     ];
 
     home.shellAliases = {
@@ -50,6 +52,7 @@
         enableZshIntegration = true;
     };
 
+
     home.file.".config/nvim" = {
         source = ./neovim-config;
         recursive = true;
@@ -58,7 +61,7 @@
 
 
     imports = [
-
+        ./rofi.nix
     ];
 
     # flakes
