@@ -7,7 +7,8 @@
         hyprlock
         hyprpaper
         hypridle
-	kitty
+        hyprshot
+	    kitty
     ];
 
     home.shellAliases = {
@@ -44,6 +45,9 @@
     programs.zsh = {
         enable = true;
         enableCompletion = true;
+        sessionVariables = {
+            PYTHONPATH = "/home/marc/dev/adventofcode/Python/lib:$PYTHONPATH";
+        };
     };
 
     programs.starship = {
