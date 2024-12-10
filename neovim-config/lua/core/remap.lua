@@ -34,10 +34,6 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 
-vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
-end)
-
 -- WINDOW STUFF
 vim.keymap.set("n", "<leader>s", "<C-w>s", { silent = true })
 vim.keymap.set("n", "<leader>d", "<C-w>v", { silent = true })
@@ -58,10 +54,13 @@ vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap =
 vim.api.nvim_set_keymap("n", "<leader>rr", ":lua CompileAndRunC()<CR>", { noremap = true, silent = true })
 
 -- Run python script
-vim.api.nvim_set_keymap("n", "<leader>n", ":!python %<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>n", ":wa<CR>:!python %<CR>", { noremap = true, silent = true })
 
 -- Run make and execute 
 vim.api.nvim_set_keymap("n", "<leader>m", ":wa<CR>:!make<CR>", { noremap = true, silent = true })
+
+-- Run cargo run
+vim.api.nvim_set_keymap("n", "<leader><leader>", ":wa<CR>:!cargo run<CR>", { noremap = true, silent = true })
 
 --Sync System clipboard with nvim
 vim.schedule(function()
