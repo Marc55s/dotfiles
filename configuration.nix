@@ -139,6 +139,7 @@
             withVencord = true;
         })
         wl-clipboard
+        brightnessctl
     ];
 
 
