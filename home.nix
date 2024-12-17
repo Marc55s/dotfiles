@@ -10,6 +10,9 @@
         hyprshot
 	    kitty
         obsidian
+        libgtop
+        dart-sass
+        ags
     ];
 
     home.shellAliases = {
