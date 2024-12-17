@@ -113,6 +113,7 @@
         shell = pkgs.zsh;
         packages = with pkgs; [
             #  thunderbird
+            obsidian
         ];
     };
 

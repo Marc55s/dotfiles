@@ -58,10 +58,10 @@
     };
 
 
-    home.file.".config/nvim" = {
-        source = ./neovim-config;
-        recursive = true;
-    };
+    # home.file.".config/nvim" = {
+    #     source = ./neovim-config;
+    #     recursive = true;
+    #};
 
 
 
