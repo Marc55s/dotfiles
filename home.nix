@@ -9,6 +9,7 @@
         hypridle
         hyprshot
 	    kitty
+        obsidian
     ];
 
     home.shellAliases = {
