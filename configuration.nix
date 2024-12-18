@@ -56,6 +56,9 @@
     ${pkgs.lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
     '';
 
+    # powermenu  for hyprpanel
+    services.power-profiles-daemon.enable = true;
+    services.dbus.enable = true;
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -85,7 +88,6 @@
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
-
     # Enable sound with pipewire.
     hardware.pulseaudio.enable = false;
     security.rtkit.enable = true;
@@ -109,12 +111,15 @@
     users.users.marc = {
         isNormalUser = true;
         description = "marc";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker"];
         shell = pkgs.zsh;
         packages = with pkgs; [
             #  thunderbird
         ];
     };
+
+    # docker
+    virtualisation.docker.enable = true;
 
     programs.zsh.enable = true;
 
