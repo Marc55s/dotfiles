@@ -48,17 +48,15 @@
     # Enable the X11 windowing system.
     services.xserver.enable = false;
 
-    # Enable the GNOME Desktop Environment.
-    services.xserver.displayManager.gdm.enable = false;
-    services.xserver.desktopManager.gnome.enable = false;
     services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
     services.xserver.displayManager.sessionCommands = ''
     ${pkgs.lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
     '';
 
-    # powermenu  for hyprpanel
-    services.power-profiles-daemon.enable = true;
-    services.dbus.enable = true;
+
+    # IMPORTANT for powermenu for hyprpanel
+    services.xserver.displayManager.gdm.enable = true;
+    services.xserver.desktopManager.gnome.enable = true;
 
     # Configure keymap in X11
     services.xserver.xkb = {
