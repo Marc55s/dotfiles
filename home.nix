@@ -8,6 +8,7 @@
         hyprpaper
         hypridle
         hyprshot
+        hyprpanel
 	    kitty
         obsidian
         libgtop
