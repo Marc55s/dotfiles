@@ -149,6 +149,7 @@
         vesktop
         wl-clipboard
         brightnessctl
+        nwg-displays
     ];
 
 
