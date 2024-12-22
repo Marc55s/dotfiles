@@ -1,6 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, textfox, ... }: {
     home.packages = with pkgs; [ 
-        firefox
         spotify
         vscode
         wofi
@@ -26,6 +25,11 @@
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#";
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
+    };
+
+    textfox = {
+        enable = true;
+        profile = "default";
     };
 
     home.username = "marc";
@@ -91,6 +95,7 @@
 
 
     imports = [
+        textfox.homeManagerModules.default
         ./rofi.nix
     ];
 

@@ -8,9 +8,10 @@
         home-manager.url = "github:nix-community/home-manager/release-24.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
         nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+        textfox.url = "github:adriankarlen/textfox";
     };
 
-    outputs = { nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
+    outputs = { nixpkgs, nixpkgs-unstable, home-manager, textfox, ... }@inputs:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {
@@ -32,7 +33,7 @@
                 nixos = lib.nixosSystem {
                     inherit system pkgs;
                     modules = [
-                        (import ./configuration.nix {inherit pkgs pkgs-unstable;})
+                        (import ./configuration.nix {inherit textfox pkgs pkgs-unstable;})
                         ./hardware-configuration.nix
                         home-manager.nixosModules.home-manager
                         {
@@ -40,7 +41,7 @@
                             home-manager.useUserPackages = true;
                             home-manager.users.marc = import ./home.nix;
                             home-manager.extraSpecialArgs = {
-                                inherit pkgs-unstable;
+                                inherit pkgs-unstable textfox;
                             };
 
                         }
