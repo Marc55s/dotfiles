@@ -19,6 +19,11 @@
         btop
         upower
         acpi
+        lazygit
+        nitch
+        remnote
+        tmux
+        bitwarden
     ];
 
     home.shellAliases = {
