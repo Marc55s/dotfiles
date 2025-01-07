@@ -30,6 +30,7 @@
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#";
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
+        gs = "git status";
     };
 
     textfox = {
@@ -42,7 +43,6 @@
 
     programs.home-manager.enable = true;
 
-    #manual.manpages.enable = false;
 
     programs.bash.enable = true;
     home.stateVersion = "24.05";
@@ -66,9 +66,6 @@
     programs.zsh = {
         enable = true;
         enableCompletion = true;
-        sessionVariables = {
-            PYTHONPATH = "/home/marc/dev/adventofcode/Python/lib:$PYTHONPATH";
-        };
     };
 
     programs.starship = {
@@ -104,9 +101,4 @@
         ./rofi.nix
     ];
 
-    # flakes
-    #nix = {
-    #  package = pkgs.nix;
-    #  settings.experimental-features = [ "nix-command" "flakes" ];
-    #};
 }
