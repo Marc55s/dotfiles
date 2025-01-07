@@ -8,7 +8,6 @@
         hypridle
         hyprshot
         hyprpanel
-	    kitty
         obsidian
         libgtop
         dart-sass
@@ -99,6 +98,7 @@
     imports = [
         textfox.homeManagerModules.default
         ./rofi.nix
+        ./kitty.nix
     ];
 
 }
