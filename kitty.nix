@@ -13,7 +13,8 @@
             font_size = 14;
             cursor_trail = 1;
 
-            background_opacity = "0.7";
+            
+            #background_opacity = "0.7";
             background_blur = 10;
         };
         

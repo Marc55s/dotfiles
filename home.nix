@@ -1,4 +1,4 @@
-{ config, pkgs, textfox, ... }: {
+{config, pkgs, textfox, ... }: {
     home.packages = with pkgs; [ 
         spotify
         vscode
@@ -21,8 +21,8 @@
         lazygit
         nitch
         remnote
-        tmux
         bitwarden
+        zathura
     ];
 
     home.shellAliases = {
@@ -32,9 +32,13 @@
         gs = "git status";
     };
 
+
     textfox = {
         enable = true;
         profile = "default";
+        config = {
+            displayHorizontalTabs = true;
+        };
     };
 
     home.username = "marc";
@@ -99,6 +103,7 @@
         textfox.homeManagerModules.default
         ./rofi.nix
         ./kitty.nix
+        #./tmux.nix
     ];
 
 }
