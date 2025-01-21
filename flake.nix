@@ -2,11 +2,17 @@
     description = "A very basic flake";
 
     inputs = {
-        hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-        hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+        hyprpanel = {
+            url = "github:Jas-SinghFSU/HyprPanel";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
+        home-manager = {
+            url = "github:nix-community/home-manager/release-24.11";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         nixpkgs.url = "nixpkgs/nixos-24.11";
-        home-manager.url = "github:nix-community/home-manager/release-24.11";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
         nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
         textfox.url = "github:adriankarlen/textfox";
     };

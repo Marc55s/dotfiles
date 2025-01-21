@@ -1,4 +1,5 @@
 {config, pkgs, textfox, ... }: {
+
     home.packages = with pkgs; [ 
         spotify
         vscode
@@ -25,6 +26,14 @@
         zathura
     ];
 
+    imports = [
+        textfox.homeManagerModules.default
+        ./rofi.nix
+        ./kitty/kitty.nix
+        #./tmux.nix
+    ];
+
+
     home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#";
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#";
@@ -45,7 +54,6 @@
     home.homeDirectory = "/home/marc";
 
     programs.home-manager.enable = true;
-
 
     programs.bash.enable = true;
     home.stateVersion = "24.05";
@@ -99,11 +107,5 @@
 
 
 
-    imports = [
-        textfox.homeManagerModules.default
-        ./rofi.nix
-        ./kitty.nix
-        #./tmux.nix
-    ];
 
 }

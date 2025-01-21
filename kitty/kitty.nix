@@ -23,7 +23,7 @@
     };
 
     home.file.".config/kitty/themes" = {
-        source = ./kitty/themes;
+        source = ./themes;
         recursive = true;
     };
 
