@@ -9,6 +9,7 @@
         hypridle
         hyprshot
         hyprpanel
+        hyprpicker
         obsidian
         libgtop
         dart-sass
@@ -30,7 +31,7 @@
         textfox.homeManagerModules.default
         ./rofi.nix
         ./kitty/kitty.nix
-        #./tmux.nix
+        ./tmux.nix
     ];
 
 
