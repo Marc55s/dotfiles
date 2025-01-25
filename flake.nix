@@ -39,7 +39,7 @@
                 nixos = lib.nixosSystem {
                     inherit system pkgs;
                     modules = [
-                        (import ./configuration.nix {inherit textfox pkgs pkgs-unstable;})
+                        (import ./configuration.nix {inherit pkgs pkgs-unstable;})
                         ./hardware-configuration.nix
                         home-manager.nixosModules.home-manager
                         {

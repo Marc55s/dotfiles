@@ -148,11 +148,6 @@
         python3
         gnumake
         displaylink
-        (discord.override {
-            # withOpenASAR = true; # can do this here too
-            withVencord = true;
-        })
-        vesktop
         wl-clipboard
         brightnessctl
         nwg-displays
