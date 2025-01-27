@@ -143,10 +143,8 @@
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
         pkgs-unstable.neovim
-        gcc
         zsh
         python3
-        gnumake
         displaylink
         wl-clipboard
         brightnessctl

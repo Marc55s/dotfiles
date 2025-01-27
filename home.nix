@@ -1,6 +1,7 @@
 {config, pkgs, textfox, ... }: {
 
     home.packages = with pkgs; [ 
+        lua-language-server
         spotify
         vscode
         wofi
@@ -21,6 +22,7 @@
         upower
         acpi
         lazygit
+        lazydocker
         nitch
         remnote
         bitwarden
