@@ -121,7 +121,7 @@
     users.users.marc = {
         isNormalUser = true;
         description = "marc";
-        extraGroups = [ "networkmanager" "wheel" "docker"];
+        extraGroups = [ "networkmanager" "wheel" "docker" "tty"];
         shell = pkgs.zsh;
         packages = with pkgs; [
             #  thunderbird
@@ -149,6 +149,7 @@
         wl-clipboard
         brightnessctl
         nwg-displays
+        gcc
     ];
 
 

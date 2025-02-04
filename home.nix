@@ -1,4 +1,4 @@
-{config, pkgs, textfox, ... }: {
+{config, pkgs, pkgs-unstable, textfox, ... }: {
 
     home.packages = with pkgs; [ 
         lua-language-server
@@ -11,7 +11,8 @@
         hyprshot
         hyprpanel
         hyprpicker
-        obsidian
+        hyprsunset
+        pkgs-unstable.obsidian
         libgtop
         dart-sass
         ags
@@ -32,6 +33,7 @@
             # withOpenASAR = true; # can do this here too
             withVencord = true;
         })
+        superfile
     ];
 
     imports = [
