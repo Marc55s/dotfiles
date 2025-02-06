@@ -1,4 +1,4 @@
-{config, pkgs, pkgs-unstable, textfox, ... }: {
+{config, pkgs, pkgs-unstable, inputs,  ... }: {
 
     home.packages = with pkgs; [ 
         lua-language-server
@@ -37,7 +37,7 @@
     ];
 
     imports = [
-        textfox.homeManagerModules.default
+        inputs.textfox.homeManagerModules.default
         ./rofi.nix
         ./kitty/kitty.nix
         ./tmux.nix
@@ -50,7 +50,6 @@
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
         gs = "git status";
     };
-
 
     textfox = {
         enable = true;

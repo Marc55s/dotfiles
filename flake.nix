@@ -17,7 +17,7 @@
         textfox.url = "github:adriankarlen/textfox";
     };
 
-    outputs = { nixpkgs, nixpkgs-unstable, home-manager, textfox, ... }@inputs:
+    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, textfox,  ... }:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {
@@ -47,7 +47,7 @@
                             home-manager.useUserPackages = true;
                             home-manager.users.marc = import ./home.nix;
                             home-manager.extraSpecialArgs = {
-                                inherit pkgs-unstable textfox;
+                                inherit inputs pkgs-unstable;
                             };
 
                         }
