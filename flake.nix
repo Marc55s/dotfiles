@@ -45,7 +45,7 @@
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.marc = import ./home.nix;
+                            home-manager.users.marc = import ./home/home.nix;
                             home-manager.extraSpecialArgs = {
                                 inherit inputs pkgs-unstable;
                             };
