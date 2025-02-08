@@ -81,7 +81,7 @@
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.greetd.greetd}/bin/agreety --cmd Hyprland";
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
             };
         };
 
