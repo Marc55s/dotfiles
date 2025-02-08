@@ -43,13 +43,6 @@
         ./tmux.nix
     ];
 
-    home.file = {
-        ".config/hypr/hyprland.conf" = {
-            source = ./hypr/hyprland.conf;
-            #recursive = true;
-        };
-    };
-
     home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#";
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#";
