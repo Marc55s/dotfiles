@@ -9,7 +9,6 @@
         hyprpaper
         hypridle
         hyprshot
-        hyprpanel
         hyprpicker
         hyprsunset
         pkgs-unstable.obsidian
@@ -41,6 +40,7 @@
         ./rofi.nix
         ./kitty/kitty.nix
         ./tmux.nix
+        ./hyprpanel.nix
     ];
 
     home.shellAliases = {

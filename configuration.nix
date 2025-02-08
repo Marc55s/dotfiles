@@ -134,7 +134,10 @@
     programs.zsh.enable = true;
 
     # flakes
-    nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    nix.settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+        warn-dirty = false;
+    };
 
 
     # List packages installed in system profile. To search, run:
