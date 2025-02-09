@@ -1,40 +1,74 @@
 { pkgs, inputs, ... }:
 {
-
     home.packages = with pkgs;[
         wireplumber
         gvfs
     ];
+
     imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
+
     programs.hyprpanel = {
         enable = true;
         overlay.enable = true;
         overwrite.enable = true;
         theme = "catppuccin_mocha";
-        settings = {
-            bar.launcher.autoDetectIcon = true;
-            bar.workspaces.show_icons = false;
-            bar.workspaces.show_numbered = true;
 
-            menus.clock = {
-
-                time = {
-                    military = false;
-                    hideSeconds = true;
+        layout = {
+            "bar.layouts" = {
+                "0" = {
+                    left = ["dashboard" "workspaces" "windowtitle"];
+                    middle = ["media"];
+                    right = [
+                        "network"
+                        "volume"
+                        "bluetooth"
+                        "hyprsunset"
+                        "battery"
+                        "clock"
+                        "notifications"
+                    ];
                 };
-                weather = {
-                    unit = "metric";
+            };
+        };
+
+        settings = {
+
+            bar = {
+                launcher.autoDetectIcon = true;
+                workspaces.show_icons = false;
+                workspaces.show_numbered = true;
+                clock.format = "%a %b %d  %H:%M";
+                customModules.hyprsunset.temperature= "4000k";
+            };
+
+            menus.dashboard.powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
+            menus = {
+                clock = {
+                    time = {
+                        military = false;
+                        hideSeconds= true;
+                    };
+                    weather = {
+                        unit = "metric";
+                    };
+                };
+
+                dashboard = {
+                    directories.enabled = false;
+                    shortcuts.enabled = true;
                 };
             };
 
-            menus.dashboard.directories.enabled = false;
             wallpaper.enable = false;
             theme.bar.transparent = true;
-
             theme.font = {
                 name = "CaskaydiaCove NF";
                 size = "18px";
             };
         };
+        override = {
+            "theme.bar.buttons.dashboard.icon" = "#89B4FB";
+        };
+
     };
 }
