@@ -6,7 +6,6 @@
 
 {
     # Bootloader.
-
     boot.supportedFilesystems = ["ntfs"];
 
     boot.loader.efi.canTouchEfiVariables = true;
@@ -50,13 +49,12 @@
 
     services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
     services.xserver.displayManager.sessionCommands = ''
-    ${pkgs.lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+        ${pkgs.lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
     '';
 
-
     # IMPORTANT for powermenu for hyprpanel
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.desktopManager.gnome.enable = true;
+    services.upower.enable = true;
+    services.power-profiles-daemon.enable = true;
 
     services = {
         logind = {
