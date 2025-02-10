@@ -40,7 +40,7 @@
         ./rofi.nix
         ./kitty/kitty.nix
         ./tmux.nix
-        ./hyprpanel.nix
+        ./hypr/default.nix
     ];
 
     home.shellAliases = {
