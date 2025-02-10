@@ -35,6 +35,7 @@
         inputs.textfox.homeManagerModules.default
         ./rofi.nix
         ./kitty/kitty.nix
+        ./starship/starship.nix
         ./tmux.nix
         ./hypr/default.nix
     ];
@@ -82,13 +83,6 @@
         enable = true;
         enableCompletion = true;
     };
-
-    programs.starship = {
-        enable = true;
-        settings = pkgs.lib.importTOML ./starship/starship.toml;
-        enableZshIntegration = true;
-    };
-
 
     # home.file.".config/nvim" = {
     #     source = ./neovim-config;
