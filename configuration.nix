@@ -150,7 +150,6 @@
         wl-clipboard
         brightnessctl
         nwg-displays
-        gcc
     ];
 
 
