@@ -3,6 +3,7 @@
         ./hyprland.nix
         ./hyprpanel.nix
         ./hyprlock.nix
-        #./hypridle.nix
+        ./hypridle.nix
+        #.hyprpaper.nix
     ];
 }
