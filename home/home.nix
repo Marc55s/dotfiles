@@ -4,8 +4,6 @@
         lua-language-server
         spotify
         vscode
-        hyprpaper
-        hypridle
         hyprshot
         hyprpicker
         hyprsunset
