@@ -2,7 +2,7 @@
     imports = [
         ./hyprland.nix
         ./hyprpanel.nix
-        #./hyprlock.nix
+        ./hyprlock.nix
         #./hypridle.nix
     ];
 }

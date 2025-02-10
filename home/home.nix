@@ -4,8 +4,6 @@
         lua-language-server
         spotify
         vscode
-        wofi
-        hyprlock
         hyprpaper
         hypridle
         hyprshot
