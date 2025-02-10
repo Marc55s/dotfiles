@@ -3,8 +3,7 @@
         xwayland.enable = true;
         enable = true;
         settings = {
-            monitor = "eDP-1,preferred,0x0,1.0";
-
+            source = "~/.config/hypr/monitors.conf";
             "$mainMod" = "SUPER";
             "$terminal" = "kitty";
             "$fileManager" = "nautilus";
