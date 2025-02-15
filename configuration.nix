@@ -42,7 +42,7 @@
         LC_TIME = "de_DE.UTF-8";
     };
 
-    boot.kernelModules = [ "evdi" ];
+    boot.kernelModules = [ "evdi" "wacom"];
 
     # Enable the X11 windowing system.
     services.xserver.enable = false;
@@ -106,7 +106,7 @@
     };
 
     # Enable touchpad support (enabled default in most desktopManager).
-    # services.xserver.libinput.enable = true;
+    services.libinput.enable = true;
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.marc = {
@@ -123,6 +123,7 @@
     virtualisation.docker.enable = true;
 
     programs.zsh.enable = true;
+    programs.hyprland.enable = true;
 
     # flakes
     nix.settings = {
@@ -143,6 +144,7 @@
         wl-clipboard
         brightnessctl
         nwg-displays
+        libwacom
     ];
 
 

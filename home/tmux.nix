@@ -2,7 +2,8 @@
 
 {
     programs.tmux = {
-        enable = true;  # Enable TMUX through Home Manager
+        enable = true;
+        newSession = true;
         plugins = with pkgs;[
             {
                 plugin = tmuxPlugins.catppuccin;

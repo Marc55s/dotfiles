@@ -3,7 +3,7 @@
         enable = true;
         settings = {
             # Variables
-            "$wallpaper" = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
+            "$wallpaper" = "~/dotfiles/wallpaper/greenbus.jpg";
 
             # Preload the wallpaper
             preload = "$wallpaper";

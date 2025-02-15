@@ -4,6 +4,8 @@
         lua-language-server
         spotify
         vscode
+        hyprpaper
+        hypridle
         hyprshot
         hyprpicker
         hyprsunset
@@ -29,6 +31,8 @@
             withVencord = true;
         })
         superfile
+        neofetch
+        nautilus
     ];
 
     imports = [
@@ -62,6 +66,7 @@
 
     programs.bash.enable = true;
     home.stateVersion = "24.05";
+
     programs.git = {
         enable = true;
         userEmail = "marc.schoenig@gmail.com";
@@ -82,6 +87,12 @@
     programs.zsh = {
         enable = true;
         enableCompletion = true;
+        initExtra = ''
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux new
+fi
+set bell-style none
+        '';
     };
 
     # home.file.".config/nvim" = {

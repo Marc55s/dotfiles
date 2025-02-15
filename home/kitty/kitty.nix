@@ -16,6 +16,7 @@
             
             #background_opacity = "0.7";
             background_blur = 10;
+            enable_audio_bell = "no";
         };
         
         extraConfig = ''include themes/Catppuccin.conf'';
