@@ -9,7 +9,13 @@
             "$fileManager" = "nautilus";
             "$menu" = "rofi -show drun";
             "$lock" = "hyprlock";
+            "$powermenu" = "~/.config/rofi/power.sh";
             "env"= "XCURSOR_SIZE,24";
+
+            monitor = [
+                "eDP-1, highres, auto, 1"
+                "HDMI-A-1, highres, auto, 1, mirror, eDP-1"
+            ];
 
             exec-once = [
                 "nm-applet"
@@ -98,6 +104,7 @@
 
             bind = [
                 "$mainMod, Q, exec, $terminal"
+                "$mainMod, B, exec, $powermenu"
                 "$mainMod, C, killactive,"
                 "$mainMod, M, exit,"
                 "$mainMod, E, exec, $fileManager"

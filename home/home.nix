@@ -37,7 +37,7 @@
 
     imports = [
         inputs.textfox.homeManagerModules.default
-        ./rofi.nix
+        ./rofi/rofi.nix
         ./kitty/kitty.nix
         ./starship/starship.nix
         ./tmux.nix

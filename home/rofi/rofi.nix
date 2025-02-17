@@ -4,6 +4,9 @@ let
     # Define mkLiteral outside of the theme block
     inherit (config.lib.formats.rasi) mkLiteral;
 in {
+    imports = [
+        ./powermenu/power.nix
+    ];
     programs.rofi = {
         enable = true;
         extraConfig = {
