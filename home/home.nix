@@ -33,6 +33,10 @@
         superfile
         neofetch
         nautilus
+        texliveFull
+        imagemagick
+        tree-sitter-grammars.tree-sitter-latex
+        ghostscript
     ];
 
     imports = [
@@ -79,7 +83,11 @@
     programs.ripgrep.enable = true;
 
     programs.neovim =  {
+        enable = true;
         defaultEditor = true;
+        vimAlias = true;
+        viAlias = true;
+        package = pkgs-unstable.neovim.unwrapped;
     };
 
     programs.gh.enable = true;
@@ -88,17 +96,13 @@
         enable = true;
         enableCompletion = true;
         initExtra = ''
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux new
-fi
-set bell-style none
+            if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+                tmux new
+                    fi
+                    set bell-style none
         '';
     };
 
-    # home.file.".config/nvim" = {
-    #     source = ./neovim-config;
-    #     recursive = true;
-    #};
     gtk = {
         enable = true;
         theme = {
@@ -113,8 +117,4 @@ set bell-style none
             gtk-application-prefer-dark-theme = 1;
         };
     };
-
-
-
-
 }

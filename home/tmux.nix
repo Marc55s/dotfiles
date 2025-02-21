@@ -38,6 +38,7 @@
       # Start counting pane and window number at 1
       set -g base-index 1
       set -g pane-base-index 1
+      set-option -sg escape-time 10
 
       unbind r 
       bind r source-file ~/.config/tmux/tmux.conf
