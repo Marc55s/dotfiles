@@ -11,10 +11,10 @@
             bold_italic_font = "auto";
 
             font_size = 14;
-            cursor_trail = 1;
+            #cursor_trail = 1;
 
             
-            #background_opacity = "0.7";
+            #background_opacity = "0.5";
             background_blur = 10;
             enable_audio_bell = "no";
         };

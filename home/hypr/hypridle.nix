@@ -12,7 +12,7 @@
             # Listener 1: Notify before locking
             listener = [
                 {
-                    timeout = 570; # 9.5 minutes
+                    timeout = 270; # 9.5 minutes
                     on-timeout = "notify-send 'locking in 30s...'";
                 }
 
