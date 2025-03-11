@@ -14,7 +14,6 @@
 
             monitor = [
                 "eDP-1, highres, auto, 1"
-                "HDMI-A-1, highres, auto, 1, mirror, eDP-1"
             ];
 
             exec-once = [

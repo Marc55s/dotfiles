@@ -63,11 +63,12 @@
             theme.bar.transparent = true;
             theme.font = {
                 name = "CaskaydiaCove NF";
-                size = "18px";
+                size = "16px";
             };
         };
         override = {
             "theme.bar.buttons.dashboard.icon" = "#89B4FB";
+            "theme.bar.background"= "#000203";
         };
 
     };

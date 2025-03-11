@@ -24,7 +24,7 @@
 
                 # Listener 3: Turn off screen after timeout
                 {
-                    timeout = 300; # 5 minutes
+                    timeout = 600; # 5 minutes
                     on-timeout = "hyprctl dispatch dpms off"; # Screen off when timeout has passed
                     on-resume = "hyprctl dispatch dpms on"; # Screen on when activity is detected after timeout has fired.
                 }

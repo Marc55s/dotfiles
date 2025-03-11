@@ -12,12 +12,16 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        todo-shell = {
+            url = "github:itsanian/todo-shell";
+        };
+
         nixpkgs.url = "nixpkgs/nixos-24.11";
         nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
         textfox.url = "github:adriankarlen/textfox";
     };
 
-    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, textfox,  ... }:
+    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, textfox, todo-shell, ... }:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {

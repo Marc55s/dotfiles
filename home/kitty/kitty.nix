@@ -19,7 +19,7 @@
             enable_audio_bell = "no";
         };
         
-        extraConfig = ''include themes/Catppuccin.conf'';
+        extraConfig = ''include themes/LiquidCarbonTransparent.conf'';
 
     };
 

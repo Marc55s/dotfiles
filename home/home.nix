@@ -43,6 +43,7 @@
         pylyzer
         pyright
         pkgs-unstable.presenterm
+        inputs.todo-shell.defaultPackage.x86_64-linux
     ];
 
     imports = [

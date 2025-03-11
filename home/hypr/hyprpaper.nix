@@ -3,7 +3,7 @@
         enable = true;
         settings = {
             # Variables
-            "$wallpaper" = "~/dotfiles/wallpaper/greenbus.jpg";
+            "$wallpaper" = "~/dotfiles/wallpaper/black_beach.webp";
 
             # Preload the wallpaper
             preload = "$wallpaper";
