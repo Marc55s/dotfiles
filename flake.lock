@@ -197,11 +197,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1741546241,
-        "narHash": "sha256-VoW+uZMds8Hc0ZRGP6VnHXK9PawI+lpS53rbDppWxco=",
+        "lastModified": 1741942590,
+        "narHash": "sha256-AyZiA/cx8RqONlii/k/gPq9tr9D3InI5iMAiohCU4Fc=",
         "owner": "itsanian",
         "repo": "todo-shell",
-        "rev": "b7596e5d8c0fa59e0fee272a86c7f7c60be45319",
+        "rev": "e457178cc6b580e15760e03d47d5fed2386076a4",
         "type": "github"
       },
       "original": {

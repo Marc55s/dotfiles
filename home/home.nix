@@ -11,6 +11,7 @@
         hyprsunset
         pkgs-unstable.obsidian
         libgtop
+        libnotify
         dart-sass
         ags
         gnome-bluetooth
@@ -30,7 +31,7 @@
             # withOpenASAR = true; # can do this here too
             withVencord = true;
         })
-        superfile
+        nnn # File explorer
         neofetch
         nautilus
         texliveFull
@@ -44,6 +45,7 @@
         pyright
         pkgs-unstable.presenterm
         inputs.todo-shell.defaultPackage.x86_64-linux
+        eog
     ];
 
     imports = [

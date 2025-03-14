@@ -20,7 +20,7 @@ in {
         theme = {
             "*" = {
                 # Define color variables for easy customization
-                bg-col = mkLiteral "#1E1E2F";
+                bg-col = mkLiteral "#000000";
                 bg-col-light = mkLiteral "#303446";
                 border-col = mkLiteral "#303446";
                 selected-col = mkLiteral "#303446";
