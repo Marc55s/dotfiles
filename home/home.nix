@@ -1,7 +1,13 @@
 {config, pkgs, pkgs-unstable, inputs,  ... }: {
 
     home.packages = with pkgs; [ 
+        # LSPs
+        texlab
         lua-language-server
+        nil
+        pylyzer
+        pyright
+
         spotify
         vscode
         hyprpaper
@@ -23,16 +29,15 @@
         lazygit
         lazydocker
         nitch
+        neofetch
         remnote
         bitwarden
-        zathura
         vesktop
         (discord.override {
             # withOpenASAR = true; # can do this here too
             withVencord = true;
         })
         nnn # File explorer
-        neofetch
         nautilus
         texliveFull
         imagemagick
@@ -40,21 +45,20 @@
         tree-sitter
         ghostscript
         whatsapp-for-linux
-        nil
-        pylyzer
-        pyright
         pkgs-unstable.presenterm
         inputs.todo-shell.defaultPackage.x86_64-linux
         eog
+        firefox
     ];
 
     imports = [
-        inputs.textfox.homeManagerModules.default
         ./rofi/rofi.nix
         ./kitty/kitty.nix
         ./starship/starship.nix
         ./tmux.nix
         ./hypr/default.nix
+        ./ctf.nix
+        ./zathura.nix
     ];
 
     home.shellAliases = {
@@ -64,13 +68,6 @@
         gs = "git status";
     };
 
-    textfox = {
-        enable = true;
-        profile = "default";
-        config = {
-            displayHorizontalTabs = true;
-        };
-    };
 
     home.username = "marc";
     home.homeDirectory = "/home/marc";

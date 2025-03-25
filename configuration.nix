@@ -112,7 +112,7 @@
     users.users.marc = {
         isNormalUser = true;
         description = "marc";
-        extraGroups = [ "networkmanager" "wheel" "docker" "tty"];
+        extraGroups = [ "networkmanager" "wheel" "docker" "tty" "wireshark"];
         shell = pkgs.zsh;
         packages = with pkgs; [
             #  thunderbird
@@ -124,6 +124,11 @@
 
     programs.zsh.enable = true;
     programs.hyprland.enable = true;
+
+    programs.wireshark = {
+        enable = true;
+        # package = pkgs.wireshark;
+    };
 
     # flakes
     nix.settings = {
