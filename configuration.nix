@@ -83,6 +83,7 @@
     # Enable CUPS to print documents.
     services.printing.enable = true;
 
+    hardware.bluetooth.enable = true;
     hardware.sensor.iio.enable = true;
     services.udev.extraHwdb = ''
     sensor:modalias:acpi:*:dmi:*svn*LENOVO*:*pn*Yoga7*
