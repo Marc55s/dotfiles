@@ -9,6 +9,7 @@
         pyright
         tree-sitter-grammars.tree-sitter-latex
         tree-sitter
+        rust-analyzer
     ];
 
     programs.neovim =  {

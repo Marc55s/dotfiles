@@ -1,7 +1,10 @@
 {config, pkgs, pkgs-unstable, inputs,  ... }: {
 
     home.packages = with pkgs; [ 
-
+        rustc
+        cargo
+        rustfmt
+        clippy        
         spotify
         vscode
         hyprpaper
@@ -88,6 +91,7 @@
         enable = true;
         enableCompletion = true;
         initExtra = ''
+            export PATH="$HOME/.cargo/bin:$PATH"
             if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
                 tmux new
                     fi
