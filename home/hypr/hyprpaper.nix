@@ -3,7 +3,7 @@
         enable = true;
         settings = {
             # Variables
-            "$wallpaper" = "~/dotfiles/wallpaper/black_beach.webp";
+            "$wallpaper" = "~/dotfiles/wallpaper/1920x1080-dark-windows2.png";
 
             # Preload the wallpaper
             preload = "$wallpaper";

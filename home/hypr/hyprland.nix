@@ -6,7 +6,7 @@
             source = "~/.config/hypr/monitors.conf";
             "$mainMod" = "SUPER";
             "$terminal" = "kitty";
-            "$fileManager" = "nautilus";
+            "$fileManager" = "nemo";
             "$menu" = "rofi -show drun";
             "$lock" = "hyprlock";
             "$powermenu" = "~/.config/rofi/power.sh";
@@ -27,16 +27,16 @@
             general =  { 
                 gaps_in = 5;
                 gaps_out = 10;
-                border_size = 3;
+                border_size = 0;
 
-                "col.active_border" = "rgba(91d7e3ca) rgba(8aadf4cc) 45deg";
-                "col.inactive_border"= "rgba(591959aa)";
+                # "col.active_border" = "rgba(91d7e3ca) rgba(8aadf4cc) 45deg";
+                # "col.inactive_border"= "rgba(591959aa)";
                 resize_on_border = false;
                 allow_tearing = false;
                 layout = "dwindle";
             };
             decoration = {
-                rounding = 5;
+                rounding = 0;
                 active_opacity = 1.0;
                 inactive_opacity = 1.0;
                 blur = {

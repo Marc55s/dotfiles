@@ -5,6 +5,7 @@
         enable = true;
         newSession = true;
         plugins = with pkgs;[
+            /*
             {
                 plugin = tmuxPlugins.catppuccin;
                 extraConfig = ''
@@ -31,7 +32,13 @@
                   set -ag status-right "#{E:@catppuccin_status_session}"
                 '';
             }
-
+            */
+            {
+                plugin = tmuxPlugins.gruvbox;
+                extraConfig = ''
+                    set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
+                '';
+            }
         ];
 
         extraConfig = ''

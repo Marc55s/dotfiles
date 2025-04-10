@@ -11,7 +11,7 @@
         enable = true;
         overlay.enable = true;
         overwrite.enable = true;
-        theme = "catppuccin_mocha";
+        theme = "gruvbox";
 
         layout = {
             "bar.layouts" = {
@@ -67,7 +67,8 @@
             };
         };
         override = {
-            "theme.bar.buttons.dashboard.icon" = "#89B4FB";
+            # "theme.bar.buttons.dashboard.icon" = "#89B4FB"; cattpuccing nix icon
+            "theme.bar.buttons.dashboard.icon" = "#FABD2F";
             "theme.bar.background"= "#000203";
         };
 

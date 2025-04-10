@@ -19,7 +19,7 @@
             enable_audio_bell = "no";
         };
         
-        extraConfig = ''include themes/LiquidCarbonTransparent.conf'';
+        extraConfig = ''include themes/gruvbox_dark.conf'';
 
     };
 
