@@ -45,6 +45,7 @@
         eog
         nemo
         firefox
+        libresprite
     ];
 
     imports = [
