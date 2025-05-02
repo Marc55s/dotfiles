@@ -57,6 +57,12 @@
     variant = "";
   };
 
+  # flakes
+  nix.settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      warn-dirty = false;
+  };
+
   # Configure console keymap
   console.keyMap = "de";
 
