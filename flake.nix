@@ -43,13 +43,13 @@
                 nixos = lib.nixosSystem {
                     inherit system pkgs;
                     modules = [
-                        (import ./configuration.nix {inherit pkgs pkgs-unstable;})
-                        ./hardware-configuration.nix
+                        ./hosts/white/configuration.nix
+                        ./hosts/white/hardware-configuration.nix
                         home-manager.nixosModules.home-manager
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.marc = import ./home/home.nix;
+                            home-manager.users.mc = import ./home/home.nix;
                             home-manager.extraSpecialArgs = {
                                 inherit inputs pkgs-unstable;
                             };
