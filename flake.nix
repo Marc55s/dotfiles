@@ -40,7 +40,7 @@
             lib = nixpkgs.lib;
         in {
             nixosConfigurations = {
-                nixos = lib.nixosSystem {
+                white = lib.nixosSystem {
                     inherit system pkgs;
                     modules = [
                         ./hosts/white/configuration.nix
@@ -49,7 +49,7 @@
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.mc = import ./home/home.nix;
+                            home-manager.users.mc = import ./home/white.nix;
                             home-manager.extraSpecialArgs = {
                                 inherit inputs pkgs-unstable;
                             };
@@ -57,6 +57,24 @@
                         }
                     ];
                 };
+            };
+
+            black = lib.nixosSystem {
+                inherit system pkgs;
+                modules = [
+                    ./hosts/black/configuration.nix
+                    ./hosts/black/hardware-configuration.nix
+                    home-manager.nixosModules.home-manager
+                    {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.users.marc = import ./home/black.nix;
+                        home-manager.extraSpecialArgs = {
+                            inherit inputs pkgs-unstable;
+                        };
+
+                    }
+                ];
             };
         };
 }
