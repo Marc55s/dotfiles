@@ -57,24 +57,24 @@
                         }
                     ];
                 };
-            };
 
-            black = lib.nixosSystem {
-                inherit system pkgs;
-                modules = [
-                    ./hosts/black/configuration.nix
-                    ./hosts/black/hardware-configuration.nix
-                    home-manager.nixosModules.home-manager
-                    {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.marc = import ./home/black.nix;
-                        home-manager.extraSpecialArgs = {
-                            inherit inputs pkgs-unstable;
-                        };
+                black = lib.nixosSystem {
+                    inherit system pkgs;
+                    modules = [
+                        ./hosts/black/configuration.nix
+                        ./hosts/black/hardware-configuration.nix
+                        home-manager.nixosModules.home-manager
+                        {
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            home-manager.users.marc = import ./home/black.nix;
+                            home-manager.extraSpecialArgs = {
+                                inherit inputs pkgs-unstable;
+                            };
 
-                    }
-                ];
+                        }
+                    ];
+                };
             };
         };
 }
