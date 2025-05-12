@@ -81,7 +81,16 @@
     console.keyMap = "de";
 
     # Enable CUPS to print documents.
-    services.printing.enable = true;
+    services.printing = {
+        enable = true;
+        drivers = [ pkgs.gutenprint ]; # or any Canon-specific driver if available
+        browsing = true; # allow CUPS to browse for network printers
+    };
+    services.avahi = {
+        enable = true;
+        nssmdns = true;  # This allows `hostname.local` resolution
+        openFirewall = true;
+    };
 
     hardware.bluetooth.enable = true;
     hardware.sensor.iio.enable = true;
