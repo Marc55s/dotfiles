@@ -53,8 +53,7 @@
         ./kitty/kitty.nix
         ./starship/starship.nix
         ./tmux.nix
-        ./hypr/default.nix
-        ./ctf.nix
+        # ./ctf.nix
         ./zathura.nix
         ./nvim.nix
     ];
@@ -67,13 +66,13 @@
     };
 
 
-    home.username = "mc";
-    home.homeDirectory = "/home/mc";
+    home.username = "marc";
+    home.homeDirectory = "/home/marc";
 
     programs.home-manager.enable = true;
 
     programs.bash.enable = true;
-    home.stateVersion = "24.05";
+    home.stateVersion = "24.11";
 
     programs.git = {
         enable = true;
@@ -87,7 +86,7 @@
     programs.ripgrep.enable = true;
 
 
-    programs.gh.enable = true;
+    # programs.gh.enable = true;
 
     programs.zsh = {
         enable = true;

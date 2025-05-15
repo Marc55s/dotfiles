@@ -10,10 +10,14 @@
       ./hardware-configuration.nix
     ];
 
+  fileSystems."/mnt/nvme" = {
+    device ="/dev/disk/by-uuid/6fd86718-7584-455a-9093-28881876a250" ;
+    fsType = "ext4";
+  };
+
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -57,12 +61,6 @@
     variant = "";
   };
 
-  # flakes
-  nix.settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      warn-dirty = false;
-  };
-
   # Configure console keymap
   console.keyMap = "de";
 
@@ -89,9 +87,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.mc = {
+  users.users.marc = {
     isNormalUser = true;
-    description = "mc";
+    description = "Marc";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
@@ -102,6 +100,18 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # flakes
+  nix.settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      warn-dirty = false;
+  };
+
+  fonts.packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
+  # Allow unfree packages
+  # nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
