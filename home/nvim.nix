@@ -10,6 +10,7 @@
         tree-sitter-grammars.tree-sitter-latex
         tree-sitter
         rust-analyzer
+        nodejs_23
     ];
 
     programs.neovim =  {

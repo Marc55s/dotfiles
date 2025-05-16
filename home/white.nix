@@ -12,7 +12,7 @@
         # hyprshot
         # hyprpicker
         # hyprsunset
-        # pkgs-unstable.obsidian
+        pkgs-unstable.obsidian
         # libgtop
         # libnotify
         # dart-sass
@@ -23,29 +23,35 @@
         btop
         # upower
         # acpi
-        # lazygit
+        lazygit
         # lazydocker
         nitch
         # neofetch
-        # remnote
-        # bitwarden
+        bitwarden
         vesktop
         (discord.override {
             # withOpenASAR = true; # can do this here too
             withVencord = true;
         })
         nnn # File explorer
+        fzf
+        easyeffects
+        obs-studio
+        gcc
         # nautilus
-        # texliveFull
+        texliveFull
         # imagemagick
         # ghostscript
-        # whatsapp-for-linux
-        # pkgs-unstable.presenterm
+        whatsapp-for-linux
+        pkgs-unstable.presenterm
         # inputs.todo-shell.defaultPackage.x86_64-linux
         # eog
         # nemo
-        # firefox
+        firefox
+        tree
         # libresprite
+        pkgs-unstable.jetbrains.clion
+        pinta
     ];
 
     imports = [
@@ -59,8 +65,8 @@
     ];
 
     home.shellAliases = {
-        nrs = "sudo nixos-rebuild switch --flake /home/mc/dotfiles#";
-        nrt = "sudo nixos-rebuild test --flake /home/mc/dotfiles#";
+        nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#white";
+        nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#white";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
         gs = "git status";
     };
