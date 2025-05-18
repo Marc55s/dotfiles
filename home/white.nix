@@ -5,53 +5,34 @@
         # cargo
         # rustfmt
         # clippy        
-        # spotify
         # vscode
-        # hyprpaper
-        # hypridle
-        # hyprshot
-        # hyprpicker
-        # hyprsunset
         pkgs-unstable.obsidian
-        # libgtop
-        # libnotify
-        # dart-sass
-        # ags
-        # gnome-bluetooth
-        # bluez
-        # bluez-tools
+        ncspot
+        libva
+        libvdpau
         btop
-        # upower
-        # acpi
         lazygit
-        # lazydocker
         nitch
-        # neofetch
         bitwarden
         vesktop
-        (discord.override {
-            # withOpenASAR = true; # can do this here too
-            withVencord = true;
-        })
+        discord
         nnn # File explorer
         fzf
         easyeffects
         obs-studio
         gcc
-        # nautilus
         texliveFull
-        # imagemagick
-        # ghostscript
+        imagemagick
+        ghostscript
         whatsapp-for-linux
         pkgs-unstable.presenterm
         # inputs.todo-shell.defaultPackage.x86_64-linux
-        # eog
-        # nemo
         firefox
         tree
         # libresprite
         pkgs-unstable.jetbrains.clion
         pinta
+        pkgs-unstable.chatterino7
     ];
 
     imports = [
@@ -64,13 +45,13 @@
         ./nvim.nix
     ];
 
+
     home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#white";
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#white";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
         gs = "git status";
     };
-
 
     home.username = "marc";
     home.homeDirectory = "/home/marc";
@@ -90,7 +71,6 @@
     };
 
     programs.ripgrep.enable = true;
-
 
     # programs.gh.enable = true;
 
