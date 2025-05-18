@@ -39,6 +39,15 @@
                     set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
                 '';
             }
+            {
+                plugin = tmuxPlugins.resurrect;
+                extraConfig = ''
+                    unbind s
+                    unbind r
+                    bind s run-shell '${tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/save.sh'
+                    bind r run-shell '${tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/restore.sh'
+                '';
+            }
         ];
 
         extraConfig = ''
@@ -46,9 +55,6 @@
       set -g base-index 1
       set -g pane-base-index 1
       set-option -sg escape-time 10
-
-      unbind r 
-      bind r source-file ~/.config/tmux/tmux.conf
 
       set -g mouse on
       bind-key h select-pane -L

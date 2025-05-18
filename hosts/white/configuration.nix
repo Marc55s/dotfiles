@@ -40,6 +40,8 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
+
+  programs.steam.gamescopeSession.enable = false;
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -61,12 +63,21 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+  services.flatpak.enable = true;
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+  services.greetd = {
+      enable = true;
+      settings = {
+          default_session = {
+              command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd startplasma-wayland";
+          };
+      };
+  };
+  services.displayManager.sddm.enable = false;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -107,7 +118,7 @@
     extraGroups = [ "networkmanager" "wheel" "audio"];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      thunderbird
     ];
   };
 
@@ -129,6 +140,8 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    wl-clipboard
+    gamescope
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

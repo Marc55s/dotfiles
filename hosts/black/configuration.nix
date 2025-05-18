@@ -75,8 +75,8 @@
                 command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd Hyprland";
             };
         };
-
     };
+
     # Configure console keymap
     console.keyMap = "de";
 
