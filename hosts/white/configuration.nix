@@ -16,6 +16,7 @@
   };
 
   # Bootloader.
+  boot.kernelPackages = pkgs.linuxPackages_6_14;
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
@@ -116,11 +117,13 @@
     isNormalUser = true;
     description = "Marc";
     extraGroups = [ "networkmanager" "wheel" "audio"];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
       thunderbird
     ];
   };
+  programs.zsh.enable = true;
 
   # flakes
   nix.settings = {
