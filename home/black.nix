@@ -49,6 +49,7 @@
     ];
 
     imports = [
+        ./common.nix
         ./rofi/rofi.nix
         ./kitty/kitty.nix
         ./starship/starship.nix
