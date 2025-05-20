@@ -1,34 +1,16 @@
 {config, pkgs, pkgs-unstable, inputs,  ... }: {
 
     home.packages = with pkgs; [ 
-        # rustc
-        # cargo
-        # rustfmt
-        # clippy        
         # vscode
-        pkgs-unstable.obsidian
         ncspot
         libva
         libvdpau
-        btop
-        lazygit
-        nitch
-        bitwarden
-        vesktop
-        discord
-        nnn # File explorer
-        fzf
         easyeffects
         obs-studio
         gcc
-        texliveFull
-        imagemagick
-        ghostscript
-        whatsapp-for-linux
         pkgs-unstable.presenterm
         # inputs.todo-shell.defaultPackage.x86_64-linux
         firefox
-        tree
         # libresprite
         pkgs-unstable.jetbrains.clion
         pinta
@@ -37,15 +19,7 @@
 
     imports = [
         ./common.nix
-        ./rofi/rofi.nix
-        ./kitty/kitty.nix
-        ./starship/starship.nix
-        ./tmux.nix
-        # ./ctf.nix
-        ./zathura.nix
-        ./nvim.nix
     ];
-
 
     home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#white";
@@ -61,19 +35,6 @@
 
     programs.bash.enable = true;
     home.stateVersion = "24.11";
-
-    programs.git = {
-        enable = true;
-        userEmail = "marc.schoenig@gmail.com";
-        userName = "marc55s";
-        extraConfig = {
-            push.autoSetupRemote = true;
-        };
-    };
-
-    programs.ripgrep.enable = true;
-
-    # programs.gh.enable = true;
 
     programs.zsh = {
         enable = true;
