@@ -16,7 +16,7 @@
   };
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
