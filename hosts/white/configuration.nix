@@ -15,6 +15,11 @@
     fsType = "ext4";
   };
 
+  fileSystems."/mnt/hdd" = {
+    device ="/dev/disk/by-uuid/a9ef4979-66c9-401b-a218-10cbbdb4bfe4" ;
+    fsType = "ext4";
+  };
+
   # Bootloader.
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader = {
@@ -34,6 +39,9 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Gaming
+  hardware.opengl.enable = true;
 
   programs.steam = {
     enable = true;
@@ -129,6 +137,12 @@
   nix.settings = {
       experimental-features = [ "nix-command" "flakes" ];
       warn-dirty = false;
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
   };
 
   fonts.packages = with pkgs; [

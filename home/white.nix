@@ -15,6 +15,7 @@
         pkgs-unstable.jetbrains.clion
         pinta
         pkgs-unstable.chatterino7
+        libreoffice
     ];
 
     imports = [
