@@ -2,13 +2,17 @@
     description = "A very basic flake";
 
     inputs = {
+        nixpkgs.url = "nixpkgs/nixos-25.05";
+        nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+        nixpkgs-24_11.url = "nixpkgs/nixos-24.11";
+
         hyprpanel = {
             url = "github:Jas-SinghFSU/HyprPanel";
-            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.nixpkgs.follows = "nixpkgs-24_11";
         };
 
         home-manager = {
-            url = "github:nix-community/home-manager/release-24.11";
+            url = "github:nix-community/home-manager/release-25.05";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
@@ -16,9 +20,8 @@
             url = "github:itsanian/todo-shell";
         };
 
-        nixpkgs.url = "nixpkgs/nixos-24.11";
-        nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
         textfox.url = "github:adriankarlen/textfox";
+
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, textfox, todo-shell, ... }:

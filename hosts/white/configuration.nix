@@ -41,7 +41,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Gaming
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   programs.steam = {
     enable = true;
@@ -102,7 +102,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -144,10 +144,6 @@
     dates = "weekly";
     options = "--delete-older-than 30d";
   };
-
-  fonts.packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-  ];
 
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true;

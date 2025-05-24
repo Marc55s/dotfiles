@@ -36,9 +36,9 @@
         texliveFull
         imagemagick
         ghostscript
+        nerd-fonts.jetbrains-mono
     ];
 
     programs.ripgrep.enable = true;
-
 
 }

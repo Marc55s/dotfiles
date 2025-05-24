@@ -40,7 +40,7 @@
     programs.zsh = {
         enable = true;
         enableCompletion = true;
-        initExtra = ''
+        initContent = ''
             export PATH="$HOME/.cargo/bin:$PATH"
             if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
                 tmux new
