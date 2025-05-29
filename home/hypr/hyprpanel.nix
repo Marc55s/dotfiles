@@ -41,7 +41,6 @@
                 customModules.hyprsunset.temperature= "4000k";
             };
 
-            menus.dashboard.powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
             menus = {
                 clock = {
                     time = {
@@ -56,6 +55,7 @@
                 dashboard = {
                     directories.enabled = false;
                     shortcuts.enabled = true;
+                    powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
                 };
             };
 
