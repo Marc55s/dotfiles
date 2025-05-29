@@ -19,7 +19,7 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
 
       - name: Build laptop config
-        run: nix build .#nixosConfigurations.black.config.system.build.toplevel
+        run: nix build .#black
 
       - name: Build pc config
-        run: nix build .#nixosConfigurations.white.config.system.build.toplevel
+        run: nix build .#white
