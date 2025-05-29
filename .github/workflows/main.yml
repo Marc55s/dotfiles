@@ -21,3 +21,8 @@ jobs:
       - name: Flake checks
         run: nix flake check
 
+      - name: Dry-run build black
+        run: nix build .#nixosConfigurations.black.config.system.build.toplevel --dry-run --print-out-paths
+
+      - name: Dry-run build white
+        run: nix build .#nixosConfigurations.white.config.system.build.toplevel --dry-run --print-out-paths
