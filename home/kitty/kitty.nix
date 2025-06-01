@@ -1,35 +1,34 @@
-{ config, pkgs, ... }:
+{ config, hostName, pkgs, ... }:
 
-{
-    programs.kitty = {
-        enable = true;
+let
+  # Detect if on laptop or PC by system or hostname
+  isLaptop = hostName == "laptop";
+  fontSize = if isLaptop then 14 else 12;  # smaller font on PC
+in {
+  programs.kitty = {
+    enable = true;
 
-        settings = {
-            font_family = "JetBrainsMono Nerd Font";
-            bold_font = "auto";
-            italic_font = "auto";
-            bold_italic_font = "auto";
+    settings = {
+      font_family = "JetBrainsMono Nerd Font";
+      font_size = fontSize;
 
-            font_size = 14;
-            #cursor_trail = 1;
+      bold_font = "auto";
+      italic_font = "auto";
+      bold_italic_font = "auto";
 
-            
-            #background_opacity = "0.5";
-            background_blur = 10;
-            enable_audio_bell = "no";
-        };
-        
-        extraConfig = ''include themes/gruvbox_dark.conf'';
-
+      background_blur = 10;
+      enable_audio_bell = "no";
     };
 
-    home.file.".config/kitty/themes" = {
-        source = ./themes;
-        recursive = true;
-    };
+    extraConfig = ''include themes/gruvbox_dark.conf'';
+  };
 
-    home.packages = with pkgs; [
-        jetbrains-mono # Ensure the font is installed
-    ];
+  home.file.".config/kitty/themes" = {
+    source = ./themes;
+    recursive = true;
+  };
 
+  home.packages = with pkgs; [
+    jetbrains-mono
+  ];
 }

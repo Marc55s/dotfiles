@@ -55,6 +55,7 @@
                             home-manager.users.marc = import ./home/white.nix;
                             home-manager.extraSpecialArgs = {
                                 inherit inputs pkgs-unstable;
+                                hostName = "pc";
                             };
 
                         }
@@ -73,6 +74,7 @@
                             home-manager.users.marc = import ./home/black.nix;
                             home-manager.extraSpecialArgs = {
                                 inherit inputs pkgs-unstable;
+                                hostName = "laptop";
                             };
 
                         }
