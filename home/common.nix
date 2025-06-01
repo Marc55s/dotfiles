@@ -9,6 +9,8 @@
         ./zathura.nix
         ./nvim.nix
         ./git.nix
+        ./direnv.nix
+        ./zsh.nix
     ];
 
     home.packages = with pkgs; [ 

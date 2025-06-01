@@ -50,18 +50,6 @@
 
     programs.gh.enable = true;
 
-    programs.zsh = {
-        enable = true;
-        enableCompletion = true;
-        initContent = ''
-            export PATH="$HOME/.cargo/bin:$PATH"
-            if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-                tmux new
-                    fi
-                    set bell-style none
-        '';
-    };
-
     gtk = {
         enable = true;
         theme = {
