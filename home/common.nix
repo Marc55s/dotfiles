@@ -39,8 +39,6 @@
         imagemagick
         ghostscript
         nerd-fonts.jetbrains-mono
+        ripgrep
     ];
-
-    programs.ripgrep.enable = true;
-
 }
