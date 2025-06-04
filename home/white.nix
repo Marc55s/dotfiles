@@ -11,7 +11,7 @@
         pkgs-unstable.presenterm
         # inputs.todo-shell.defaultPackage.x86_64-linux
         firefox
-        # libresprite
+        libresprite
         pkgs-unstable.jetbrains.clion
         pinta
         pkgs-unstable.chatterino7
@@ -20,6 +20,8 @@
 
     imports = [
         ./common.nix
+        ./spicetify.nix
+        inputs.spicetify-nix.homeManagerModules.spicetify
     ];
 
     home.shellAliases = {

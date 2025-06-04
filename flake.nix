@@ -20,11 +20,10 @@
             url = "github:itsanian/todo-shell";
         };
 
-        textfox.url = "github:adriankarlen/textfox";
-
+       spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
     };
 
-    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, textfox, todo-shell, ... }:
+    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, ... }:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {
@@ -76,7 +75,6 @@
                                 inherit inputs pkgs-unstable;
                                 hostName = "laptop";
                             };
-
                         }
                     ];
                 };
