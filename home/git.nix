@@ -5,6 +5,11 @@
         userName = "marc55s";
         extraConfig = {
             push.autoSetupRemote = true;
+            rerere.enabled = true;
+            init.defaultBranch = "main";
+            core = {
+                editor = "nvim";
+            };
         };
     };
 }
