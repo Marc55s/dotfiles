@@ -11,7 +11,7 @@
         tree-sitter
         rust-analyzer
         nodejs_24
-        nixfmt
+        nixfmt-classic
     ];
 
     programs.neovim =  {
