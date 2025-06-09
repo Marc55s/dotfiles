@@ -29,6 +29,7 @@
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#white";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
         gs = "git status";
+        gl = "git log --oneline";
     };
 
     home.username = "marc";
