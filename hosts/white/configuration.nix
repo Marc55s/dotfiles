@@ -1,9 +1,10 @@
 { config, pkgs, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
       ../../modules/nix-ld.nix
+      ../../modules/ssh.nix
     ];
 
   fileSystems."/mnt/nvme" = {
@@ -161,10 +162,6 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
