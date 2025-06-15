@@ -18,7 +18,7 @@
   };
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
@@ -30,7 +30,7 @@
     };
   };
 
-  networking.hostName = "nixos-pc"; # Define your hostname.
+  networking.hostName = "pc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

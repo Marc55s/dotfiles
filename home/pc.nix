@@ -25,8 +25,8 @@
     ];
 
     home.shellAliases = {
-        nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#white";
-        nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#white";
+        nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#pc";
+        nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#pc";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
         gs = "git status";
         gl = "git log --oneline";

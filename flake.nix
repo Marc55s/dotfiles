@@ -42,16 +42,16 @@
             lib = nixpkgs.lib;
         in {
             nixosConfigurations = {
-                white = lib.nixosSystem {
+                pc = lib.nixosSystem {
                     inherit system pkgs;
                     modules = [
-                        ./hosts/white/configuration.nix
-                        ./hosts/white/hardware-configuration.nix
+                        ./hosts/pc/configuration.nix
+                        ./hosts/pc/hardware-configuration.nix
                         home-manager.nixosModules.home-manager
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.marc = import ./home/white.nix;
+                            home-manager.users.marc = import ./home/pc.nix;
                             home-manager.extraSpecialArgs = {
                                 inherit inputs pkgs-unstable;
                                 hostName = "pc";
@@ -61,16 +61,16 @@
                     ];
                 };
 
-                black = lib.nixosSystem {
+                laptop = lib.nixosSystem {
                     inherit system pkgs;
                     modules = [
-                        ./hosts/black/configuration.nix
-                        ./hosts/black/hardware-configuration.nix
+                        ./hosts/laptop/configuration.nix
+                        ./hosts/laptop/hardware-configuration.nix
                         home-manager.nixosModules.home-manager
                         {
                             home-manager.useGlobalPkgs = true;
                             home-manager.useUserPackages = true;
-                            home-manager.users.marc = import ./home/black.nix;
+                            home-manager.users.marc = import ./home/laptop.nix;
                             home-manager.extraSpecialArgs = {
                                 inherit inputs pkgs-unstable;
                                 hostName = "laptop";
