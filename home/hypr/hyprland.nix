@@ -10,7 +10,6 @@
             "$menu" = "rofi -show drun";
             "$lock" = "hyprlock";
             "$powermenu" = "~/.config/rofi/power.sh";
-            "env"= "XCURSOR_SIZE,24";
 
             monitor = [
                 "eDP-1, highres, auto, 1"
