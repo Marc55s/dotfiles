@@ -20,7 +20,7 @@
             url = "github:itsanian/todo-shell";
         };
 
-       spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
+        #spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, ... }:

@@ -16,12 +16,11 @@
         pinta
         pkgs-unstable.chatterino7
         libreoffice
+        spotify
     ];
 
     imports = [
         ./common.nix
-        ./spicetify.nix
-        inputs.spicetify-nix.homeManagerModules.spicetify
     ];
 
     home.shellAliases = {

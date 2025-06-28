@@ -29,8 +29,11 @@
       device = "nodev";  # required for UEFI systems
     };
   };
-
   networking.hostName = "pc"; # Define your hostname.
+  networking.interfaces.enp34s0.wakeOnLan = {
+    enable = true;
+    policy = [ "magic" ];
+  };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
