@@ -20,14 +20,14 @@ in {
         theme = {
             "*" = {
                 # Define color variables for easy customization
-                bg-col = mkLiteral "#000000";
-                bg-col-light = mkLiteral "#303446";
-                border-col = mkLiteral "#303446";
-                selected-col = mkLiteral "#303446";
-                blue = mkLiteral "#8caaee";
-                fg-col = mkLiteral "#c6d0f5";
-                fg-col2 = mkLiteral "#e78284";
-                grey = mkLiteral "#737994";
+                bg-col       = mkLiteral "#1d2021";  # bg0_hard
+                bg-col-light = mkLiteral "#282828";  # bg0
+                border-col   = mkLiteral "#282828";  # bg0 (same as bg-col-light)
+                selected-col = mkLiteral "#3c3836";  # bg1 (slightly lighter for selection)
+                blue         = mkLiteral "#458588";  # blue
+                fg-col       = mkLiteral "#ebdbb2";  # fg
+                fg-col2      = mkLiteral "#cc241d";  # red (for emphasis or errors)
+                grey         = mkLiteral "#928374";  # gray (neutral)
 
                 width = mkLiteral "600";
                 font = "JetBrainsMono Nerd Font 14"; # Custom font

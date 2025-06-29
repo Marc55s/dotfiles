@@ -1,11 +1,11 @@
 * {
-    font:		"JetBrains Mono Nerd Font 9";
-    background:     	#1E1E2FFF;
-    background-alt: 	#1B1B1BFF;
-    foreground:     	#EBDBB2FF;
-    blue:       	#7DAEA3FF;
-    orange:             #D8A657FF;
-    green:         	#89B4FAFF;
-    red:         	#EA6962FF;
-    aqua:		#89b482FF;
+    font:             "JetBrains Mono Nerd Font 9";
+    background:       #1d2021FF;  /* bg0_hard */
+    background-alt:   #282828FF;  /* bg0 */
+    foreground:       #ebdbb2FF;  /* fg */
+    blue:             #458588FF;  /* blue */
+    orange:           #d79921FF;  /* orange */
+    green:            #98971aFF;  /* green */
+    red:              #cc241dFF;  /* red */
+    aqua:             #8ec07cFF;  /* aqua */
 }
