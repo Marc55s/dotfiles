@@ -17,7 +17,6 @@
 
             exec-once = [
                 "nm-applet"
-                "hyprpanel"
                 "hyprpaper"
                 "hypridle"
                 "swaync"

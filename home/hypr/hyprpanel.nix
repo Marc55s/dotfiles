@@ -37,5 +37,6 @@
             wallpaper.enable = false;
             theme = theme;
         };
+        systemd.enable = true;
     };
 }
