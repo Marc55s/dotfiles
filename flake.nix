@@ -6,11 +6,6 @@
         nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
         nixpkgs-24_11.url = "nixpkgs/nixos-24.11";
 
-        hyprpanel = {
-            url = "github:Jas-SinghFSU/HyprPanel/94a00a49dae15c87e4234c9962295aed2b0dc45e";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-
         home-manager = {
             url = "github:nix-community/home-manager/release-25.05";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -29,9 +24,6 @@
             pkgs = import nixpkgs {
                 inherit system;
                 config = { allowUnfree = true; };
-                overlays = [
-                    inputs.hyprpanel.overlay
-                ];
             };
 
             pkgs-unstable = import nixpkgs-unstable {

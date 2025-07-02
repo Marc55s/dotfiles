@@ -1,20 +1,18 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
     home.packages = with pkgs;[
         wireplumber
         gvfs
     ];
 
-    imports = [ inputs.hyprpanel.homeManagerModules.hyprpanel ];
+    imports = [
+        ./gruvbox.nix
+    ];
 
     programs.hyprpanel = {
         enable = true;
-        overlay.enable = true;
-        overwrite.enable = true;
-        theme = "gruvbox";
-
-        layout = {
-            "bar.layouts" = {
+        settings = {
+            bar.layouts = {
                 "0" = {
                     left = ["dashboard" "workspaces" "windowtitle"];
                     middle = ["media"];
@@ -29,48 +27,25 @@
                     ];
                 };
             };
-        };
 
-        settings = {
+            bar.launcher.autoDetectIcon = true;
+            bar.workspaces.show_icons = false;
+            bar.workspaces.show_numbered = true;
+            bar.clock.format = "%a %b %d  %H:%M";
+            bar.customModules.hyprsunset.temperature= "4000k";
 
-            bar = {
-                launcher.autoDetectIcon = true;
-                workspaces.show_icons = false;
-                workspaces.show_numbered = true;
-                clock.format = "%a %b %d  %H:%M";
-                customModules.hyprsunset.temperature= "4000k";
-            };
-
-            menus = {
-                clock = {
-                    time = {
-                        military = false;
-                        hideSeconds= true;
-                    };
-                    weather = {
-                        unit = "metric";
-                    };
-                };
-
-                dashboard = {
-                    directories.enabled = false;
-                    shortcuts.enabled = true;
-                    powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
-                };
-            };
+            menus.clock.time.military = false;
+            menus.clock.time.hideSeconds = true;
+            menus.clock.weather.unit = "metric";
+            menus.dashboard.directories.enabled = false;
+            menus.dashboard.shortcuts.enabled = true;
+            menus.dashboard.powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
 
             wallpaper.enable = false;
+            theme.name = "gruvbox";
             theme.bar.transparent = true;
-            theme.font = {
-                name = "CaskaydiaCove NF";
-                size = "16px";
-            };
+            theme.font.name = "CaskaydiaCove NF";
+            theme.font.size = "16px";
         };
-        override = {
-            # "theme.bar.buttons.dashboard.icon" = "#89B4FB"; cattpuccing nix icon
-            "theme.bar.buttons.dashboard.icon" = "#FABD2F";
-            "theme.bar.background"= "#000203";
-        };
-
     };
 }
