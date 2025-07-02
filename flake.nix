@@ -11,14 +11,16 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        grub2-themes = {
+            url = "github:vinceliuice/grub2-themes";
+        };
+
         todo-shell = {
             url = "github:itsanian/todo-shell";
         };
-
-        #spicetify-nix.url = "github:Gerg-L/spicetify-nix"; 
     };
 
-    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, ... }:
+    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
         let
             system = "x86_64-linux";
             pkgs = import nixpkgs {
@@ -56,6 +58,7 @@
                 laptop = lib.nixosSystem {
                     inherit system pkgs;
                     modules = [
+                        grub2-themes.nixosModules.default
                         ./hosts/laptop/configuration.nix
                         ./hosts/laptop/hardware-configuration.nix
                         home-manager.nixosModules.home-manager

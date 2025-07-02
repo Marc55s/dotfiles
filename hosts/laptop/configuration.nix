@@ -14,6 +14,12 @@
     boot.loader.grub.efiSupport = true;
     boot.loader.grub.useOSProber = true;
 
+    boot.loader.grub2-theme = {
+        enable = true;
+        theme = "vimix";
+        footer = true;
+    };
+
     imports = [
       ../../modules/ssh.nix
     ];
