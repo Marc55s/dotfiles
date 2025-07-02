@@ -8,7 +8,7 @@
 
         hyprpanel = {
             url = "github:Jas-SinghFSU/HyprPanel/94a00a49dae15c87e4234c9962295aed2b0dc45e";
-            inputs.nixpkgs.follows = "nixpkgs-24_11";
+            inputs.nixpkgs.follows = "nixpkgs";
         };
 
         home-manager = {
