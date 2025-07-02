@@ -1,14 +1,7 @@
 { pkgs, ... }:
-{
-    home.packages = with pkgs;[
-        wireplumber
-        gvfs
-    ];
-
-    imports = [
-        ./gruvbox.nix
-    ];
-
+    let 
+        theme = builtins.fromJSON (builtins.readFile ./gruvbox.json);
+    in {
     programs.hyprpanel = {
         enable = true;
         settings = {
@@ -42,10 +35,7 @@
             menus.dashboard.powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
 
             wallpaper.enable = false;
-            theme.name = "gruvbox";
-            theme.bar.transparent = true;
-            theme.font.name = "CaskaydiaCove NF";
-            theme.font.size = "16px";
+            theme = theme;
         };
     };
 }
