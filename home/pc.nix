@@ -12,7 +12,6 @@
         # inputs.todo-shell.defaultPackage.x86_64-linux
         firefox
         libresprite
-        pkgs-unstable.jetbrains.clion
         pinta
         pkgs-unstable.chatterino7
         libreoffice

@@ -24,6 +24,7 @@
         nemo
         firefox
         libresprite
+        thunderbird
     ];
 
     imports = [
