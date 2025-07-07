@@ -25,16 +25,16 @@
             general =  { 
                 gaps_in = 5;
                 gaps_out = 10;
-                border_size = 0;
+                border_size = 2;
 
-                # "col.active_border" = "rgba(91d7e3ca) rgba(8aadf4cc) 45deg";
+                "col.active_border" = "rgba(fe8018ff)"; # rgba(8aadf4cc) 45deg";
                 # "col.inactive_border"= "rgba(591959aa)";
                 resize_on_border = false;
                 allow_tearing = false;
                 layout = "dwindle";
             };
             decoration = {
-                rounding = 0;
+                rounding = 1;
                 active_opacity = 1.0;
                 inactive_opacity = 1.0;
                 blur = {
