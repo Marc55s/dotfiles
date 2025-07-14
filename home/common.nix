@@ -11,6 +11,7 @@
         ./git.nix
         ./direnv.nix
         ./zsh.nix
+        ./bat.nix
     ];
 
     home.packages = with pkgs; [ 
