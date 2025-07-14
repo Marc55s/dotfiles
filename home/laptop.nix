@@ -8,7 +8,6 @@
         hyprpicker
         hyprsunset
         libgtop
-        libnotify
         dart-sass
         ags
         gnome-bluetooth
@@ -25,6 +24,8 @@
         firefox
         libresprite
         thunderbird
+        mqttx
+        arduino-ide
     ];
 
     imports = [

@@ -14,11 +14,6 @@
     ];
 
     home.packages = with pkgs; [ 
-        rustc
-        cargo
-        rustfmt
-        clippy        
-
         lazygit
         lazydocker
         nitch

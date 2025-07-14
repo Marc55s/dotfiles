@@ -12,6 +12,8 @@
         rust-analyzer
         nodejs_24
         nixfmt-classic
+        arduino-language-server
+        arduino-cli
     ];
 
     programs.neovim =  {

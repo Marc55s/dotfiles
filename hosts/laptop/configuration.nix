@@ -123,7 +123,7 @@
     users.users.marc = {
         isNormalUser = true;
         description = "marc";
-        extraGroups = [ "networkmanager" "wheel" "docker" "tty" "wireshark"];
+        extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" "wireshark"];
         shell = pkgs.zsh;
         packages = with pkgs; [
             #  thunderbird
