@@ -1,17 +1,17 @@
 {config, pkgs, pkgs-unstable, ...}:
 {
     imports = [
-        ./zoxide.nix
-        ./kitty/kitty.nix
-        ./starship/starship.nix
-        ./rofi/rofi.nix
-        ./tmux.nix
-        ./zathura.nix
-        ./nvim.nix
-        ./git.nix
-        ./direnv.nix
-        ./zsh.nix
-        ./bat.nix
+        ./programs/zoxide.nix
+        ./programs/kitty/kitty.nix
+        ./programs/starship/starship.nix
+        ./programs/rofi/rofi.nix
+        ./programs/tmux.nix
+        ./programs/zathura.nix
+        ./programs/nvim.nix
+        ./programs/git.nix
+        ./programs/direnv.nix
+        ./programs/zsh.nix
+        ./programs/bat.nix
     ];
 
     home.packages = with pkgs; [ 
