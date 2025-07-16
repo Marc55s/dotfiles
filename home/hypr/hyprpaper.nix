@@ -3,7 +3,7 @@
         enable = true;
         settings = {
             # Variables
-            "$wallpaper" = "~/dotfiles/wallpaper/gruvbox-dark-rainbow.png";
+            "$wallpaper" = "~/dotfiles/wallpaper/himalaya-mountain.jpeg";
 
             # Preload the wallpaper
             preload = "$wallpaper";

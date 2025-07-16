@@ -54,6 +54,8 @@
 
     boot.kernelModules = [ "evdi" "wacom"];
 
+    services.udev.packages = with pkgs; [ platformio-core.udev ];
+
     # Enable the X11 windowing system.
     services.xserver.enable = false;
 
