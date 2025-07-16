@@ -36,6 +36,6 @@
         ghostscript
         nerd-fonts.jetbrains-mono
         ripgrep
-        pkgs-unstable.jetbrains.clion
+        jetbrains.clion
     ];
 }
