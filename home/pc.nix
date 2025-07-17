@@ -13,7 +13,7 @@
         firefox
         libresprite
         pinta
-        pkgs-unstable.chatterino7
+        chatterino7
         libreoffice
         spotify
     ];
