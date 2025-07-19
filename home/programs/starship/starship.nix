@@ -2,7 +2,7 @@
 {
     programs.starship = {
         enable = true;
-        settings = pkgs.lib.importTOML ./pure-preset.toml;
+        settings = pkgs.lib.importTOML ./nerd-font-symbols.toml;
         enableZshIntegration = true;
     };
 }
