@@ -12,6 +12,7 @@
         ./programs/direnv.nix
         ./programs/zsh.nix
         ./programs/bat.nix
+        ./programs/television.nix
     ];
 
     home.packages = with pkgs; [ 
@@ -23,6 +24,7 @@
         nnn # File explorer
         fzf
         tree
+        fd
 
         whatsapp-for-linux
         pkgs-unstable.obsidian

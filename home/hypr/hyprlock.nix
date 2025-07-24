@@ -6,7 +6,7 @@
             # Background configuration
             background = [{
                 monitor = "";
-                path = "~/dotfiles/wallpaper/cyperpunk.png";
+                path = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
                 color = "rgba(25, 20, 20, 1.0)";
 
                 blur_passes = 1; # 0 disables blurring
