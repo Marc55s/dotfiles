@@ -33,6 +33,7 @@
         vesktop
         discord
         element-desktop
+        vlc
 
         texliveFull
         imagemagick
