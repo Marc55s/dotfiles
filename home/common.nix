@@ -25,6 +25,7 @@
         fzf
         tree
         fd
+        unzip
 
         whatsapp-for-linux
         pkgs-unstable.obsidian
