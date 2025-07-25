@@ -101,6 +101,9 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # docker
+  virtualisation.docker.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -124,7 +127,7 @@
   users.users.marc = {
     isNormalUser = true;
     description = "Marc";
-    extraGroups = [ "networkmanager" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "docker" "wheel" "audio"];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
