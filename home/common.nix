@@ -13,6 +13,7 @@
         ./programs/zsh.nix
         ./programs/bat.nix
         ./programs/television.nix
+        ./programs/ncspot.nix
     ];
 
     home.packages = with pkgs; [ 
