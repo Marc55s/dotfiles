@@ -3,7 +3,7 @@
 let
   # Detect if on laptop or PC by system or hostname
   isLaptop = hostName == "laptop";
-  fontSize = if isLaptop then 12 else 12;  # smaller font on PC
+  fontSize = if isLaptop then 12 else 10;  # smaller font on PC
 in {
   programs.kitty = {
     enable = true;
@@ -16,7 +16,9 @@ in {
       italic_font = "auto";
       bold_italic_font = "auto";
 
-      background_blur = 10;
+      # background_blur = 10;
+      confirm_os_window_close =  0;
+      background_opacity = if isLaptop then 1 else 0.7;
       enable_audio_bell = "no";
     };
 
