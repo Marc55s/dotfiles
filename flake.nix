@@ -23,14 +23,20 @@
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
         let
             system = "x86_64-linux";
+
+            overlays = builtins.map (file: import (./overlays + "/${file}")) 
+                (builtins.attrNames (builtins.readDir ./overlays));
+
             pkgs = import nixpkgs {
                 inherit system;
                 config = { allowUnfree = true; };
+                overlays = overlays;
             };
 
             pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
                 config = { allowUnfree = true; };
+                overlays = overlays;
             };
 
             lib = nixpkgs.lib;
