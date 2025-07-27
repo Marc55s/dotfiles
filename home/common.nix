@@ -1,6 +1,7 @@
 {config, pkgs, pkgs-unstable, ...}:
 {
     imports = [
+        ./ctf.nix
         ./programs/zoxide.nix
         ./programs/kitty/kitty.nix
         ./programs/starship/starship.nix

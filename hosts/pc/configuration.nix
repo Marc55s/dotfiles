@@ -5,6 +5,7 @@
       ./hardware-configuration.nix
       ../../modules/nix-ld.nix
       ../../modules/ssh.nix
+      ../../modules/wireshark.nix
     ];
 
   fileSystems."/mnt/nvme" = {

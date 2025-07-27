@@ -31,7 +31,6 @@
     imports = [
         ./common.nix
         ./hypr/default.nix
-        ./ctf.nix
     ];
 
     home.shellAliases = {

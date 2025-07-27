@@ -22,6 +22,7 @@
 
     imports = [
       ../../modules/ssh.nix
+      ../../modules/wireshark.nix
     ];
 
     networking.hostName = "laptop"; # Define your hostname.
@@ -125,7 +126,7 @@
     users.users.marc = {
         isNormalUser = true;
         description = "marc";
-        extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" "wireshark"];
+        extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" ];
         shell = pkgs.zsh;
         packages = with pkgs; [
             #  thunderbird
@@ -137,11 +138,6 @@
 
     programs.zsh.enable = true;
     programs.hyprland.enable = true;
-
-    programs.wireshark = {
-        enable = true;
-        # package = pkgs.wireshark;
-    };
 
     # flakes
     nix.settings = {
