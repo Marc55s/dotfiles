@@ -29,7 +29,7 @@
         fd
         unzip
 
-        whatsapp-for-linux
+        zapzap
         pkgs-unstable.obsidian
         bitwarden
         vesktop
