@@ -26,6 +26,8 @@
         thunderbird
         mqttx
         arduino-ide
+        systemctl-tui
+        redisinsight
     ];
 
     imports = [

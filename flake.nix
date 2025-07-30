@@ -18,25 +18,31 @@
         todo-shell = {
             url = "github:itsanian/todo-shell";
         };
+
+        edu-sync-nix = {
+            # url = "https://github.com/Marc55s/edu-sync-nix";
+            url = "path:/home/marc/dev/edu-sync-nix";
+        };
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
         let
             system = "x86_64-linux";
 
-            overlays = builtins.map (file: import (./overlays + "/${file}")) 
-                (builtins.attrNames (builtins.readDir ./overlays));
+            overlay = final: prev: {
+                edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
+            };
 
             pkgs = import nixpkgs {
                 inherit system;
                 config = { allowUnfree = true; };
-                overlays = overlays;
+                overlays = [ overlay ];
             };
 
             pkgs-unstable = import nixpkgs-unstable {
                 inherit system;
                 config = { allowUnfree = true; };
-                overlays = overlays;
+                overlays = [ overlay ];
             };
 
             lib = nixpkgs.lib;

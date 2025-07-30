@@ -36,7 +36,7 @@
         discord
         element-desktop
         vlc
-        edu-sync
+        edu-sync-cli
 
         texliveFull
         imagemagick
