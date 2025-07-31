@@ -1,6 +1,6 @@
 { pkgs, ... }:
     let 
-        theme = builtins.fromJSON (builtins.readFile ./gruvbox.json);
+        theme_json = builtins.fromJSON (builtins.readFile ./gruvbox.json);
     in {
     programs.hyprpanel = {
         enable = true;
@@ -21,6 +21,10 @@
                 };
             };
 
+            bar.windowtitle.title_map = [
+                [ "kitty" "" "Terminal" ]
+            ];
+
             bar.launcher.autoDetectIcon = true;
             bar.workspaces.show_icons = false;
             bar.workspaces.show_numbered = true;
@@ -35,7 +39,7 @@
             menus.dashboard.powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
 
             wallpaper.enable = false;
-            theme = theme;
+            theme = theme_json;
         };
         systemd.enable = true;
     };

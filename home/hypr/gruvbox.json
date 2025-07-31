@@ -371,5 +371,6 @@
   "bar.buttons.modules.worldclock.background": "#282828",
   "bar.buttons.modules.worldclock.icon_background": "#d3869b",
   "bar.buttons.modules.worldclock.icon": "#d3869b",
-  "bar.buttons.modules.worldclock.border": "#d3869b"
+  "bar.buttons.modules.worldclock.border": "#d3869b",
+  "bar.transparent": true
 }
