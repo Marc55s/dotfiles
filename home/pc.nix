@@ -28,6 +28,7 @@
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
         gs = "git status";
         gl = "git log --oneline";
+        nd = "nix develop";
     };
 
     home.username = "marc";

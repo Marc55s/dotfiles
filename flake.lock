@@ -6,14 +6,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1753878309,
-        "narHash": "sha256-Hm3UqwNBCFSrGMAMzFjuUtUWWICAmr8Fk0LnHU9/yss=",
-        "path": "/home/marc/dev/edu-sync-nix",
-        "type": "path"
+        "lastModified": 1753881382,
+        "narHash": "sha256-0l2X/Q0pFrZSQYPSmIto1visAk5TfoyoIC3CMsdOr/Q=",
+        "owner": "Marc55s",
+        "repo": "edu-sync-nix",
+        "rev": "5463b85cc4b21a3a4e8b0046429de020513b25c4",
+        "type": "github"
       },
       "original": {
-        "path": "/home/marc/dev/edu-sync-nix",
-        "type": "path"
+        "owner": "Marc55s",
+        "repo": "edu-sync-nix",
+        "type": "github"
       }
     },
     "flake-utils": {

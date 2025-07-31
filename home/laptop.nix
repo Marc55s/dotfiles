@@ -40,6 +40,7 @@
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#laptop";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
         gs = "git status";
+        nd = "nix develop";
     };
 
 

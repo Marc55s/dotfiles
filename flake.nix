@@ -20,8 +20,7 @@
         };
 
         edu-sync-nix = {
-            # url = "https://github.com/Marc55s/edu-sync-nix";
-            url = "path:/home/marc/dev/edu-sync-nix";
+            url = "github:Marc55s/edu-sync-nix";
         };
     };
 
