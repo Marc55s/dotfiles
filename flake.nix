@@ -21,6 +21,7 @@
 
         edu-sync-nix = {
             url = "github:Marc55s/edu-sync-nix";
+            inputs.nixpkgs.follows = "nixpkgs-unstable";
         };
     };
 
