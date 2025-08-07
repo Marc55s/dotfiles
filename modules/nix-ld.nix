@@ -5,6 +5,8 @@
         stdenv.cc.cc
         zlib
         glfw
+        openssl
+        glibc
         libGL
         libxkbcommon
         xorg.libX11
@@ -13,5 +15,5 @@
         xorg.libXi
         xorg.libXxf86vm
         wayland
-  ];
+    ];
 }

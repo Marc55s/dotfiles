@@ -23,6 +23,7 @@
     imports = [
       ../../modules/ssh.nix
       ../../modules/wireshark.nix
+      ../../modules/nix-ld.nix
     ];
 
     networking.hostName = "laptop"; # Define your hostname.
