@@ -14,7 +14,6 @@
         libresprite
         pinta
         chatterino7
-        libreoffice
         spotify
     ];
 

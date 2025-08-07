@@ -37,6 +37,7 @@
         element-desktop
         vlc
         edu-sync-cli
+        libreoffice
 
         texliveFull
         imagemagick
