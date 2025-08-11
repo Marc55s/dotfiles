@@ -19,6 +19,20 @@
                         "notifications"
                     ];
                 };
+
+                "1" = {
+                    left = ["dashboard" "workspaces" "windowtitle"];
+                    middle = ["media"];
+                    right = [
+                        "network"
+                        "volume"
+                        "bluetooth"
+                        "hyprsunset"
+                        "battery"
+                        "clock"
+                        "notifications"
+                    ];
+                };
             };
 
             bar.windowtitle.title_map = [

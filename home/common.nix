@@ -15,6 +15,7 @@
         ./programs/bat.nix
         ./programs/television.nix
         ./programs/ncspot.nix
+        ./programs/fzf.nix
     ];
 
     home.packages = with pkgs; [ 
@@ -24,7 +25,6 @@
         neofetch
         btop
         nnn # File explorer
-        fzf
         tree
         fd
         unzip
