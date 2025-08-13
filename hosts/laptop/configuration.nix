@@ -21,9 +21,9 @@
     };
 
     imports = [
+      ../../modules/nix-ld.nix
       ../../modules/ssh.nix
       ../../modules/wireshark.nix
-      ../../modules/nix-ld.nix
     ];
 
     networking.hostName = "laptop"; # Define your hostname.
@@ -153,7 +153,6 @@
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
         zsh
-        python313
         displaylink
         wl-clipboard
         brightnessctl
