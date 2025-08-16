@@ -18,7 +18,7 @@ in {
 
       # background_blur = 10;
       confirm_os_window_close =  0;
-      background_opacity = if isLaptop then 1 else 0.9;
+      background_opacity = 1;
       enable_audio_bell = "no";
     };
 
