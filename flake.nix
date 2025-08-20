@@ -23,6 +23,10 @@
             url = "github:Marc55s/edu-sync-nix";
             inputs.nixpkgs.follows = "nixpkgs-unstable";
         };
+        wakafetch = {
+            url = "github:marc55s/wakafetch";
+            inputs.nixpkgs.follows = "nixpkgs-unstable";
+        };
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
@@ -31,6 +35,7 @@
 
             overlay = final: prev: {
                 edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
+                wakafetch = inputs.wakafetch.packages.${system}.default;
             };
 
             pkgs = import nixpkgs {

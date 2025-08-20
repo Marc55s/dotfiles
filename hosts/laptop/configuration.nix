@@ -20,6 +20,8 @@
         footer = true;
     };
 
+    boot.kernelParams = [ "amd_pstate=active" ];
+
     imports = [
       ../../modules/nix-ld.nix
       ../../modules/ssh.nix
@@ -158,6 +160,9 @@
         brightnessctl
         nwg-displays
         libwacom
+        iio-hyprland
+
+
     ];
 
     # Some programs need SUID wrappers, can be configured further or are

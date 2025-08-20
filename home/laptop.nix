@@ -28,6 +28,12 @@
         arduino-ide
         systemctl-tui
         redisinsight
+        wakafetch
+
+        fluxcd
+        kubectl
+        helm
+        k9s
     ];
 
     imports = [

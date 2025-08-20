@@ -24,7 +24,7 @@
             general =  { 
                 gaps_in = 5;
                 gaps_out = 10;
-                border_size = 2;
+                border_size = 3;
 
                 "col.active_border" = "rgba(fe8018dd)"; # rgba(8aadf4cc) 45deg";
                 # "col.inactive_border"= "rgba(591959aa)";
@@ -33,11 +33,11 @@
                 layout = "dwindle";
             };
             decoration = {
-                rounding = 1;
+                rounding = 0;
                 active_opacity = 1.0;
                 inactive_opacity = 1.0;
                 blur = {
-                    enabled = true;
+                    enabled = false;
                     size = 3;
                     passes = 1;
                     vibrancy = 0.1696;

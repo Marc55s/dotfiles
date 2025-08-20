@@ -16,6 +16,7 @@
         ./programs/television.nix
         ./programs/ncspot.nix
         ./programs/fzf.nix
+        ./programs/nnn.nix
     ];
 
     home.packages = with pkgs; [ 
@@ -24,7 +25,6 @@
         nitch
         neofetch
         btop
-        nnn # File explorer
         tree
         fd
         unzip
