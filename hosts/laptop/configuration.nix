@@ -21,6 +21,7 @@
     };
 
     boot.kernelParams = [ "amd_pstate=active" ];
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     imports = [
       ../../modules/nix-ld.nix
