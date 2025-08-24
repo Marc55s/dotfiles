@@ -46,4 +46,8 @@
         ripgrep
         jetbrains.clion
     ];
+
+    home.shellAliases = {
+        dps = ''docker ps --format "{{.Names}} -> {{.Ports}}"''; 
+    };
 }
