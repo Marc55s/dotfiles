@@ -22,7 +22,7 @@ in {
       enable_audio_bell = "no";
     };
 
-    extraConfig = ''include themes/gruvbox_dark.conf'';
+    extraConfig = if  isLaptop then ''include themes/gruvbox.conf'' else ''include themes/Kanagawa.conf'';
   };
 
   home.file.".config/kitty/themes" = {
