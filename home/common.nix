@@ -22,6 +22,7 @@
     home.packages = with pkgs; [ 
         lazygit
         lazydocker
+        lazysql
         nitch
         neofetch
         btop
