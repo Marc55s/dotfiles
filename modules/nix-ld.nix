@@ -10,6 +10,8 @@
         glibc
         libGL
         libxkbcommon
+        vulkan-loader
+        vulkan-tools
         xorg.libX11
         xorg.libXcursor
         xorg.libXrandr
