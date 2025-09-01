@@ -65,6 +65,7 @@
       bind-key x kill-pane
 
       set-option -g status-position top
+      set-option -g allow-passthrough on
 
         '';
     };
