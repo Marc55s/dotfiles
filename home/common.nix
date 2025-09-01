@@ -28,6 +28,7 @@
         tree
         fd
         unzip
+        mermaid-cli
 
         zapzap
         pkgs-unstable.obsidian
@@ -45,9 +46,11 @@
         nerd-fonts.jetbrains-mono
         ripgrep
         jetbrains.clion
+        openconnect-sso
     ];
 
     home.shellAliases = {
         dps = ''docker ps --format "{{.Names}} -> {{.Ports}}"''; 
+        dhbw-vpn = "openconnect-sso --server vpn.dhbw-heidenheim.de --authgroup Studenten+Externe-MFA";
     };
 }

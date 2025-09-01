@@ -23,10 +23,18 @@
             url = "github:Marc55s/edu-sync-nix";
             inputs.nixpkgs.follows = "nixpkgs-unstable";
         };
+
         wakafetch = {
             url = "github:marc55s/wakafetch";
             inputs.nixpkgs.follows = "nixpkgs-unstable";
         };
+
+        openconnect-sso = {
+            url = "github:jcszymansk/openconnect-sso";
+            inputs.nixpkgs.follows = "nixpkgs-openconnect-sso";
+        };
+
+        nixpkgs-openconnect-sso.url = "github:nixos/nixpkgs/46397778ef1f73414b03ed553a3368f0e7e33c2f";
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
@@ -36,6 +44,7 @@
             overlay = final: prev: {
                 edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
                 wakafetch = inputs.wakafetch.packages.${system}.default;
+                openconnect-sso = inputs.openconnect-sso.packages.${pkgs.system}.openconnect-sso;
             };
 
             pkgs = import nixpkgs {
