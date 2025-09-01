@@ -2,7 +2,6 @@
 
     home.packages = with pkgs; [ 
         spotify
-        hyprpaper
         hypridle
         hyprshot
         hyprpicker
