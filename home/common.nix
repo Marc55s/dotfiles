@@ -41,6 +41,7 @@
         vlc
         edu-sync-cli
         libreoffice
+        gimp
 
         texliveFull
         imagemagick
