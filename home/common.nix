@@ -30,6 +30,7 @@
         fd
         unzip
         mermaid-cli
+        gh
 
         zapzap
         pkgs-unstable.obsidian
