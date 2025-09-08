@@ -35,6 +35,10 @@
         };
 
         nixpkgs-openconnect-sso.url = "github:nixos/nixpkgs/46397778ef1f73414b03ed553a3368f0e7e33c2f";
+        timr-tui = {
+            url = "github:sectore/timr-tui";
+            inputs.nixpkgs.follows = "nixpkgs-unstable";
+        };
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
@@ -44,7 +48,8 @@
             overlay = final: prev: {
                 edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
                 wakafetch = inputs.wakafetch.packages.${system}.default;
-                openconnect-sso = inputs.openconnect-sso.packages.${pkgs.system}.openconnect-sso;
+                openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
+                timr-tui = inputs.timr-tui.packages.${system}.timr;
             };
 
             pkgs = import nixpkgs {

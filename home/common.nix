@@ -50,6 +50,7 @@
         ripgrep
         jetbrains.clion
         openconnect-sso
+        timr-tui
     ];
 
     home.shellAliases = {
