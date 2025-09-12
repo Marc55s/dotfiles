@@ -15,6 +15,7 @@
         pinta
         chatterino7
         spotify
+        jetbrains.clion
     ];
 
     imports = [

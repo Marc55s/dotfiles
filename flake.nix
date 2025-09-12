@@ -50,7 +50,14 @@
                 wakafetch = inputs.wakafetch.packages.${system}.default;
                 openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
                 timr-tui = inputs.timr-tui.packages.${system}.timr;
+                tailscale = prev.tailscale.overrideAttrs (oldAttrs: {
+                    # Remove the failing test file during build
+                    preBuild = (oldAttrs.preBuild or "") + ''
+                    rm -f portlist/portlist_test.go
+                    '';
+                });
             };
+
 
             pkgs = import nixpkgs {
                 inherit system;

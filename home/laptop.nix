@@ -1,23 +1,16 @@
 {config, pkgs, pkgs-unstable, inputs,  ... }: {
 
     home.packages = with pkgs; [ 
-        spotify
         hypridle
         hyprshot
         hyprpicker
         hyprsunset
-        libgtop
-        dart-sass
-        ags
         gnome-bluetooth
         bluez
         bluez-tools
         upower
-        acpi
         remnote
-        nautilus
         pkgs-unstable.presenterm
-        inputs.todo-shell.defaultPackage.x86_64-linux
         eog
         nemo
         firefox

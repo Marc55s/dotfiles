@@ -36,7 +36,6 @@
         pkgs-unstable.obsidian
         bitwarden
         vesktop
-        discord
         element-desktop
         vlc
         edu-sync-cli
@@ -48,7 +47,6 @@
         ghostscript
         nerd-fonts.jetbrains-mono
         ripgrep
-        jetbrains.clion
         openconnect-sso
         timr-tui
     ];
