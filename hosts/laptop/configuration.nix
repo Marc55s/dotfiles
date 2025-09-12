@@ -89,7 +89,7 @@
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisk --cmd Hyprland";
+                command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks --cmd Hyprland";
             };
         };
     };
