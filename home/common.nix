@@ -41,6 +41,7 @@
         edu-sync-cli
         libreoffice
         gimp
+        postman
 
         texliveFull
         imagemagick
