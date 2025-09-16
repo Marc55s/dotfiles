@@ -17,7 +17,6 @@
         libresprite
         thunderbird
         mqttx
-        arduino-ide
         systemctl-tui
         redisinsight
         wakafetch
