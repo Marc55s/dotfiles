@@ -157,6 +157,7 @@
     gamescope
     kdePackages.kcalc
     lutris
+    mangohud
   ];
 
  nixpkgs.overlays = [
