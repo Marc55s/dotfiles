@@ -19,7 +19,7 @@
   };
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
@@ -42,13 +42,26 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Gaming
-  hardware.graphics.enable = true;
+  hardware.graphics= {
+        enable = true;
+        enable32Bit = true;
+  };
 
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+  programs.gamemode.enable = true;
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "performance";
+  };
+  environment.variables = {
+  AMD_VULKAN_ICD = "RADV";  # Force RADV
+  RADV_PERFTEST = "aco";    # Use ACO compiler (faster for games)
   };
 
   programs.steam.gamescopeSession.enable = false;

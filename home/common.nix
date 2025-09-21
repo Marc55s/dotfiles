@@ -30,6 +30,7 @@
         fd
         unzip
         mermaid-cli
+        tdf # tui pdf viewer
 
         zapzap
         pkgs-unstable.obsidian
