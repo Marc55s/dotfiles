@@ -17,6 +17,7 @@
         ./programs/ncspot.nix
         ./programs/fzf.nix
         ./programs/nnn.nix
+        ./programs/presenterm.nix
     ];
 
     home.packages = with pkgs; [ 

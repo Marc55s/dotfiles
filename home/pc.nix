@@ -8,7 +8,6 @@
         easyeffects
         obs-studio
         gcc
-        pkgs-unstable.presenterm
         # inputs.todo-shell.defaultPackage.x86_64-linux
         firefox
         libresprite
