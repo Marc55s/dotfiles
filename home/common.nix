@@ -29,7 +29,6 @@
         tree
         fd
         unzip
-        mermaid-cli
         tdf # tui pdf viewer
 
         zapzap

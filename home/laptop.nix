@@ -10,7 +10,6 @@
         bluez-tools
         upower
         remnote
-        pkgs-unstable.presenterm
         eog
         nemo
         firefox
