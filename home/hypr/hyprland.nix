@@ -20,9 +20,6 @@
                 "hypridle"
                 "swaync"
             ];
-            binds = [
-                movefocus_cycles_fullscreen = 1;
-            ];
 
             general =  { 
                 gaps_in = 5;
