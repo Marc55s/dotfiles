@@ -20,13 +20,16 @@
                 "hypridle"
                 "swaync"
             ];
+            binds = [
+                movefocus_cycles_fullscreen = 1;
+            ];
 
             general =  { 
                 gaps_in = 5;
                 gaps_out = 10;
                 border_size = 3;
 
-                "col.active_border" = "rgba(fe8018dd)"; # rgba(8aadf4cc) 45deg";
+                "col.active_border" = "rgba(fefefeaa)"; # rgba(8aadf4cc) 45deg";
                 # "col.inactive_border"= "rgba(591959aa)";
                 resize_on_border = false;
                 allow_tearing = false;
