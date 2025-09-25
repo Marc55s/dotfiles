@@ -35,9 +35,14 @@
                 };
             };
 
+            theme = theme_json;
             bar.windowtitle.title_map = [
                 [ "kitty" "" "Terminal" ]
             ];
+
+
+            bar.buttons.enableBorders= true;
+            bar.buttons.borderSize= "0.075em";
 
             bar.launcher.autoDetectIcon = true;
             bar.workspaces.show_icons = false;
@@ -53,7 +58,6 @@
             menus.dashboard.powermenu.avatar.image = "~/dotfiles/wallpaper/nixos-wallpaper-catppuccin-mocha.png";
 
             wallpaper.enable = false;
-            theme = theme_json;
         };
         systemd.enable = true;
     };
