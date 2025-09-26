@@ -35,14 +35,15 @@
                 };
             };
 
-            theme = theme_json;
+            theme = theme_json // {
+                bar.buttons.enableBorders = true;
+                bar.buttons.borderSize ="0.075em";
+                bar.buttons.radius = "0.0em";
+            };
+
             bar.windowtitle.title_map = [
                 [ "kitty" "" "Terminal" ]
             ];
-
-
-            bar.buttons.enableBorders= true;
-            bar.buttons.borderSize= "0.075em";
 
             bar.launcher.autoDetectIcon = true;
             bar.workspaces.show_icons = false;
