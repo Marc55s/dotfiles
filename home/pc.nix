@@ -15,6 +15,7 @@
         chatterino7
         spotify
         jetbrains.clion
+        signal-desktop
     ];
 
     imports = [
