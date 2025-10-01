@@ -16,6 +16,7 @@
         spotify
         jetbrains.clion
         signal-desktop
+        prismlauncher
     ];
 
     imports = [
