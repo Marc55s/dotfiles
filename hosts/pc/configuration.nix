@@ -104,7 +104,7 @@
       enable = true;
       settings = {
           default_session = {
-              command = "${pkgs.greetd.tuigreet}/bin/tuigreet --cmd startplasma-wayland";
+              command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --cmd startplasma-wayland";
           };
       };
   };
