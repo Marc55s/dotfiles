@@ -57,17 +57,19 @@
         LC_TIME = "de_DE.UTF-8";
     };
 
-    boot.kernelModules = [ "evdi" "wacom"];
+    # boot.kernelModules = [ "evdi" "wacom"];
+    boot.kernelModules = [ "wacom"];
 
     services.udev.packages = with pkgs; [ platformio-core.udev ];
 
     # Enable the X11 windowing system.
     services.xserver.enable = false;
 
-    services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
-    services.xserver.displayManager.sessionCommands = ''
-        ${pkgs.lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
-    '';
+    services.xserver.videoDrivers = [ "modesetting" ];
+    # services.xserver.videoDrivers = [ "displaylink" "modesetting" ];
+    # services.xserver.displayManager.sessionCommands = ''
+    #     ${pkgs.lib.getBin pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+    # '';
 
     # IMPORTANT for powermenu for hyprpanel
     services.upower.enable = true;
@@ -156,7 +158,7 @@
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
         #  wget
         zsh
-        displaylink
+        # displaylink
         wl-clipboard
         brightnessctl
         nwg-displays
