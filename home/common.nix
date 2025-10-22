@@ -30,6 +30,7 @@
         tree
         fd
         unzip
+        jq
         tdf # tui pdf viewer
 
         zapzap
