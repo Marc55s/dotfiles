@@ -11,6 +11,7 @@
                 tmux new
                     fi
                     set bell-style none
+            eval "$($HOME/dev/termstat/target/debug/termstat -i)"
         '';
     };
 }
