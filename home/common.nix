@@ -56,5 +56,7 @@
     home.shellAliases = {
         dps = ''docker ps --format "{{.Names}} -> {{.Ports}}"''; 
         dhbw-vpn = "openconnect-sso --server vpn.dhbw-heidenheim.de --authgroup Studenten+Externe-MFA";
+        cr = "cargo r";
+        cb = "cargo b";
     };
 }
