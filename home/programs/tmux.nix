@@ -1,56 +1,84 @@
 { config, pkgs, ... }:
+let
+  gh-opener = pkgs.writeShellApplication {
+    name = "gh-opener-script";
 
-{
-    programs.tmux = {
-        enable = true;
-        newSession = true;
-        plugins = with pkgs;[
-            /*
-            {
-                plugin = tmuxPlugins.catppuccin;
-                extraConfig = ''
-                  # Additional tmux customizations for Catppuccin theme
-                  set -g @catppuccin_window_left_separator ""
-                  set -g @catppuccin_window_right_separator ""
-                  set -g @catppuccin_window_middle_separator " █"
-                  set -g @catppuccin_window_number_position "right"
+    runtimeInputs = [ pkgs.git pkgs.xdg-utils pkgs.tmux ];
 
-                  set -g @catppuccin_window_default_fill "number"
-                  set -g @catppuccin_window_default_text "#W"
+    text = ''
+      #!${pkgs.bash}/bin/bash
+      # Url
+      url=$(git remote get-url origin 2>/dev/null || true)
+      if [[ -z "$url" ]]; then
+        tmux display-message "Not in a git repo (or no 'origin' remote)"
+        exit 0
+      fi
 
-                  set -g @catppuccin_window_current_fill "number"
-                  set -g @catppuccin_window_current_text "#W"
+      if [[ $url == *github.com* ]]; then
+        if [[ $url == git@* ]]; then
+          url="''${url#git@}"
+          url="''${url/:/\/}"
+          url="https://''${url}"
+        fi
+        
+        url="''${url%.git}"
+        
+        xdg-open "$url"
+      else
+        tmux display-message "Not a github repo"
+      fi
+    '';
+  };
+in {
+  programs.tmux = {
+    enable = true;
+    newSession = true;
+    plugins = with pkgs; [
+      /* {
+            plugin = tmuxPlugins.catppuccin;
+            extraConfig = ''
+              # Additional tmux customizations for Catppuccin theme
+              set -g @catppuccin_window_left_separator ""
+              set -g @catppuccin_window_right_separator ""
+              set -g @catppuccin_window_middle_separator " █"
+              set -g @catppuccin_window_number_position "right"
 
-                  set -g @catppuccin_status_left_separator " "
-                  set -g @catppuccin_status_right_separator ""
-                  set -g @catppuccin_status_fill "icon"
-                  set -g @catppuccin_status_connect_separator "no"
+              set -g @catppuccin_window_default_fill "number"
+              set -g @catppuccin_window_default_text "#W"
 
-                  set -g @catppuccin_directory_text "#{pane_current_path}"
+              set -g @catppuccin_window_current_fill "number"
+              set -g @catppuccin_window_current_text "#W"
 
-                  set -g status-right "#{E:@catppuccin_status_directory}"
-                  set -ag status-right "#{E:@catppuccin_status_session}"
-                '';
-            }
-            */
-            {
-                plugin = tmuxPlugins.gruvbox;
-                extraConfig = ''
-                    set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
-                '';
-            }
-            {
-                plugin = tmuxPlugins.resurrect;
-                extraConfig = ''
-                    unbind s
-                    unbind r
-                    bind s run-shell '${tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/save.sh'
-                    bind r run-shell '${tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/restore.sh'
-                '';
-            }
-        ];
+              set -g @catppuccin_status_left_separator " "
+              set -g @catppuccin_status_right_separator ""
+              set -g @catppuccin_status_fill "icon"
+              set -g @catppuccin_status_connect_separator "no"
 
+              set -g @catppuccin_directory_text "#{pane_current_path}"
+
+              set -g status-right "#{E:@catppuccin_status_directory}"
+              set -ag status-right "#{E:@catppuccin_status_session}"
+            '';
+          }
+      */
+      {
+        plugin = tmuxPlugins.gruvbox;
         extraConfig = ''
+          set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
+        '';
+      }
+      {
+        plugin = tmuxPlugins.resurrect;
+        extraConfig = ''
+          unbind s
+          unbind r
+          bind s run-shell '${tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/save.sh'
+          bind r run-shell '${tmuxPlugins.resurrect}/share/tmux-plugins/resurrect/scripts/restore.sh'
+        '';
+      }
+    ];
+
+    extraConfig = ''
       # Start counting pane and window number at 1
       set -g base-index 1
       set -g pane-base-index 1
@@ -63,11 +91,13 @@
       bind-key l select-pane -R
       bind-key & kill-window
       bind-key x kill-pane
+      
+      # --- THIS IS THE FIXED LINE ---
+      bind-key g run-shell "cd #{pane_current_path} && ${gh-opener}/bin/gh-opener-script"
 
       set-option -g status-position top
       set-option -g allow-passthrough on
 
-        '';
-    };
+    '';
+  };
 }
-
