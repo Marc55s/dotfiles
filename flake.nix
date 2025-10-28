@@ -39,6 +39,11 @@
             url = "github:sectore/timr-tui";
             inputs.nixpkgs.follows = "nixpkgs-unstable";
         };
+
+        termstat = {
+            url = "path:/home/marc/dev/termstat";
+            inputs.nixpkgs.follows = "nixpkgs-unstable";
+        };
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
@@ -62,7 +67,7 @@
             pkgs = import nixpkgs {
                 inherit system;
                 config = { allowUnfree = true; };
-                overlays = [ overlay ];
+                overlays = [ overlay inputs.termstat.overlays.default];
             };
 
             pkgs-unstable = import nixpkgs-unstable {

@@ -26,10 +26,17 @@
         k9s
     ];
 
+    programs.termstat = {
+        enable = true;
+        enableZshIntegration = true;
+    };
+
     imports = [
         ./common.nix
         ./hypr/default.nix
+        inputs.termstat.homeManagerModules.default
     ];
+
 
     home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#laptop";
