@@ -1,4 +1,4 @@
-{config, pkgs, pkgs-unstable, ...}:
+{config, pkgs, pkgs-unstable, inputs, ...}:
 {
     imports = [
         ./ctf.nix
@@ -18,6 +18,8 @@
         ./programs/fzf.nix
         ./programs/nnn.nix
         ./programs/presenterm.nix
+        ./programs/termstat.nix
+        inputs.termstat.homeManagerModules.default
     ];
 
     home.packages = with pkgs; [ 
