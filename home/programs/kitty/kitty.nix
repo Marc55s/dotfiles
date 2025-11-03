@@ -9,7 +9,7 @@ in {
     enable = true;
 
     settings = {
-      font_family = "JetBrainsMono Nerd Font";
+      font_family = "Iosevka Nerd Font";
       font_size = fontSize;
 
       bold_font = "auto";
@@ -32,5 +32,6 @@ in {
 
   home.packages = with pkgs; [
     jetbrains-mono
+    nerd-fonts.iosevka
   ];
 }
