@@ -28,7 +28,6 @@
         lazysql
         nitch
         neofetch
-        btop
         tree
         fd
         unzip

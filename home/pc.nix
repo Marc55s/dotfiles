@@ -16,6 +16,7 @@
         jetbrains.clion
         signal-desktop
         prismlauncher
+        btop-rocm
     ];
 
     imports = [

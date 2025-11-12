@@ -11,6 +11,7 @@
         upower
         remnote
         eog
+        btop
         nemo
         firefox
         libresprite
