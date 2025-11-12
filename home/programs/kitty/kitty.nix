@@ -3,7 +3,7 @@
 let
   # Detect if on laptop or PC by system or hostname
   isLaptop = hostName == "laptop";
-  fontSize = if isLaptop then 12 else 10;  # smaller font on PC
+  fontSize = if isLaptop then 12 else 12;  # smaller font on PC
 in {
   programs.kitty = {
     enable = true;
