@@ -149,7 +149,7 @@
   users.users.marc = {
     isNormalUser = true;
     description = "Marc";
-    extraGroups = [ "networkmanager" "docker" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       kdePackages.kate
