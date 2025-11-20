@@ -1,3 +1,4 @@
+{config, ...}:
 {
     programs.zsh = {
         enable = true;
@@ -12,5 +13,8 @@
                     fi
                     set bell-style none
         '';
+        sessionVariables = {
+            NH_OS_FLAKE = "${config.home.homeDirectory}/dotfiles";
+        };
     };
 }

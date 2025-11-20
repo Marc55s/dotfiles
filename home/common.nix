@@ -19,6 +19,8 @@
         ./programs/nnn.nix
         ./programs/presenterm.nix
         ./programs/termstat.nix
+        ./programs/yazi.nix
+        ./programs/nh.nix
         inputs.termstat.homeManagerModules.default
     ];
 
