@@ -518,8 +518,8 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1763938845,
-        "narHash": "sha256-L26239e1UuVEVNKFxg4bP3HmX/n3sp4Bp6snAp7o0iY=",
+        "lastModified": 1764177895,
+        "narHash": "sha256-zfljg2Zju1hU33RVl/pMl/y01TObtuVhwhjPwRgPkdE=",
         "path": "/home/marc/dev/termstat",
         "type": "path"
       },

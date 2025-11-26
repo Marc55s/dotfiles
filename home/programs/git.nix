@@ -9,6 +9,7 @@
                 features = "decorations";
                 line-numers = true;
                 side-by-side = true;
+                conflictStyle = "zdiff3";
             };
         };
         extraConfig = {
