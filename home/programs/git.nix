@@ -7,6 +7,8 @@
             enable = true;
             options = {
                 features = "decorations";
+                line-numers = true;
+                side-by-side = true;
             };
         };
         extraConfig = {
