@@ -16,7 +16,6 @@
         ./programs/television.nix
         ./programs/ncspot.nix
         ./programs/fzf.nix
-        ./programs/nnn.nix
         ./programs/presenterm.nix
         ./programs/termstat.nix
         ./programs/yazi.nix
@@ -61,5 +60,12 @@
         dhbw-vpn = "openconnect-sso --server vpn.dhbw-heidenheim.de --authgroup Studenten+Externe-MFA";
         cr = "cargo r";
         cb = "cargo b";
+        gs = "git status";
+        gl = "git log --oneline";
+        gll = "git log";
+        gd = "git diff";
+        gc = "git commit";
+        nd = "nix develop";
+        nos = "nh os switch";
     };
 }

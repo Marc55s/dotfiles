@@ -37,9 +37,6 @@
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#laptop";
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#laptop";
         aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
-        gs = "git status";
-        gl = "git log --oneline";
-        nd = "nix develop";
     };
 
 
