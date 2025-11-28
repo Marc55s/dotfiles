@@ -26,7 +26,7 @@
     home.shellAliases = {
         nrs = "sudo nixos-rebuild switch --flake /home/marc/dotfiles#pc";
         nrt = "sudo nixos-rebuild test --flake /home/marc/dotfiles#pc";
-        aoc = "cd ~/dev/adventofcode/Python/2024 && nix develop";
+        aoc = "cd ~/dev/adventofcode/Rust/2025 && nix develop";
     };
 
     home.username = "marc";
