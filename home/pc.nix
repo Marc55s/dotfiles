@@ -13,7 +13,6 @@
         pinta
         chatterino7
         spotify
-        jetbrains.clion
         signal-desktop
         prismlauncher
         btop-rocm

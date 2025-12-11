@@ -37,7 +37,7 @@
 
         zapzap
         pkgs-unstable.obsidian
-        bitwarden
+        bitwarden-desktop
         vesktop
         element-desktop
         vlc

@@ -75,11 +75,7 @@
     services.upower.enable = true;
     services.power-profiles-daemon.enable = true;
 
-    services = {
-        logind = {
-            lidSwitchDocked = "ignore";
-        };
-    };
+    services.logind.settings.Login.HandleLidSwitchDocked = "ignore";
 
     # Configure keymap in X11
     services.xserver.xkb = {
@@ -91,7 +87,7 @@
         enable = true;
         settings = {
             default_session = {
-                command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks --cmd Hyprland";
+                command = "${pkgs.tuigreet}/bin/tuigreet -r --asterisks --cmd Hyprland";
             };
         };
     };

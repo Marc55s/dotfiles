@@ -1,20 +1,18 @@
-{ config, pkgs, ... }:
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/nix-ld.nix
-      ../../modules/ssh.nix
-      ../../modules/wireshark.nix
-    ];
+{ config, pkgs, ... }: {
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/nix-ld.nix
+    ../../modules/ssh.nix
+    ../../modules/wireshark.nix
+  ];
 
   fileSystems."/mnt/nvme" = {
-    device ="/dev/disk/by-uuid/6fd86718-7584-455a-9093-28881876a250" ;
+    device = "/dev/disk/by-uuid/6fd86718-7584-455a-9093-28881876a250";
     fsType = "ext4";
   };
 
   fileSystems."/mnt/hdd" = {
-    device ="/dev/disk/by-uuid/a9ef4979-66c9-401b-a218-10cbbdb4bfe4" ;
+    device = "/dev/disk/by-uuid/a9ef4979-66c9-401b-a218-10cbbdb4bfe4";
     fsType = "ext4";
   };
 
@@ -27,7 +25,7 @@
     grub = {
       enable = true;
       efiSupport = true;
-      device = "nodev";  # required for UEFI systems
+      device = "nodev"; # required for UEFI systems
     };
   };
   networking.hostName = "pc"; # Define your hostname.
@@ -42,24 +40,20 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Gaming
-  hardware.graphics= {
-        enable = true;
-        enable32Bit = true;
-        extraPackages = [
-            pkgs.vulkan-loader
-            pkgs.vulkan-tools
-            pkgs.amdvlk
-        ];
-        extraPackages32 = [
-            pkgs.driversi686Linux.amdvlk # For 32-bit applications
-        ];
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = [ pkgs.vulkan-loader pkgs.vulkan-tools ];
   };
 
   programs.steam = {
     enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    remotePlay.openFirewall =
+      true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall =
+      true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall =
+      true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
   programs.gamemode.enable = true;
 
@@ -68,8 +62,8 @@
     cpuFreqGovernor = "performance";
   };
   environment.variables = {
-  AMD_VULKAN_ICD = "RADV";  # Force RADV
-  RADV_PERFTEST = "aco";    # Use ACO compiler (faster for games)
+    AMD_VULKAN_ICD = "RADV"; # Force RADV
+    RADV_PERFTEST = "aco"; # Use ACO compiler (faster for games)
   };
 
   programs.steam.gamescopeSession.enable = false;
@@ -101,12 +95,12 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.greetd = {
-      enable = true;
-      settings = {
-          default_session = {
-              command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --cmd startplasma-wayland";
-          };
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet -r --cmd startplasma-wayland";
       };
+    };
   };
   services.displayManager.sddm.enable = false;
   services.desktopManager.plasma6.enable = true;
@@ -121,7 +115,15 @@
   console.keyMap = "de";
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [ cups-filters cups-browsed ];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   # docker
   virtualisation.docker.enable = true;
@@ -151,17 +153,14 @@
     description = "Marc";
     extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-      kdePackages.kate
-      thunderbird
-    ];
+    packages = with pkgs; [ kdePackages.kate thunderbird ];
   };
   programs.zsh.enable = true;
 
   # flakes
   nix.settings = {
-      experimental-features = [ "nix-command" "flakes" ];
-      warn-dirty = false;
+    experimental-features = [ "nix-command" "flakes" ];
+    warn-dirty = false;
   };
 
   nix.gc = {
@@ -181,72 +180,73 @@
     mangohud
   ];
 
- nixpkgs.overlays = [
+  nixpkgs.overlays = [
     (self: super: {
       lutris = super.lutris.override {
-        extraLibraries = pkgs: with pkgs; [
-          # 64-bit libraries
-          keyutils
-          libkrb5
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc
-          vulkan-loader
-          xorg.libXcomposite
-          xorg.libXext
-          xorg.libX11
-          xorg.libXau
-          xorg.libxcb
-          xorg.libXdmcp
-          xorg.libXfixes
-          xorg.libXrandr
-          xorg.libXrender
-          xorg.libXxf86vm
-          xorg.libxshmfence
+        extraLibraries = pkgs:
+          with pkgs; [
+            # 64-bit libraries
+            keyutils
+            libkrb5
+            libpng
+            libpulseaudio
+            libvorbis
+            stdenv.cc.cc
+            vulkan-loader
+            xorg.libXcomposite
+            xorg.libXext
+            xorg.libX11
+            xorg.libXau
+            xorg.libxcb
+            xorg.libXdmcp
+            xorg.libXfixes
+            xorg.libXrandr
+            xorg.libXrender
+            xorg.libXxf86vm
+            xorg.libxshmfence
 
-          # 32-bit libraries
-          pkgsi686Linux.keyutils
-          pkgsi686Linux.libkrb5
-          pkgsi686Linux.libpng
-          pkgsi686Linux.libpulseaudio
-          pkgsi686Linux.libvorbis
-          pkgsi686Linux.stdenv.cc.cc
-          pkgsi686Linux.vulkan-loader
-          pkgsi686Linux.xorg.libXcomposite
-          pkgsi686Linux.xorg.libXext
-          pkgsi686Linux.xorg.libX11
-          pkgsi686Linux.xorg.libXau
-          pkgsi686Linux.xorg.libxcb
-          pkgsi686Linux.xorg.libXdmcp
-          pkgsi686Linux.xorg.libXfixes
-          pkgsi686Linux.xorg.libXrandr
-          pkgsi686Linux.xorg.libXrender
-          pkgsi686Linux.xorg.libXxf86vm
-          pkgsi686Linux.xorg.libxshmfence
+            # 32-bit libraries
+            pkgsi686Linux.keyutils
+            pkgsi686Linux.libkrb5
+            pkgsi686Linux.libpng
+            pkgsi686Linux.libpulseaudio
+            pkgsi686Linux.libvorbis
+            pkgsi686Linux.stdenv.cc.cc
+            pkgsi686Linux.vulkan-loader
+            pkgsi686Linux.xorg.libXcomposite
+            pkgsi686Linux.xorg.libXext
+            pkgsi686Linux.xorg.libX11
+            pkgsi686Linux.xorg.libXau
+            pkgsi686Linux.xorg.libxcb
+            pkgsi686Linux.xorg.libXdmcp
+            pkgsi686Linux.xorg.libXfixes
+            pkgsi686Linux.xorg.libXrandr
+            pkgsi686Linux.xorg.libXrender
+            pkgsi686Linux.xorg.libXxf86vm
+            pkgsi686Linux.xorg.libxshmfence
 
-          # GStreamer and its plugins (both 64 and 32-bit)
-          gst_all_1.gstreamer
-          gst_all_1.gst-plugins-base
-          gst_all_1.gst-plugins-good
-          gst_all_1.gst-plugins-bad
-          gst_all_1.gst-plugins-ugly
-          gst_all_1.gst-libav
+            # GStreamer and its plugins (both 64 and 32-bit)
+            gst_all_1.gstreamer
+            gst_all_1.gst-plugins-base
+            gst_all_1.gst-plugins-good
+            gst_all_1.gst-plugins-bad
+            gst_all_1.gst-plugins-ugly
+            gst_all_1.gst-libav
 
-          pkgsi686Linux.gst_all_1.gstreamer
-          pkgsi686Linux.gst_all_1.gst-plugins-base
-          pkgsi686Linux.gst_all_1.gst-plugins-good
-          pkgsi686Linux.gst_all_1.gst-plugins-bad
-          pkgsi686Linux.gst_all_1.gst-plugins-ugly
-          pkgsi686Linux.gst_all_1.gst-libav
+            pkgsi686Linux.gst_all_1.gstreamer
+            pkgsi686Linux.gst_all_1.gst-plugins-base
+            pkgsi686Linux.gst_all_1.gst-plugins-good
+            pkgsi686Linux.gst_all_1.gst-plugins-bad
+            pkgsi686Linux.gst_all_1.gst-plugins-ugly
+            pkgsi686Linux.gst_all_1.gst-libav
 
-          # Specific libraries mentioned in your errors
-          pkgsi686Linux.libgudev # fixes "libgudev-1.0.so.0" error
-          pkgsi686Linux.speex    # fixes "libspeex.so.1" error
-          pkgsi686Linux.libtheora # fixes "libtheoradec.so.1" error
-          pkgsi686Linux.openal   # fixes "libopenal.so.1" error
-          pkgsi686Linux.libvdpau # fixes "libvdpau.so.1" error
-        ];
+            # Specific libraries mentioned in your errors
+            pkgsi686Linux.libgudev # fixes "libgudev-1.0.so.0" error
+            pkgsi686Linux.speex # fixes "libspeex.so.1" error
+            pkgsi686Linux.libtheora # fixes "libtheoradec.so.1" error
+            pkgsi686Linux.openal # fixes "libopenal.so.1" error
+            pkgsi686Linux.libvdpau # fixes "libvdpau.so.1" error
+          ];
       };
     })
   ];

@@ -2,12 +2,11 @@
     description = "A very basic flake";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-25.05";
+        nixpkgs.url = "nixpkgs/nixos-25.11";
         nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-        nixpkgs-24_11.url = "nixpkgs/nixos-24.11";
 
         home-manager = {
-            url = "github:nix-community/home-manager/release-25.05";
+            url = "github:nix-community/home-manager/release-25.11";
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
@@ -51,10 +50,10 @@
             system = "x86_64-linux";
 
             overlay = final: prev: {
-                edu-sync-cli = inputs.edu-sync-nix.packages.${system}.default;
-                wakafetch = inputs.wakafetch.packages.${system}.default;
-                openconnect-sso = inputs.openconnect-sso.packages.${system}.openconnect-sso;
-                timr-tui = inputs.timr-tui.packages.${system}.timr;
+                edu-sync-cli = inputs.edu-sync-nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+                wakafetch = inputs.wakafetch.packages.${pkgs.stdenv.hostPlatform.system}.default;
+                openconnect-sso = inputs.openconnect-sso.packages.${pkgs.stdenv.hostPlatform.system}.openconnect-sso;
+                timr-tui = inputs.timr-tui.packages.${pkgs.stdenv.hostPlatform.system}.timr;
                 tailscale = prev.tailscale.overrideAttrs (oldAttrs: {
                     # Remove the failing test file during build
                     preBuild = (oldAttrs.preBuild or "") + ''
@@ -62,7 +61,6 @@
                     '';
                 });
             };
-
 
             pkgs = import nixpkgs {
                 inherit system;
@@ -80,7 +78,7 @@
         in {
             nixosConfigurations = {
                 pc = lib.nixosSystem {
-                    inherit system pkgs;
+                    inherit pkgs;
                     modules = [
                         ./hosts/pc/configuration.nix
                         ./hosts/pc/hardware-configuration.nix
@@ -99,7 +97,7 @@
                 };
 
                 laptop = lib.nixosSystem {
-                    inherit system pkgs;
+                    inherit pkgs;
                     modules = [
                         grub2-themes.nixosModules.default
                         ./hosts/laptop/configuration.nix
