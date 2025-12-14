@@ -16,6 +16,7 @@
         signal-desktop
         prismlauncher
         btop-rocm
+        freecad-wayland
     ];
 
     imports = [
