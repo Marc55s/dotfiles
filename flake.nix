@@ -5,6 +5,11 @@
         nixpkgs.url = "nixpkgs/nixos-25.11";
         nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
+        noctalia = {
+          url = "github:noctalia-dev/noctalia-shell";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         home-manager = {
             url = "github:nix-community/home-manager/release-25.11";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -12,10 +17,6 @@
 
         grub2-themes = {
             url = "github:vinceliuice/grub2-themes";
-        };
-
-        todo-shell = {
-            url = "github:itsanian/todo-shell";
         };
 
         edu-sync-nix = {
@@ -50,7 +51,7 @@
         };
     };
 
-    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:
+    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, grub2-themes, ... }:
         let
             system = "x86_64-linux";
 

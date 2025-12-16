@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }: {
   imports = [
     inputs.niri.homeModules.niri
+    ./noctalia.nix
   ];
 
   home.packages = with pkgs; [ xwayland-satellite ];
@@ -11,7 +12,11 @@
     # stylix?
 
     settings = {
-      spawn-at-startup = [ ];
+      spawn-at-startup = [
+            {
+                command = [ "noctalia-shell" ];
+            }
+        ];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
       input = {
@@ -67,8 +72,9 @@
 
       binds = {
         "Mod+Q".action.spawn = "kitty";
-        "Mod+R".action.spawn = "rofi -show drun";
-        # "Mod+B".action.spawn = "brave";
+        "Mod+Space".action.spawn = ["rofi" "-show" "drun"];
+        "Mod+Shift+L".action.spawn = [ "hyprlock" ];
+        "Mod+B".action.spawn = "firefox";
 
         "Mod+left".action.focus-window-down-or-column-left = { };
         "Mod+down".action.focus-window-down = { };

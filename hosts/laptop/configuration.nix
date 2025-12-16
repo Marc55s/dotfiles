@@ -89,15 +89,15 @@
             sessions = [
                 {
                     name = "Niri";
-                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
+                    command = "${pkgs.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
                 }
                 {
                     name = "Hyprland";
-                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd Hyprland";
+                    command = "${pkgs.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd Hyprland";
                 }
             ];
             default_session = {
-               command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
+               command = "${pkgs.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
             };
         };
     };

@@ -361,19 +361,23 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1741513245,
-        "narHash": "sha256-7rTAMNTY1xoBwz0h7ZMtEcd8LELk9R5TzBPoHuhNSCk=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "e3e32b642a31e6714ec1b712de8c91a3352ce7e1",
+        "lastModified": 1765916394,
+        "narHash": "sha256-Rao0WX2ZVUC9hFEs3oqy/oIP6O2sSfQRq/mNhHqvG0Y=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
+        "rev": "29d4347d9073ec66512d46c0d52a90c04131a5ed",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-shell",
         "type": "github"
       }
     },
@@ -437,10 +441,10 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-openconnect-sso": "nixpkgs-openconnect-sso",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "noctalia": "noctalia",
         "openconnect-sso": "openconnect-sso",
         "termstat": "termstat",
         "timr-tui": "timr-tui",
-        "todo-shell": "todo-shell",
         "wakafetch": "wakafetch"
       }
     },
@@ -607,24 +611,6 @@
       "original": {
         "owner": "sectore",
         "repo": "timr-tui",
-        "type": "github"
-      }
-    },
-    "todo-shell": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_4"
-      },
-      "locked": {
-        "lastModified": 1741942590,
-        "narHash": "sha256-AyZiA/cx8RqONlii/k/gPq9tr9D3InI5iMAiohCU4Fc=",
-        "owner": "itsanian",
-        "repo": "todo-shell",
-        "rev": "e457178cc6b580e15760e03d47d5fed2386076a4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "itsanian",
-        "repo": "todo-shell",
         "type": "github"
       }
     },
