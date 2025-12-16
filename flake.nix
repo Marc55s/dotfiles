@@ -43,6 +43,11 @@
             url = "path:/home/marc/dev/termstat";
             inputs.nixpkgs.follows = "nixpkgs-unstable";
         };
+
+        niri = {
+          url = "github:sodiboo/niri-flake";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, todo-shell, grub2-themes, ... }:

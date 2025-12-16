@@ -30,6 +30,7 @@
     imports = [
         ./common.nix
         ./hypr/default.nix
+        ./niri/niri.nix
     ];
 
 

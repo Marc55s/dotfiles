@@ -90,8 +90,7 @@
             };
 
             gestures =  {
-                workspace_swipe = true;
-                workspace_swipe_min_speed_to_force = 5;
+                gesture = "3, horizontal, workspace";
             };
             device = {
                 name = "epic-mouse-v1";

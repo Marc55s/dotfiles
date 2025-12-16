@@ -86,8 +86,18 @@
     services.greetd = {
         enable = true;
         settings = {
+            sessions = [
+                {
+                    name = "Niri";
+                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
+                }
+                {
+                    name = "Hyprland";
+                    command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd Hyprland";
+                }
+            ];
             default_session = {
-                command = "${pkgs.tuigreet}/bin/tuigreet -r --asterisks --cmd Hyprland";
+               command = "${pkgs.greetd.tuigreet}/bin/tuigreet -r --asterisks -t --theme 'time=white;border=white;prompt=gray;input=white' --cmd niri-session";
             };
         };
     };
@@ -140,6 +150,7 @@
 
     programs.zsh.enable = true;
     programs.hyprland.enable = true;
+    programs.niri.enable = true;
 
     # flakes
     nix.settings = {
