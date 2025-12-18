@@ -90,9 +90,14 @@
 
         "Mod+F".action.maximize-column = { };
         "Mod+Shift+F".action.fullscreen-window = { };
+        "XF86AudioRaiseVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+" ];
+        "XF86AudioLowerVolume".action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-" ];
+        "XF86AudioMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+        "XF86AudioMicMute".action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ];
+        "XF86MonBrightnessUp".action.spawn = [ "brightnessctl" "s" "10%+" ];
+        "XF86MonBrightnessDown".action.spawn = [ "brightnessctl" "s" "10%-" ];
 
         "Mod+M".action.quit = { };
-        "Mod+L".action.spawn = "swaylock";
       };
 
       window-rules = [{
