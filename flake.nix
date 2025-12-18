@@ -41,7 +41,7 @@
         };
 
         termstat = {
-            url = "path:/home/marc/dev/termstat";
+            url = "github:marc55s/termstat";
             inputs.nixpkgs.follows = "nixpkgs-unstable";
         };
 

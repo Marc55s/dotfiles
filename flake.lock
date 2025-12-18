@@ -581,14 +581,17 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1765303309,
-        "narHash": "sha256-LJ6hInJx+kQ8nc1OLxetTrgh7WlibZ+wLGAM5jsrUDg=",
-        "path": "/home/marc/dev/termstat",
-        "type": "path"
+        "lastModified": 1764180944,
+        "narHash": "sha256-4HaJpyjyxZDXT4EFvafBBcubsV/dfEvLT+saBaYBUYo=",
+        "owner": "marc55s",
+        "repo": "termstat",
+        "rev": "9217ac763f77dbb04eb1e79618462cb12d59f3da",
+        "type": "github"
       },
       "original": {
-        "path": "/home/marc/dev/termstat",
-        "type": "path"
+        "owner": "marc55s",
+        "repo": "termstat",
+        "type": "github"
       }
     },
     "timr-tui": {
