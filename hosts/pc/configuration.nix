@@ -15,6 +15,31 @@
     device = "/dev/disk/by-uuid/a9ef4979-66c9-401b-a218-10cbbdb4bfe4";
     fsType = "ext4";
   };
+  fileSystems."/" = {
+    device = "zroot/root";
+    fsType = "zfs";
+  };
+  fileSystems."/nix" = {
+    device = "zroot/nix";
+    fsType = "zfs";
+  };
+  fileSystems."/home" = {
+    device = "zroot/home";
+    fsType = "zfs";
+  };
+  fileSystems."/boot" = {
+    device = "dev/disk/by-label/boot";
+    fsType = "vfat";
+  };
+
+  boot.initrd.systemd.enable = true;
+  boot.initrd.luks.devices."cryptroot".device =
+    "/dev/disk/by-uuid/b9fb3b65-bc59-48f7-8f31-94b5e60e0d16";
+  boot.initrd.luks.devices."cryptroot".preLVM = true;
+  networking.hostId = "c5a47126";
+  boot.zfs.devNodes = "/dev/mapper";
+  boot.zfs.extraPools = [ "zroot" ];
+  boot.zfs.requestEncryptionCredentials = true;
 
   # Bootloader.
   # boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -25,6 +50,8 @@
     grub = {
       enable = true;
       efiSupport = true;
+      zfsSupport = true;
+      copyKernels = true;
       device = "nodev"; # required for UEFI systems
     };
   };
@@ -34,10 +61,6 @@
     policy = [ "magic" ];
   };
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Gaming
   hardware.graphics = {
@@ -92,16 +115,36 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet -r --cmd startplasma-wayland";
+        command = ''
+          ${pkgs.tuigreet}/bin/tuigreet \
+            --time \
+            --remember \
+            --remember-user-session \
+            --asterisks \
+            --cmd startplasma-wayland
+        '';
+        user = "greeter";
       };
     };
   };
+
+  systemd.services.greetd = {
+    unitConfig = { After = [ "multi-user.target" "display-manager.target" ]; };
+    serviceConfig = {
+      Type = "idle";
+      StandardInput = "tty";
+      StandardOutput = "tty";
+      StandardError = "journal";
+      TTYReset = true;
+      TTYVHangup = true;
+      TTYVTDisallocate = true;
+    };
+  };
+  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = false;
   services.desktopManager.plasma6.enable = true;
 
@@ -149,6 +192,8 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.marc = {
+    hashedPassword =
+      "$6$KF5GV021S8V51Bfe$Rc3tnTNBwX46RNxdEORCsr64/DkVKbTIu2cS9837YEPsjJAj5EZwDUSYZ72zVOgqhZWGyvtYZ35jTDrwMhMiw1";
     isNormalUser = true;
     description = "Marc";
     extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" ];
