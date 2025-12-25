@@ -14,7 +14,7 @@ let
         exit 0
       fi
 
-      if [[ $url == *github.com* ]]; then
+      if [[ $url == *github.com* || $url == *gitlab* ]]; then
         if [[ $url == git@* ]]; then
           url="''${url#git@}"
           url="''${url/:/\/}"
