@@ -5,7 +5,6 @@
         enableCompletion = true;
         initContent = ''
             export READER="zathura"
-            export NNN_USE_EDITOR=1 
             export DIRENV_LOG_FORMAT=" "
             export PATH="$HOME/.cargo/bin:$PATH"
             if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then

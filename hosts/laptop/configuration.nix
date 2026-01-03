@@ -1,32 +1,12 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ pkgs, pkgs-unstable, ... }:
-
+{ pkgs, ... }:
 {
-    # Bootloader.
-    boot.supportedFilesystems = ["ntfs"];
-
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.grub.enable = true;
-    boot.loader.grub.devices = ["nodev"];
-    boot.loader.grub.efiSupport = true;
-    boot.loader.grub.useOSProber = true;
-
-    boot.loader.grub2-theme = {
-        enable = true;
-        theme = "vimix";
-        footer = true;
-    };
-
-    boot.kernelParams = [ "amd_pstate=active" ];
-    boot.kernelPackages = pkgs.linuxPackages_latest;
-
     imports = [
+      ./boot.nix
       ../../modules/nix-ld.nix
       ../../modules/ssh.nix
       ../../modules/wireshark.nix
+      ../../modules/nix.nix
+      ../../modules/local.nix
     ];
 
     networking.hostName = "laptop"; # Define your hostname.
@@ -38,24 +18,6 @@
 
     # Enable networking
     networking.networkmanager.enable = true;
-
-    # Set your time zone.
-    time.timeZone = "Europe/Berlin";
-
-    # Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
-
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "de_DE.UTF-8";
-        LC_IDENTIFICATION = "de_DE.UTF-8";
-        LC_MEASUREMENT = "de_DE.UTF-8";
-        LC_MONETARY = "de_DE.UTF-8";
-        LC_NAME = "de_DE.UTF-8";
-        LC_NUMERIC = "de_DE.UTF-8";
-        LC_PAPER = "de_DE.UTF-8";
-        LC_TELEPHONE = "de_DE.UTF-8";
-        LC_TIME = "de_DE.UTF-8";
-    };
 
     # boot.kernelModules = [ "evdi" "wacom"];
     boot.kernelModules = [ "wacom"];
@@ -77,12 +39,6 @@
 
     services.logind.settings.Login.HandleLidSwitchDocked = "ignore";
 
-    # Configure keymap in X11
-    services.xserver.xkb = {
-        layout = "de";
-        variant = "";
-    };
-
     services.greetd = {
         enable = true;
         settings = {
@@ -102,8 +58,6 @@
         };
     };
 
-    # Configure console keymap
-    console.keyMap = "de";
 
     # Enable CUPS to print documents.
     services.printing.enable = true;
@@ -151,12 +105,6 @@
     programs.zsh.enable = true;
     programs.hyprland.enable = true;
     programs.niri.enable = true;
-
-    # flakes
-    nix.settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-        warn-dirty = false;
-    };
 
 
     # List packages installed in system profile. To search, run:
