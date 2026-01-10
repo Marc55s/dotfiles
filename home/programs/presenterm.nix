@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     mermaid-cli
     python313Packages.weasyprint
+    python313Packages.pypandoc
   ];
   imports = [
     ../modules/presenterm-options.nix
