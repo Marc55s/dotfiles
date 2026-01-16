@@ -3,13 +3,13 @@
 let
   # Detect if on laptop or PC by system or hostname
   isLaptop = hostName == "laptop";
-  fontSize = if isLaptop then 12 else 12;  # smaller font on PC
+  fontSize = if isLaptop then 14 else 13;  # smaller font on PC
 in {
   programs.kitty = {
     enable = true;
 
     settings = {
-      font_family = "Iosevka Nerd Font";
+      font_family = "IosevkaTermSlab Nerd Font";
       font_size = fontSize;
 
       bold_font = "auto";
@@ -32,6 +32,7 @@ in {
 
   home.packages = with pkgs; [
     jetbrains-mono
-    nerd-fonts.iosevka
+    # nerd-fonts.iosevka
+    nerd-fonts.iosevka-term-slab
   ];
 }
