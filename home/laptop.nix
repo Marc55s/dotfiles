@@ -20,6 +20,7 @@
         systemctl-tui
         redisinsight
         wakafetch
+        teamtype
 
         fluxcd
         kubectl

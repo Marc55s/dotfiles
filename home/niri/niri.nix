@@ -42,6 +42,7 @@
         focus-ring.inactive = { color = "#000000"; };
         focus-ring.urgent = { color = "#ffffff"; };
         gaps = 10;
+        border.width = 2;
       };
       # animations = {
       # slowdown = ;
