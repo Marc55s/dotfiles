@@ -76,6 +76,8 @@
         "Mod+Space".action.spawn = ["rofi" "-show" "drun"];
         "Mod+Shift+L".action.spawn = [ "hyprlock" ];
         "Mod+B".action.spawn = "firefox";
+        "Mod+F12".action.spawn = [ "hyprshot" "-m" "window" ];
+        "F12".action.spawn = [ "hyprshot" "-m" "region" ];
 
         "Mod+left".action.focus-window-down-or-column-left = { };
         "Mod+down".action.focus-window-down = { };

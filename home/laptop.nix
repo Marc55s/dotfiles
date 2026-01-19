@@ -10,15 +10,12 @@
         bluez-tools
         upower
         remnote
-        eog
         btop
         nemo
         firefox
         libresprite
         thunderbird
-        mqttx
         systemctl-tui
-        redisinsight
         wakafetch
         teamtype
 
