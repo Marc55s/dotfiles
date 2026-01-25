@@ -9,6 +9,7 @@
 
   # Bootloader.
   # boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.kernelParams = [ "zfs.zfs_arc_max=4294967296" ]; # Limits ZFS to 4GB
   boot.loader = {
     systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;

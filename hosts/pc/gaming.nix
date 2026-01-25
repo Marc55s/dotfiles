@@ -9,6 +9,7 @@
   };
 
   zramSwap.enable = true;
+  zramSwap.priority = 100;
 
   programs.steam = {
     enable = true;
