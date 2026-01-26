@@ -18,6 +18,9 @@
         systemctl-tui
         wakafetch
         teamtype
+        zotero
+        dua
+        vscode
 
         fluxcd
         kubectl
@@ -29,6 +32,7 @@
         ./common.nix
         ./hypr/default.nix
         ./niri/niri.nix
+        ./programs/vscode.nix
     ];
 
 

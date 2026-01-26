@@ -8,6 +8,7 @@
       ../../modules/nix.nix
       ../../modules/local.nix
     ];
+    zramSwap.enable = true;
 
     programs.steam = {
       enable = true;
@@ -93,7 +94,12 @@
     };
 
     # Enable touchpad support (enabled default in most desktopManager).
-    services.libinput.enable = true;
+    services.libinput = {
+        enable = true;
+        touchpad = {
+            disableWhileTyping = true;
+        };
+    };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.marc = {
