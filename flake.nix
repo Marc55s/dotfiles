@@ -120,6 +120,26 @@
                         }
                     ];
                 };
+
+                mainframe = lib.nixosSystem {
+                    inherit pkgs;
+                    modules = [
+                        ./hosts/mainframe/configuration.nix
+                        # ./hosts/mainframe/hardware-configuration.nix
+                        home-manager.nixosModules.home-manager
+                        {
+                            home-manager.useGlobalPkgs = true;
+                            home-manager.useUserPackages = true;
+                            # home-manager.users.mainframe = import ./home/pc.nix;
+                            home-manager.extraSpecialArgs = {
+                                inherit inputs pkgs-unstable;
+                                hostName = "mainframe";
+                            };
+
+                        }
+                    ];
+                };
+
             };
         };
 }
