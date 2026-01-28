@@ -10,6 +10,11 @@
     ];
     zramSwap.enable = true;
 
+    swapDevices = [{
+      device = "/var/lib/swapfile";
+      size = 16*1024; # 16 GB
+    }];
+
     programs.steam = {
       enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play

@@ -67,5 +67,9 @@
         gc = "git commit";
         nd = "nix develop";
         nos = "nh os switch";
+        clr = "clear";
+        clar = "clear";
+        cler = "clear";
+        claer = "clear";
     };
 }
