@@ -50,37 +50,37 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = ''
-          ${pkgs.tuigreet}/bin/tuigreet \
-            --time \
-            --remember \
-            --remember-user-session \
-            --asterisks \
-            --cmd startplasma-wayland
-        '';
-        user = "greeter";
-      };
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = ''
+  #         ${pkgs.tuigreet}/bin/tuigreet \
+  #           --time \
+  #           --remember \
+  #           --remember-user-session \
+  #           --asterisks \
+  #           --cmd startplasma-wayland
+  #       '';
+  #       user = "greeter";
+  #     };
+  #   };
+  # };
 
-  systemd.services.greetd = {
-    unitConfig = { After = [ "multi-user.target" "display-manager.target" ]; };
-    serviceConfig = {
-      Type = "idle";
-      StandardInput = "tty";
-      StandardOutput = "tty";
-      StandardError = "journal";
-      TTYReset = true;
-      TTYVHangup = true;
-      TTYVTDisallocate = true;
-    };
-  };
+  # systemd.services.greetd = {
+  #   unitConfig = { After = [ "multi-user.target" "display-manager.target" ]; };
+  #   serviceConfig = {
+  #     Type = "idle";
+  #     StandardInput = "tty";
+  #     StandardOutput = "tty";
+  #     StandardError = "journal";
+  #     TTYReset = true;
+  #     TTYVHangup = true;
+  #     TTYVTDisallocate = true;
+  #   };
+  # };
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = false;
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Enable CUPS to print documents.
