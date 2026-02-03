@@ -301,11 +301,19 @@
     },
     "nixpkgs-stable": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1771714954,
         "narHash": "sha256-nhZJPnBavtu40/L2aqpljrfUNb2rxmWTmSjK2c9UKds=",
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "afbbf774e2087c3d734266c22f96fca2e78d3620",
+=======
+        "lastModified": 1770056022,
+        "narHash": "sha256-yvCz+Qmci1bVucXEyac3TdoSPMtjqVJmVy5wro6j/70=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d04d8548aed39902419f14a8537006426dc1e4fa",
+>>>>>>> 8a9ff1a (update: nix flake)
         "type": "github"
       },
       "original": {
