@@ -12,7 +12,6 @@
         pinta
         chatterino7
         spotify
-        signal-desktop
         prismlauncher
         btop-rocm
         freecad-wayland

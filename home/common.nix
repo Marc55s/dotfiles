@@ -35,6 +35,7 @@
         jq
         tdf # tui pdf viewer
 
+        signal-desktop
         zapzap
         pkgs-unstable.obsidian
         bitwarden-desktop
