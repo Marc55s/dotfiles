@@ -20,6 +20,7 @@
         ./programs/termstat.nix
         ./programs/yazi.nix
         ./programs/nh.nix
+        ./programs/firefox.nix
         inputs.termstat.homeManagerModules.default
     ];
 

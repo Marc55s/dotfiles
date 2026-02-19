@@ -12,7 +12,6 @@
         remnote
         btop
         nemo
-        firefox
         libresprite
         thunderbird
         systemctl-tui

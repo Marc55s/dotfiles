@@ -7,7 +7,6 @@
         easyeffects
         obs-studio
         gcc
-        firefox
         libresprite
         pinta
         chatterino7
