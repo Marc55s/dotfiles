@@ -67,6 +67,11 @@ in {
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
           installation_mode = "force_installed";
         };
+        # Tabliss
+        "extension@tabliss.io" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/tabliss/latest.xpi";
+          installation_mode = "force_installed";
+        };
         # Simple Translate
         "simple-translate@sienori" = {
           install_url =
