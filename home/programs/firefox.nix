@@ -63,9 +63,8 @@ in {
           installation_mode = "force_installed";
         };
         # Dark Reader
-        "dark-reader@darkreader.org" = {
-          install_url =
-            "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+        "addon@darkreader.org" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
           installation_mode = "force_installed";
         };
         # Simple Translate
