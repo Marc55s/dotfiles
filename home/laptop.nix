@@ -32,6 +32,7 @@
         ./hypr/default.nix
         ./niri/niri.nix
         ./programs/vscode.nix
+        ./services/udiskie.nix
     ];
 
 

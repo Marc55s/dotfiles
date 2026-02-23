@@ -47,6 +47,9 @@
 
     services.logind.settings.Login.HandleLidSwitchDocked = "ignore";
 
+    # USB automount
+    services.udisks2.enable = true;
+
     services.greetd = {
         enable = true;
         settings = {
