@@ -13,10 +13,7 @@
 
     settings = {
       spawn-at-startup = [
-            {
-                command = [ "noctalia-shell" ];
-            }
-        ];
+      ];
       prefer-no-csd = true;
       hotkey-overlay.skip-at-startup = true;
       input = {
@@ -74,7 +71,7 @@
       binds = {
         "Mod+Q".action.spawn = "kitty";
         "Mod+Space".action.spawn = ["rofi" "-show" "drun"];
-        "Mod+Shift+L".action.spawn = [ "hyprlock" ];
+        "Mod+L".action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
         "Mod+B".action.spawn = "firefox";
         "Mod+F12".action.spawn = [ "hyprshot" "-m" "window" ];
         "F12".action.spawn = [ "hyprshot" "-m" "region" ];
@@ -90,6 +87,11 @@
 
         "Mod+T".action.switch-preset-column-width = { };
         "Mod+C".action.close-window = { };
+        "Mod+Shift+P".action.spawn = [
+          "bash"
+          "-c"
+          "${pkgs.wl-mirror}/bin/wl-mirror $(${pkgs.niri}/bin/niri msg --json focused-output | ${pkgs.jq}/bin/jq -r .name)"
+        ];
 
         "Mod+F".action.maximize-column = { };
         "Mod+Shift+F".action.fullscreen-window = { };

@@ -25,6 +25,8 @@
         kubectl
         helm
         k9s
+        wl-mirror
+        iamb
     ];
 
     imports = [
