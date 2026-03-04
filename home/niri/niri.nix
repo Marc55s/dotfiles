@@ -34,7 +34,7 @@
         always-center-single-column = true;
         center-focused-column = "never";
         focus-ring.enable = true;
-        focus-ring.width = 3;
+        focus-ring.width = 2;
         focus-ring.active = { color = "#ffffff"; };
         focus-ring.inactive = { color = "#000000"; };
         focus-ring.urgent = { color = "#ffffff"; };
@@ -106,7 +106,7 @@
       };
 
       window-rules = [{
-        geometry-corner-radius = let radius = 8.0;
+        geometry-corner-radius = let radius = 0.0;
         in {
           bottom-left = radius;
           bottom-right = radius;
