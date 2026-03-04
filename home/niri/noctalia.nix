@@ -202,7 +202,7 @@
               pinned = [ ];
             }
             {
-              deviceNativePath = "default";
+              deviceNativePath = "__default__";
               displayMode = "icon-always";
               hideIfIdle = false;
               hideIfNotDetected = false;
@@ -364,9 +364,7 @@
         autoStartAuth = false;
         avatarImage = "";
         boxRadiusRatio = 1;
-        clockFormat = ''
-          hh
-          mm'';
+        clockFormat = "hh\\nmm";
         clockStyle = "custom";
         compactLockScreen = false;
         dimmerOpacity = 0;
@@ -632,6 +630,5 @@
         wallpaperChangeMode = "random";
       };
     };
-
   };
 }
