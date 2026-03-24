@@ -8,6 +8,7 @@
     ../../modules/wireshark.nix
     ../../modules/nix.nix
     ../../modules/local.nix
+    ../../modules/dh-certs.nix
   ];
 
   fileSystems."/mnt/nvme" = {
