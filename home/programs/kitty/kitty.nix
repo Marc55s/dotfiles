@@ -9,7 +9,7 @@ in {
     enable = true;
 
     settings = {
-      font_family = "IosevkaTermSlab Nerd Font";
+      font_family = "Jetbrains Mono Nerd Font";
       font_size = fontSize;
 
       bold_font = "auto";
@@ -32,7 +32,5 @@ in {
 
   home.packages = with pkgs; [
     jetbrains-mono
-    # nerd-fonts.iosevka
-    nerd-fonts.iosevka-term-slab
   ];
 }
