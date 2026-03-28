@@ -129,8 +129,8 @@ in {
       settings = {
         "extensions.activeThemeID" = "{51fd00e2-c195-4740-824f-c8e789b1c066}";
         "lightweightThemes.selectedID" = "{51fd00e2-c195-4740-824f-c8e789b1c066}";
-        "browser.startup.homepage" = "https://www.ecosia.org/";
         "browser.newtabpage.enabled" = false;
+        "browser.urlbar.suggest.searches" = false;
         "signon.rememberSignons" = false;
         "signon.autofillForms" = false;
         "ui.systemUsesDarkTheme" = 1;
