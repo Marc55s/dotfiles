@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Dashboard v3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body { background: #020617; }
+        input[type=range] { cursor: pointer; }
+    </style>
+</head>
+<body class="text-slate-200 min-h-screen p-4 md:p-10">
+
+    <div class="max-w-3xl mx-auto">
+        <header class="mb-10 flex justify-between items-center">
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-tighter">LED Control</h1>
+                <p class="text-slate-500 text-xs font-mono uppercase tracking-widest mt-1">Mainframe Server | Dual Node</p>
+            </div>
+            <div id="statusDot" class="h-3 w-3 rounded-full bg-emerald-500"></div>
+        </header>
+
+        <div class="glass rounded-2xl p-6 mb-8">
+            <div class="flex justify-between mb-4">
+                <label class="text-xs font-black uppercase tracking-widest text-slate-400">Master Brightness</label>
+                <span id="brightnessVal" class="text-indigo-400 font-mono text-sm">150</span>
+            </div>
+            <input type="range" id="brightnessSlider" min="0" max="255" value="150" 
+                   class="w-full h-2 bg-slate-800 rounded-lg appearance-none accent-indigo-500">
+        </div>
+
+        <div id="btnGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+
+        <div class="glass rounded-2xl p-6 mt-12">
+            <div class="flex justify-between items-center mb-4">
+                <span class="text-[10px] font-black uppercase text-slate-500">Live Status</span>
+                <span id="activity" class="text-indigo-400 text-xs font-mono">READY</span>
+            </div>
+            <pre id="log" class="text-[11px] font-mono text-cyan-400/80 leading-relaxed max-h-32 overflow-y-auto">> System Ready.</pre>
+        </div>
+    </div>
+
+    <script>
+        const LED_COUNT = 100;
+        const TARGETS = ['http://esp32-led-2/led', 'http://esp32-led-3/led'];
+        
+        let lastH = 0;
+        let lastS = 0;
+        let currentV = 150;
+        let isPowerOff = true; // Track if we are in an "Off" state
+
+        const presets = [
+            ['Red', 0, 255], ['Orange', 25, 255], ['Yellow', 45, 255],
+            ['Green', 85, 255], ['Cyan', 128, 255], ['Blue', 170, 255],
+            ['Purple', 200, 255], ['Pink', 230, 255], ['White', 0, 0],
+            ['Warm', 22, 120], ['Night', 0, 255], ['POWER OFF', -1, -1] // Special marker
+        ];
+
+        const logEl = document.getElementById('log');
+        const activity = document.getElementById('activity');
+        const slider = document.getElementById('brightnessSlider');
+        const bValDisplay = document.getElementById('brightnessVal');
+
+        slider.oninput = function() {
+            currentV = parseInt(this.value);
+            bValDisplay.textContent = currentV;
+            
+            // Only update if lights are currently "On"
+            if (!isPowerOff) {
+                trigger(lastH, lastS, currentV, false);
+            } else {
+                logEl.innerHTML = `> Brightness staged to ${currentV} (Lights are OFF)`;
+            }
+        };
+
+        async function trigger(h, s, v, setPowerOn = true) {
+            // Check if this is the "OFF" command
+            if (h === -1) {
+                isPowerOff = true;
+                await transmit(0, 0, 0);
+                logEl.innerHTML += `<br>> Kill Switch Engaged: All LEDs OFF`;
+                return;
+            }
+
+            if (setPowerOn) isPowerOff = false;
+            lastH = h;
+            lastS = s;
+
+            await transmit(h, s, v);
+        }
+
+        async function transmit(h, s, v) {
+            activity.textContent = "SENDING...";
+            const payload = JSON.stringify({
+                offset: 0,
+                h: Array(LED_COUNT).fill(h),
+                s: Array(LED_COUNT).fill(s),
+                v: Array(LED_COUNT).fill(v)
+            });
+
+            try {
+                await Promise.all(TARGETS.map(url => 
+                    fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: payload })
+                ));
+                activity.textContent = "IDLE";
+                if (v > 0) logEl.innerHTML += `<br>> Active: HSV(${h},${s},${v})`;
+            } catch (err) {
+                activity.textContent = "ERROR";
+            }
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+
+        const grid = document.getElementById('btnGrid');
+        presets.forEach(([name, h, s]) => {
+            const hueCSS = Math.round(h * (360/255));
+            const isOffBtn = name === 'POWER OFF';
+            const cssColor = isOffBtn ? '#ef4444' : `hsl(${hueCSS}, ${s/2.55}%, 50%)`;
+            
+            const btn = document.createElement('button');
+            btn.className = "glass p-5 rounded-2xl transition-all hover:scale-105 active:scale-95 text-center group border border-white/5";
+            btn.onclick = () => trigger(h, s, currentV);
+            btn.innerHTML = `
+                <div class="w-10 h-10 rounded-full mx-auto mb-3 shadow-lg" 
+                     style="background:${isOffBtn ? 'transparent' : cssColor}; border: ${isOffBtn ? '2px solid #ef4444' : 'none'}; box-shadow: 0 0 15px ${isOffBtn ? 'transparent' : cssColor}">
+                     ${isOffBtn ? '<div class="text-red-500 text-xl font-bold mt-1">○</div>' : ''}
+                </div>
+                <div class="text-[11px] font-bold ${isOffBtn ? 'text-red-400' : 'text-slate-400'} uppercase tracking-tighter">${name}</div>
+            `;
+            grid.appendChild(btn);
+        });
+    </script>
+</body>
+</html>
