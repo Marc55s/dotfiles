@@ -1,5 +1,4 @@
-{ lib, ... }:
-{
+{ lib, ... }: {
   disko.devices = {
     disk.disk1 = {
       device = lib.mkDefault "/dev/sda";
@@ -14,9 +13,9 @@
           };
           esp = {
             name = "ESP";
-        size = "500M";
-        type = "EF00";
-        content = {
+            size = "500M";
+            type = "EF00";
+            content = {
               type = "filesystem";
               format = "vfat";
               mountpoint = "/boot";
@@ -43,9 +42,7 @@
               type = "filesystem";
               format = "ext4";
               mountpoint = "/";
-              mountOptions = [
-                "defaults"
-              ];
+              mountOptions = [ "defaults" ];
             };
           };
         };

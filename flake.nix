@@ -15,6 +15,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        disko = {
+            url = "github:nix-community/disko";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         grub2-themes = {
             url = "github:vinceliuice/grub2-themes";
         };
@@ -125,7 +130,8 @@
                     inherit pkgs;
                     modules = [
                         ./hosts/mainframe/configuration.nix
-                        # ./hosts/mainframe/hardware-configuration.nix
+                        ./hosts/mainframe/hardware-configuration.nix
+                        inputs.disko.nixosModules.disko
                         home-manager.nixosModules.home-manager
                         {
                             home-manager.useGlobalPkgs = true;
