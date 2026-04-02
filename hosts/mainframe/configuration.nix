@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  imports = [ ./disk.nix ./nginx.nix ../../modules/local.nix ../../modules/ssh.nix ];
+{ pkgs, pkgs-unstable, ... }: {
+  imports = [ ./disk.nix ./nginx.nix ./factorio.nix ../../modules/local.nix ../../modules/ssh.nix ];
 
   boot.supportedFilesystems = [ "ntfs" ];
   boot.loader.grub = {
