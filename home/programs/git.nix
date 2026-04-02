@@ -11,6 +11,9 @@
     };
     programs.git = {
         enable = true;
+        aliases = {
+            tree = "log --graph --oneline --all --decorate";
+        };
         settings = {
             user = {
                 email = "marc.schoenig@gmail.com";
