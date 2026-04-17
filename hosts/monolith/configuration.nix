@@ -5,10 +5,10 @@
   boot.supportedFilesystems = [ "ntfs" ];
   boot.loader.grub = {
     enable = true;
-    useOSProber = true;
-    # device = "/dev/disk/by-id/ata-Intenso_SSD_Sata_III_AA000000000000002795";
-    devices = [ "nodev" ];
+    device = "/dev/disk/by-id/ata-Intenso_SSD_Sata_III_AA000000000000002795";
+    efiSupport = false;
   };
+  boot.loader.efi.canTouchEfiVariables = false;
 
   boot.loader.systemd-boot.enable = false;
   boot.kernelParams = [ "nomodeset" ];
@@ -35,7 +35,7 @@
 
   security.sudo.wheelNeedsPassword = false;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  nix.settings.trusted-users = [ "root" "monolith" ]; # Add your username here
   virtualisation.docker.enable = true;
 
   system.stateVersion = "24.11";
