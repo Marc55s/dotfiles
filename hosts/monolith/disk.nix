@@ -9,16 +9,7 @@
           partitions = {
             boot = {
               size = "1M";
-              type = "EF02";
-            };
-            esp = {
-              size = "500M";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-              };
+              type = "EF02"; # Still need this gap for BIOS GRUB
             };
             root = {
               size = "100%";
