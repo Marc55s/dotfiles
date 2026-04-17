@@ -1,7 +1,8 @@
 { lib, ... }: {
   disko.devices = {
     disk.disk1 = {
-      device = lib.mkDefault "/dev/sda";
+      device = lib.mkDefault
+        "/dev/disk/by-id/ata-Intenso_SSD_Sata_III_AA000000000000002795";
       type = "disk";
       content = {
         type = "gpt";
@@ -33,7 +34,7 @@
       };
     };
     disk.disk2 = {
-      device = lib.mkDefault "/dev/sdb";
+      device = lib.mkDefault "/dev/disk/by-id/ata-ST3500413AS_Z2AR49VF";
       type = "disk";
       content = {
         type = "gpt";

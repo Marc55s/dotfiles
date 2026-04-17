@@ -5,12 +5,12 @@
   boot.supportedFilesystems = [ "ntfs" ];
   boot.loader.grub = {
     enable = true;
-    efiSupport = true;
     useOSProber = true;
+    # device = "/dev/disk/by-id/ata-Intenso_SSD_Sata_III_AA000000000000002795";
     devices = [ "nodev" ];
-    efiInstallAsRemovable = true;
   };
 
+  boot.loader.systemd-boot.enable = false;
   boot.kernelParams = [ "nomodeset" ];
   networking.hostName = "monolith";
   hardware.enableRedistributableFirmware = true;
@@ -35,6 +35,7 @@
 
   security.sudo.wheelNeedsPassword = false;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   virtualisation.docker.enable = true;
 
   system.stateVersion = "24.11";
