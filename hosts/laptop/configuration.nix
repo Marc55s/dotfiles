@@ -117,7 +117,7 @@
         extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" ];
         shell = pkgs.zsh;
         packages = with pkgs; [
-            #  thunderbird
+            comma
         ];
     };
 

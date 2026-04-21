@@ -5,6 +5,10 @@
         nixpkgs.url = "nixpkgs/nixos-25.11";
         nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
 
+        nix-index-database = {
+            url = "github:nix-community/nix-index-database";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
         noctalia = {
           url = "github:noctalia-dev/noctalia-shell";
           inputs.nixpkgs.follows = "nixpkgs";
@@ -56,7 +60,7 @@
         };
     };
 
-    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, home-manager, grub2-themes, ... }:
+    outputs = inputs@{self, nixpkgs, nixpkgs-unstable, nix-index-database, home-manager, grub2-themes, ... }:
         let
             system = "x86_64-linux";
 
@@ -76,7 +80,7 @@
             pkgs = import nixpkgs {
                 inherit system;
                 config = { allowUnfree = true; };
-                overlays = [ overlay inputs.termstat.overlays.default];
+                overlays = [ overlay inputs.termstat.overlays.default ];
             };
 
             pkgs-unstable = import nixpkgs-unstable {
@@ -91,6 +95,7 @@
                 pc = lib.nixosSystem {
                     inherit pkgs;
                     modules = [
+                        nix-index-database.nixosModules.default 
                         ./hosts/pc/configuration.nix
                         ./hosts/pc/hardware-configuration.nix
                         home-manager.nixosModules.home-manager

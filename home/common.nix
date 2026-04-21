@@ -35,6 +35,8 @@
         unzip
         jq
         tdf # tui pdf viewer
+        nurl
+        nix-init
 
         signal-desktop
         zapzap

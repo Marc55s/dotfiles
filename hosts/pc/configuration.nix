@@ -125,6 +125,7 @@
     packages = with pkgs; [ kdePackages.kate thunderbird ];
   };
 
+  programs.nix-index-database.comma.enable = true;
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
