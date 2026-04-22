@@ -155,6 +155,7 @@
                     inherit pkgs;
                     modules = [
                         ./hosts/monolith/configuration.nix
+                        ./hosts/monolith/hardware-configuration.nix
                         inputs.disko.nixosModules.disko
                         home-manager.nixosModules.home-manager
                         {
