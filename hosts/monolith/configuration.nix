@@ -1,11 +1,19 @@
 { lib, pkgs, pkgs-unstable, ... }: {
   imports =
-    [ ./disk.nix ./nginx.nix ../../modules/local.nix ../../modules/ssh.nix ];
+    [
+        ./disk.nix
+        ./nginx.nix
+        ./media/media.nix
+        ./media/samba.nix
+        ../../modules/local.nix
+        ../../modules/ssh.nix
+    ];
 
   boot.supportedFilesystems = [ "ntfs" ];
   boot.loader.grub = {
     enable = true;
-    devices = lib.mkForce [ "/dev/disk/by-id/ata-Intenso_SSD_Sata_III_AA000000000000002795" ];
+    devices = lib.mkForce
+      [ "/dev/disk/by-id/ata-Intenso_SSD_Sata_III_AA000000000000002795" ];
     efiSupport = false;
     device = lib.mkForce "nodev";
   };
