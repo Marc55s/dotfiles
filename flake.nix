@@ -58,6 +58,10 @@
           url = "github:sodiboo/niri-flake";
           inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        spicetify-nix = {
+          url = "github:Gerg-L/spicetify-nix";
+        };
     };
 
     outputs = inputs@{self, nixpkgs, nixpkgs-unstable, nix-index-database, home-manager, grub2-themes, ... }:
@@ -75,6 +79,7 @@
                     rm -f portlist/portlist_test.go
                     '';
                 });
+                spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
             };
 
             pkgs = import nixpkgs {

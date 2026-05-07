@@ -10,7 +10,7 @@
         libresprite
         pinta
         chatterino7
-        spotify
+        # spotify
         prismlauncher
         btop-rocm
         freecad-wayland
@@ -18,6 +18,7 @@
 
     imports = [
         ./common.nix
+        ./programs/spicetify.nix
     ];
 
     home.shellAliases = {
