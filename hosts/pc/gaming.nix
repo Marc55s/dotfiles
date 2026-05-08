@@ -58,8 +58,9 @@
 
   powerManagement = {
     enable = true;
-    cpuFreqGovernor = "performance";
+    cpuFreqGovernor = "schedutil";
   };
+
 
   nixpkgs.overlays = [
     (self: super: {
