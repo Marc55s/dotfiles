@@ -44,11 +44,6 @@
         };
 
         nixpkgs-openconnect-sso.url = "github:nixos/nixpkgs/46397778ef1f73414b03ed553a3368f0e7e33c2f";
-        timr-tui = {
-            url = "github:sectore/timr-tui";
-            inputs.nixpkgs.follows = "nixpkgs-unstable";
-        };
-
         termstat = {
             url = "github:marc55s/termstat";
             inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -72,7 +67,6 @@
                 edu-sync-cli = inputs.edu-sync-nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
                 wakafetch = inputs.wakafetch.packages.${pkgs.stdenv.hostPlatform.system}.default;
                 openconnect-sso = inputs.openconnect-sso.packages.${pkgs.stdenv.hostPlatform.system}.openconnect-sso;
-                timr-tui = inputs.timr-tui.packages.${pkgs.stdenv.hostPlatform.system}.timr;
                 tailscale = prev.tailscale.overrideAttrs (oldAttrs: {
                     # Remove the failing test file during build
                     preBuild = (oldAttrs.preBuild or "") + ''

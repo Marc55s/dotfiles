@@ -56,7 +56,6 @@
         nerd-fonts.jetbrains-mono
         ripgrep
         openconnect-sso
-        timr-tui
     ];
 
     home.shellAliases = {
