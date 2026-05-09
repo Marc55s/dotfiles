@@ -7,7 +7,7 @@
       fullAppDisplay
       shuffle
     ];
-    theme = pkgs.spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+    theme = pkgs.spicePkgs.themes.sleek;
+    colorScheme = "Deep";
   };
 }
