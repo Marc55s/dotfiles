@@ -15,12 +15,13 @@
 
   boot.loader = {
     systemd-boot.enable = false;
-    efi.canTouchEfiVariables = true;
+    efi.canTouchEfiVariables = false;
 
     grub = {
       enable = true;
       efiSupport = true;
       device = "nodev"; # required for UEFI systems
+      efiInstallAsRemovable = true;
     };
   };
 }
