@@ -8,10 +8,8 @@
     "amdgpu.runpm=0" # DISABLES Runtime Power Management entirely
     "amdgpu.dcfeaturemask=0x2" # Forces the display core to prioritize refresh rate over power
     "amdgpu.dcdebugmask=0x10" # Disables PSR (Stops the FPS decay)
+    "amp_pstate=active"
   ];
-
-  # Stop the service that is fighting your manual echo commands
-  systemd.services.power-profiles-daemon.enable = false;
 
   boot.loader = {
     systemd-boot.enable = false;
