@@ -12,11 +12,11 @@
         libxkbcommon
         vulkan-loader
         vulkan-tools
-        xorg.libX11
-        xorg.libXcursor
-        xorg.libXrandr
-        xorg.libXi
-        xorg.libXxf86vm
+        libx11
+        libxcursor
+        libxrandr
+        libxi
+        libxxf86vm
         wayland
     ];
 }

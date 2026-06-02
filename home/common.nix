@@ -29,7 +29,6 @@
         lazydocker
         lazysql
         nitch
-        neofetch
         tree
         fd
         unzip
@@ -41,7 +40,6 @@
         signal-desktop
         zapzap
         pkgs-unstable.obsidian
-        bitwarden-desktop
         vesktop
         element-desktop
         vlc

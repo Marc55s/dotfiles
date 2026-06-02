@@ -16,11 +16,11 @@
         arduino-cli
     ];
 
-    programs.neovim =  {
+    programs.neovim = {
         enable = true;
-        defaultEditor = true;
-        vimAlias = true;
         viAlias = true;
-        package = pkgs-unstable.neovim.unwrapped;
+        vimAlias = true;
+        sideloadInitLua = true;
     };
+
 }
