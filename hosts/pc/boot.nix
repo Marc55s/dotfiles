@@ -1,6 +1,5 @@
 { pkgs, config, ... }: {
- boot.initrd.systemd.enable = false;
-  boot.kernelPackages = pkgs.linuxPackages_6_6;
+  # boot.kernelPackages = pkgs.linuxPackages_6_6;
 
   # Force high performance and prevent "Scatter/Gather" memory bugs on Navi 10
   boot.kernelParams = [

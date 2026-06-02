@@ -11,7 +11,7 @@
         tree-sitter
         rust-analyzer
         nodejs_24
-        nixfmt-classic
+        nixfmt
         arduino-language-server
         arduino-cli
     ];
@@ -21,6 +21,8 @@
         viAlias = true;
         vimAlias = true;
         sideloadInitLua = true;
+        withPython3 = false;
+        withRuby = false;
     };
 
 }

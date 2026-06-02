@@ -32,10 +32,10 @@
     extraPackages = with pkgs; [
       gamescope
       mangohud
-      xorg.libXcursor
-      xorg.libXi
-      xorg.libXinerama
-      xorg.libXScrnSaver
+      libxcursor
+      libxi
+      libxinerama
+      libXScrnSaver
       libpng
       libpulseaudio
       libvorbis
@@ -75,17 +75,17 @@
             libvorbis
             stdenv.cc.cc
             vulkan-loader
-            xorg.libXcomposite
-            xorg.libXext
-            xorg.libX11
-            xorg.libXau
-            xorg.libxcb
-            xorg.libXdmcp
-            xorg.libXfixes
-            xorg.libXrandr
-            xorg.libXrender
-            xorg.libXxf86vm
-            xorg.libxshmfence
+            libxcomposite
+            libxext
+            libx11
+            libxau
+            libxcb
+            libxdmcp
+            libxfixes
+            libxrandr
+            libxrender
+            libxxf86vm
+            libxshmfence
 
             # 32-bit libraries
             pkgsi686Linux.keyutils
@@ -95,17 +95,17 @@
             pkgsi686Linux.libvorbis
             pkgsi686Linux.stdenv.cc.cc
             pkgsi686Linux.vulkan-loader
-            pkgsi686Linux.xorg.libXcomposite
-            pkgsi686Linux.xorg.libXext
-            pkgsi686Linux.xorg.libX11
-            pkgsi686Linux.xorg.libXau
-            pkgsi686Linux.xorg.libxcb
-            pkgsi686Linux.xorg.libXdmcp
-            pkgsi686Linux.xorg.libXfixes
-            pkgsi686Linux.xorg.libXrandr
-            pkgsi686Linux.xorg.libXrender
-            pkgsi686Linux.xorg.libXxf86vm
-            pkgsi686Linux.xorg.libxshmfence
+            pkgsi686Linux.libxcomposite
+            pkgsi686Linux.libxext
+            pkgsi686Linux.libx11
+            pkgsi686Linux.libxau
+            pkgsi686Linux.libxcb
+            pkgsi686Linux.libxdmcp
+            pkgsi686Linux.libxfixes
+            pkgsi686Linux.libxrandr
+            pkgsi686Linux.libxrender
+            pkgsi686Linux.libxxf86vm
+            pkgsi686Linux.libxshmfence
 
             # GStreamer and its plugins (both 64 and 32-bit)
             gst_all_1.gstreamer

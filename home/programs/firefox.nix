@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   lock-false = {
@@ -13,6 +13,7 @@ in {
   programs.firefox = {
     enable = true;
     languagePacks = [ "de" "en-US" ];
+    configPath = ".mozilla/firefox";
 
     # ---- 1. POLICIES (Global & Extensions) ----
     policies = {
