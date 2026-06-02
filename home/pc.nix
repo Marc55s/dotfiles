@@ -14,6 +14,8 @@
         prismlauncher
         btop-rocm
         freecad-wayland
+        todoist-electron
+        gemini-cli
     ];
 
     imports = [
