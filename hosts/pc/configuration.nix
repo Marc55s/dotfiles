@@ -120,7 +120,6 @@
     wl-clipboard
     gamescope
     kdePackages.kcalc
-    lutris
     mangohud
   ];
 
