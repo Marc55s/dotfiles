@@ -16,6 +16,7 @@
         freecad-wayland
         todoist-electron
         gemini-cli
+        showmethekey
     ];
 
     imports = [
