@@ -9,7 +9,7 @@ in {
     enable = true;
 
     settings = {
-      font_family = "IosevkaTermSlab Nerd Font Mono";
+      font_family = if  isLaptop then ''Jetbrains Mono Nerd Font'' else ''IosevkaTermSlab Nerd Font Mono'';
       font_size = fontSize;
 
       bold_font = "auto";

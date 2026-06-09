@@ -593,7 +593,7 @@
       };
       wallpaper = {
         automationEnabled = false;
-        directory = "/home/marc/Pictures/Wallpapers";
+        directory = "/home/marc/dotfiles/wallpaper";
         enableMultiMonitorDirectories = false;
         enabled = true;
         favorites = [ ];
