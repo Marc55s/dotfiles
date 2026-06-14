@@ -5,7 +5,6 @@
         ./programs/zoxide.nix
         ./programs/kitty/kitty.nix
         ./programs/starship/starship.nix
-        ./programs/rofi/rofi.nix
         ./programs/tmux.nix
         ./programs/zathura.nix
         ./programs/nvim.nix

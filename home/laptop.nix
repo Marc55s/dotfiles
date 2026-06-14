@@ -34,6 +34,7 @@
         ./hypr/default.nix
         ./niri/niri.nix
         ./programs/vscode.nix
+        ./programs/rofi/rofi.nix
         ./services/udiskie.nix
     ];
 
