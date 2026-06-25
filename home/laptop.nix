@@ -31,7 +31,6 @@
 
     imports = [
         ./common.nix
-        ./hypr/default.nix
         ./niri/niri.nix
         ./programs/vscode.nix
         ./programs/rofi/rofi.nix

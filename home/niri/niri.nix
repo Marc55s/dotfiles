@@ -2,6 +2,7 @@
   imports = [
     inputs.niri.homeModules.niri
     ./noctalia.nix
+    ./swayidle.nix
   ];
 
   home.packages = with pkgs; [ xwayland-satellite ];
