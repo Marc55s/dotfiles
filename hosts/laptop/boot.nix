@@ -15,6 +15,6 @@
         footer = true;
     };
 
-    boot.kernelParams = [ "amd_pstate=active" ];
+    boot.kernelParams = [ "amd_pstate=active" "i2c_hid.polling_mode=1" ];
     boot.kernelPackages = pkgs.linuxPackages_latest;
 }

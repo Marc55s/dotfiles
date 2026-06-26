@@ -37,6 +37,9 @@
     boot.kernelModules = [ "wacom"];
 
     services.udev.packages = with pkgs; [ platformio-core.udev ];
+    services.udev.extraRules = ''
+      ACTION=="add", SUBSYSTEM=="i2c", KERNEL=="i2c-SYNAC780:00", ATTR{power/control}="on"
+    '';
 
     # Enable the X11 windowing system.
     services.xserver.enable = false;
