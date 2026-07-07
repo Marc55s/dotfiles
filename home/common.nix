@@ -39,6 +39,7 @@
         signal-desktop
         zapzap
         pkgs-unstable.obsidian
+        pkgs-unstable.claude-code
         vesktop
         element-desktop
         vlc
