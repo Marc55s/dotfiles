@@ -21,10 +21,6 @@
         dua
         vscode
 
-        fluxcd
-        kubectl
-        helm
-        k9s
         wl-mirror
         iamb
     ];
@@ -32,6 +28,7 @@
     imports = [
         ./common.nix
         ./niri/niri.nix
+        ./programs/kubernetes.nix
         ./programs/vscode.nix
         ./programs/rofi/rofi.nix
         ./services/udiskie.nix
@@ -54,6 +51,7 @@
     home.stateVersion = "24.05";
 
     programs.gh.enable = true;
+
 
     home.pointerCursor = {
         package = pkgs.bibata-cursors;
