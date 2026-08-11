@@ -22,7 +22,13 @@ in {
       enable_audio_bell = "no";
     };
 
-    extraConfig = if  isLaptop then ''include themes/gruvbox.conf'' else ''include themes/Tango_dark.conf'';
+    extraConfig = ''
+      modify_font cell_height 95%
+      # modify_font baseline 2
+      modify_font cell_width 100%
+
+      include themes/${if isLaptop then "gruvbox" else "Tango_dark"}.conf
+    '';
   };
 
   home.file.".config/kitty/themes" = {
