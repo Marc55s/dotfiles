@@ -12,7 +12,6 @@
         ./programs/direnv.nix
         ./programs/zsh.nix
         ./programs/bat.nix
-        # ./programs/television.nix
         ./programs/ncspot.nix
         ./programs/fzf.nix
         ./programs/presenterm.nix
