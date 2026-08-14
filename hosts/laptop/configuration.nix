@@ -140,7 +140,6 @@
         # displaylink
         wl-clipboard
         brightnessctl
-        nwg-displays
         libwacom
         iio-hyprland
 
