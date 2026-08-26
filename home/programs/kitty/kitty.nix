@@ -20,6 +20,8 @@ in {
       confirm_os_window_close =  0;
       background_opacity = 1;
       enable_audio_bell = "no";
+     
+      disable_ligatures = "always";
     };
 
     extraConfig = ''
