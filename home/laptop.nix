@@ -20,6 +20,9 @@
         zotero
         dua
         vscode
+        rapidraw
+        nomacs
+        oculante
 
         wl-mirror
         iamb
