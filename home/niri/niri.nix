@@ -40,7 +40,7 @@
         focus-ring.inactive = { color = "#000000"; };
         focus-ring.urgent = { color = "#ffffff"; };
         gaps = 10;
-        border.width = 2;
+        # border.width = 2;
       };
       # animations = {
       # slowdown = ;
@@ -86,6 +86,8 @@
         "Mod+Shift+up".action.move-window-to-workspace-up = { };
         "Mod+Shift+right".action.move-column-right = { };
 
+        "Mod+V".action.toggle-window-floating = { };
+        "Mod+Shift+V".action.switch-focus-between-floating-and-tiling = { };
         "Mod+T".action.switch-preset-column-width = { };
         "Mod+C".action.close-window = { };
         "Mod+Shift+P".action.spawn = [
