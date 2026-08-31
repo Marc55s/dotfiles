@@ -277,7 +277,7 @@
         manualSunrise = "06:30";
         manualSunset = "18:30";
         monitorForColors = "";
-        predefinedScheme = "Tokyo-Night";
+        predefinedScheme = "Gruvbox";
         schedulingMode = "off";
         useWallpaperColors = false;
       };
