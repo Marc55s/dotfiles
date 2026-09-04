@@ -4,6 +4,7 @@
         ./disk.nix
         ../../modules/local.nix
         ../../modules/ssh.nix
+        ../../modules/secrets.nix
     ];
 
   boot.supportedFilesystems = [ "ntfs" ];

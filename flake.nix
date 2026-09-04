@@ -25,6 +25,10 @@
 
     grub2-themes.url = "github:vinceliuice/grub2-themes";
 
+    agenix = {
+        url = "github:ryantm/agenix";
+    };
+
     # --- desktop ----------------------------------------------------------
     niri = {
       url = "github:sodiboo/niri-flake";
