@@ -2,9 +2,6 @@
   imports =
     [
         ./disk.nix
-        ./nginx.nix
-        ./media/media.nix
-        ./media/samba.nix
         ../../modules/local.nix
         ../../modules/ssh.nix
     ];
