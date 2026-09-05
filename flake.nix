@@ -27,6 +27,7 @@
 
     agenix = {
         url = "github:ryantm/agenix";
+        inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # --- desktop ----------------------------------------------------------
@@ -110,7 +111,7 @@
 
         mainframe.modules = [ inputs.disko.nixosModules.disko ];
 
-        monolith.modules = [ inputs.disko.nixosModules.disko ];
+        monolith.modules = [ inputs.agenix.nixosModules.default inputs.disko.nixosModules.disko ];
       };
 
       mkHost =
