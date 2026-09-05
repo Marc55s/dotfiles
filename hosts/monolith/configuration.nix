@@ -3,6 +3,7 @@
     [
         ./disk.nix
         ./ionos-ddns-url.nix
+        ./k3s.nix
         ../../modules/local.nix
         ../../modules/ssh.nix
     ];
@@ -33,6 +34,7 @@
       isNormalUser = true;
       description = "Monolith user";
       extraGroups = [ "networkmanager" "wheel" "docker" ];
+      shell = pkgs.zsh;
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDmMEHJkey2YR4q7pgJVcgq8mi3Wfu2rJnwnQiMAoLjW marc@pc"
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUBslv6CEeXw6xVnNi9AOvkpQh5k3eN/moHNKLxja87 marc@laptop"
@@ -40,9 +42,13 @@
     };
   };
 
+  programs.zsh.enable = true;
+
   security.sudo.wheelNeedsPassword = false;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.trusted-users = [ "root" "monolith" ]; # Add your username here
+
   virtualisation.docker.enable = true;
 
   system.stateVersion = "24.11";

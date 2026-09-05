@@ -109,9 +109,13 @@
           users.marc = ./home/laptop.nix;
         };
 
+        monolith = {
+            modules = [ inputs.agenix.nixosModules.default inputs.disko.nixosModules.disko ];
+            users.monolith = ./home/monolith.nix;
+        };
+
         mainframe.modules = [ inputs.disko.nixosModules.disko ];
 
-        monolith.modules = [ inputs.agenix.nixosModules.default inputs.disko.nixosModules.disko ];
       };
 
       mkHost =

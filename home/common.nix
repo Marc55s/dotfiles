@@ -61,11 +61,6 @@
         dhbw-vpn = "openconnect-sso --server vpn.dhbw-heidenheim.de --authgroup Studenten+Externe-MFA";
         cr = "cargo r";
         cb = "cargo b";
-        gs = "git status";
-        gl = "git log --oneline";
-        gll = "git log";
-        gd = "git diff";
-        gc = "git commit";
         nd = "nix develop";
         nos = "nh os switch";
         clr = "clear";
