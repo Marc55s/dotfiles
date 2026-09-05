@@ -44,6 +44,7 @@
         vlc
         edu-sync-cli
         libreoffice
+        onlyoffice-desktopeditors
         gimp
         postman
 
