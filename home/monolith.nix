@@ -2,6 +2,8 @@
 
     home.packages = with pkgs; [ 
         btop
+        sops
+        age
     ];
 
     imports = [
