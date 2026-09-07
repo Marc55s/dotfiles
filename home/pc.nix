@@ -22,6 +22,7 @@
     imports = [
         ./common.nix
         ./programs/spicetify.nix
+        ./programs/kubernetes.nix
     ];
 
     home.shellAliases = {
