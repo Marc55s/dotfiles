@@ -14,12 +14,12 @@
     devices = lib.mkForce
       [ "/dev/disk/by-id/ata-Intenso_SSD_Sata_III_AA000000000000002795" ];
     efiSupport = false;
-    device = lib.mkForce "nodev";
+    # device = lib.mkForce "nodev";
   };
   boot.loader.efi.canTouchEfiVariables = false;
-
   boot.loader.systemd-boot.enable = false;
   boot.kernelParams = [ "nomodeset" ];
+
   networking.hostName = "monolith";
   hardware.enableRedistributableFirmware = true;
 
