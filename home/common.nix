@@ -1,6 +1,7 @@
 {config, pkgs, pkgs-unstable, inputs, ...}:
 {
     imports = [
+        ./stylix.nix
         ./ctf.nix
         ./programs/zoxide.nix
         ./programs/kitty/kitty.nix
@@ -44,6 +45,7 @@
         vlc
         edu-sync-cli
         libreoffice
+        onlyoffice-desktopeditors
         gimp
         postman
 
@@ -71,5 +73,7 @@
         clar = "clear";
         cler = "clear";
         claer = "clear";
+        ".." = "cd ..";
+        "..." = "cd ../..";
     };
 }

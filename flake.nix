@@ -38,6 +38,11 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
+    stylix = {
+      url = "github:nix-community/stylix/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # --- custom packages -----------------------------------------------------
     edu-sync-nix = {
       url = "github:Marc55s/edu-sync-nix";
@@ -126,6 +131,10 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                # Back up (don't abort on) pre-existing real files that HM now
+                # manages -- e.g. Noctalia's runtime colors.json / wallpapers.json
+                # that Stylix took over. Clashing file -> <name>.bkup.
+                backupFileExtension = "bkup";
                 extraSpecialArgs = { inherit inputs pkgs-unstable hostName; };
                 inherit users;
               };

@@ -34,7 +34,9 @@ in {
     enable = true;
     newSession = true;
     plugins = with pkgs; [
-      {
+      # rose-pine removed so Stylix (hull base16) themes the tmux status bar.
+      # Re-enable by deleting the surrounding /* */.
+      /* {
         plugin = tmuxPlugins.rose-pine;
         extraConfig = ''
                   set -g @rose_pine_variant 'main' # Options are 'main', 'moon' or 'dawn'
@@ -74,7 +76,7 @@ in {
                   set -g @rose_pine_hostname_icon '󰒋' # Changes the default icon to the right of the hostname
                   set -g @rose_pine_date_time_icon '󰃰' # Changes the default icon to the right of the date module
         '';
-      }
+      } */
       {
         plugin = tmuxPlugins.resurrect;
         extraConfig = ''
