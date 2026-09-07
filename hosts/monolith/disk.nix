@@ -23,7 +23,7 @@
         };
       };
       hdd = {
-        device = "/dev/disk/by-id/ata-ST3500413AS_Z2AR49VF";
+        device = "/dev/disk/by-id/ata-WDC_WD40EFZZ-68CPAN0_WD-WXC2DC5FS4XK";
         type = "disk";
         content = {
           type = "gpt";
@@ -34,6 +34,23 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/mnt/storage";
+              };
+            };
+          };
+        };
+      };
+      scratch = {
+        device = "/dev/disk/by-id/ata-ST3500413AS_Z2AR49VF";
+        type = "disk";
+        content = {
+          type = "gpt";
+          partitions = {
+            scratch = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/mnt/scratch";
               };
             };
           };
