@@ -67,5 +67,7 @@
         clar = "clear";
         cler = "clear";
         claer = "clear";
+        ".." = "cd ..";
+        "..." = "cd ../..";
     };
 }

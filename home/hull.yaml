@@ -1,0 +1,18 @@
+scheme: "Hull Red"
+author: "you"
+base00: "111214"  # default background
+base01: "303136"  # lighter bg (status lines)      = bright black
+base02: "303136"  # selection background            = bright black
+base03: "8F8F8F"  # comments, invisibles            = blue slot (gray)
+base04: "A6A6A6"  # dark foreground (status lines)  = cyan slot (gray)
+base05: "E8E8E8"  # default foreground
+base06: "F0F0F0"  # light foreground                = magenta slot
+base07: "FFFFFF"  # light background                = bright white
+base08: "E52B2B"  # red — variables, errors
+base09: "FF3838"  # orange slot                     = bright red
+base0A: "D8D8D8"  # yellow slot                     = gray
+base0B: "B8B8B8"  # green slot                      = gray
+base0C: "A6A6A6"  # cyan — support, regex
+base0D: "8F8F8F"  # blue — functions
+base0E: "F0F0F0"  # magenta — keywords
+base0F: "303136"  # brown/deprecated                = bright black
