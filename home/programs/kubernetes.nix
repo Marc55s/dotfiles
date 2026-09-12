@@ -6,6 +6,7 @@
         kind
         k9s
         kubernetes-helm
+        kustomize
     ];
 
     programs.kubecolor = {
