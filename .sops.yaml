@@ -1,0 +1,9 @@
+keys:
+  - &admin age1p9xstpcfvsvsmpv9vf5x5xg25t7wa77cgukf8vhmvvdlu6pvqu4qhrh74f
+  - &monolith age1d6g46qavjkgydrk80ldqktgpt6sc2r8z4cnsr0dat4ccmyjhj4rs2tpngw
+creation_rules:
+  - path_regex: secrets/.*
+    key_groups:
+      - age:
+          - *admin
+          - *monolith

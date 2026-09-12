@@ -30,6 +30,8 @@
         inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix.url = "github:Mic92/sops-nix";
+
     # --- desktop ----------------------------------------------------------
     niri = {
       url = "github:sodiboo/niri-flake";
@@ -110,7 +112,7 @@
         };
 
         monolith = {
-            modules = [ inputs.agenix.nixosModules.default inputs.disko.nixosModules.disko ];
+            modules = [ inputs.sops-nix.nixosModules.sops inputs.agenix.nixosModules.default inputs.disko.nixosModules.disko ];
             users.monolith = ./home/monolith.nix;
         };
 

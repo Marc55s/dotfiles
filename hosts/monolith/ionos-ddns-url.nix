@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 {
-  age.secrets.ionos-ddns-url.file = ../../modules/ionos-ddns-url.age;
+  sops.defaultSopsFile = ../../secrets/ionos-ddns-url.enc.env;
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.secrets.ionos-ddns-url = {
+    format = "dotenv";
+    sopsFile = ../../secrets/ionos-ddns-url.enc.env;
+  };
 
   systemd.services.ionos-ddns = {
     description = "Update IONOS DynDNS record";
@@ -11,12 +16,15 @@
       Type = "oneshot";
     };
 
-    path = [ pkgs.curl pkgs.coreutils ];
+    path = [
+      pkgs.curl
+      pkgs.coreutils
+    ];
 
     script = ''
       set -euo pipefail
 
-      url="$(cat ${config.age.secrets.ionos-ddns-url.path})"
+      url="$(cat ${config.sops.secrets.ionos-ddns-url.path})"
 
       # -f  -> bei HTTP-Fehler mit Fehlercode abbrechen (landet sichtbar im Journal)
       # -sS -> still, aber Fehler zeigen
