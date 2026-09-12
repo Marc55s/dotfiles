@@ -40,14 +40,11 @@ in {
         allow_types = [ "theme" "locale" ];
 
         # Themes
-        # praisethesun disabled: Stylix's firefoxGnomeTheme (userChrome.css)
-        # recolors the chrome with the hull palette and needs the default theme
-        # active. Re-enable to take the chrome back from Stylix.
-        # "{51fd00e2-c195-4740-824f-c8e789b1c066}" = {
-        #   install_url =
-        #     "https://addons.mozilla.org/firefox/downloads/latest/praisethesun/latest.xpi";
-        #   installation_mode = "force_installed";
-        # };
+        "{51fd00e2-c195-4740-824f-c8e789b1c066}" = {
+          install_url =
+            "https://addons.mozilla.org/firefox/downloads/latest/praisethesun/latest.xpi";
+          installation_mode = "force_installed";
+        };
         # uBlock Origin
         "uBlock0@raymondhill.net" = {
           install_url =
@@ -130,17 +127,9 @@ in {
       name = "default";
       isDefault = true;
 
-      # Ack HM's warning: Stylix's colorTheme declares the Firefox Color addon
-      # via profiles.<n>.extensions.settings. Your other add-ons come from
-      # policies.ExtensionSettings (separate mechanism), so this only governs
-      # the Stylix-managed one.
-      extensions.force = true;
-
       settings = {
-        # praisethesun pins removed so Stylix's userChrome theme applies on the
-        # default theme (see firefox.nix ExtensionSettings + stylix.nix).
-        # "extensions.activeThemeID" = "{51fd00e2-c195-4740-824f-c8e789b1c066}";
-        # "lightweightThemes.selectedID" = "{51fd00e2-c195-4740-824f-c8e789b1c066}";
+        "extensions.activeThemeID" = "{51fd00e2-c195-4740-824f-c8e789b1c066}";
+        "lightweightThemes.selectedID" = "{51fd00e2-c195-4740-824f-c8e789b1c066}";
         "browser.newtabpage.enabled" = false;
         "browser.urlbar.suggest.searches" = false;
         "signon.rememberSignons" = false;

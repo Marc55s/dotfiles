@@ -18,7 +18,7 @@ in {
 
       # background_blur = 10;
       confirm_os_window_close =  0;
-      # background_opacity now owned by Stylix (stylix.opacity.terminal).
+      background_opacity = 1;
       enable_audio_bell = "no";
      
       disable_ligatures = "always";
@@ -29,9 +29,7 @@ in {
       # modify_font baseline 2
       modify_font cell_width 100%
 
-      # Colors now come from Stylix (base16 "hull" palette). Re-enable this
-      # include to override Stylix with a manual kitty theme.
-      # include themes/${if isLaptop then "gruvbox" else "Tango_dark"}.conf
+      include themes/${if isLaptop then "gruvbox" else "Tango_dark"}.conf
     '';
   };
 

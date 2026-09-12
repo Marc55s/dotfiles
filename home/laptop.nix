@@ -35,7 +35,6 @@
         ./programs/vscode.nix
         ./programs/rofi/rofi.nix
         ./services/udiskie.nix
-        ./stylix.nix
     ];
 
 
@@ -67,12 +66,10 @@
 
     gtk = {
         enable = true;
-        # GTK theme now owned by Stylix (adw-gtk3, recolored with the hull
-        # base16 palette). Uncomment to take it back from Stylix.
-        # theme = {
-        #     package = pkgs.gnome-themes-extra;
-        #     name = "Adwaita-dark";
-        # };
+        theme = {
+            package = pkgs.gnome-themes-extra;
+            name = "Adwaita-dark";
+        };
         iconTheme = {
             package = pkgs.adwaita-icon-theme;
             name = "Adwaita";

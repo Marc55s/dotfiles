@@ -1,4 +1,4 @@
-{ pkgs, inputs, lib, ... }: {
+{ pkgs, inputs, ... }: {
   imports = [ inputs.noctalia.homeModules.default ];
 
   programs.noctalia-shell = {
@@ -45,12 +45,10 @@
       bar = {
         autoHideDelay = 500;
         autoShowDelay = 150;
-        # mkForce: keep this transparency; Stylix's noctalia target otherwise
-        # forces backgroundOpacity = 1.0. Palette colors still come from Stylix.
-        backgroundOpacity = lib.mkForce 0.93;
+        backgroundOpacity = 0.93;
         barType = "simple";
         capsuleColorKey = "none";
-        capsuleOpacity = lib.mkForce 1;
+        capsuleOpacity = 1;
         density = "comfortable";
         displayMode = "always_visible";
         floating = false;
@@ -61,7 +59,7 @@
         marginHorizontal = 5;
         marginVertical = 5;
         monitors = [ ];
-        outerCorners = false;
+        outerCorners = true;
         position = "top";
         screenOverrides = [ ];
         showCapsule = true;
@@ -279,7 +277,7 @@
         manualSunrise = "06:30";
         manualSunset = "18:30";
         monitorForColors = "";
-        predefinedScheme = "Ayu";
+        predefinedScheme = "Gruvbox";
         schedulingMode = "off";
         useWallpaperColors = false;
       };
@@ -334,7 +332,7 @@
       };
       dock = {
         animationSpeed = 1;
-        backgroundOpacity = lib.mkForce 1; # Stylix also sets this (1.0); keep ours
+        backgroundOpacity = 1;
         colorizeIcons = false;
         deadOpacity = 0.6;
         displayMode = "auto_hide";
@@ -449,7 +447,7 @@
         nightTemp = "4008";
       };
       notifications = {
-        backgroundOpacity = lib.mkForce 1; # Stylix also sets this (1.0); keep ours
+        backgroundOpacity = 1;
         clearDismissed = true;
         criticalUrgencyDuration = 15;
         density = "default";
@@ -481,7 +479,7 @@
       };
       osd = {
         autoHideMs = 2000;
-        backgroundOpacity = lib.mkForce 1; # Stylix also sets this (1.0); keep ours
+        backgroundOpacity = 1;
         enabled = true;
         enabledTypes = [ 0 1 2 4 ];
         location = "top_right";
@@ -582,14 +580,12 @@
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
         boxBorderEnabled = false;
-        # mkForce: Stylix's noctalia target would set these to its font
-        # (DejaVu). Keep Noctalia's own default font; only colors come from Stylix.
-        fontDefault = lib.mkForce "";
+        fontDefault = "";
         fontDefaultScale = 1;
-        fontFixed = lib.mkForce "";
+        fontFixed = "";
         fontFixedScale = 1;
         networkPanelView = "wifi";
-        panelBackgroundOpacity = lib.mkForce 0.85; # keep transparency (see bar note)
+        panelBackgroundOpacity = 0.85;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         tooltipsEnabled = true;
