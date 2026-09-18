@@ -9,6 +9,7 @@
     ../../modules/nix.nix
     ../../modules/local.nix
     ../../modules/dh-certs.nix
+    ../../modules/davinci.nix
   ];
 
   fileSystems."/mnt/nvme" = {
