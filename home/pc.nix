@@ -15,8 +15,9 @@
         btop-rocm
         freecad-wayland
         todoist-electron
-        gemini-cli
         showmethekey
+        immich-cli
+        immich-go
     ];
 
     imports = [
