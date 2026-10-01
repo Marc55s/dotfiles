@@ -72,7 +72,7 @@
       binds = {
         "Mod+Q".action.spawn = "kitty";
         "Mod+Space".action.spawn = ["rofi" "-show" "drun"];
-        "Mod+L".action.spawn = ["noctalia-shell" "ipc" "call" "lockScreen" "lock"];
+        "Mod+L".action.spawn = ["noctalia" "ipc" "call" "lockScreen" "lock"];
         "Mod+B".action.spawn = "firefox";
         "Mod+F12".action.spawn = [ "hyprshot" "-m" "window" ];
         "F12".action.spawn = [ "hyprshot" "-m" "region" ];

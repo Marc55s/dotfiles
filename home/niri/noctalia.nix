@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: {
   imports = [ inputs.noctalia.homeModules.default ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
     systemd.enable = true;
     settings = {
@@ -105,7 +105,7 @@
               icon = "rocket";
               id = "CustomButton";
               ipcIdentifier = "";
-              leftClickExec = "qs -c noctalia-shell ipc call launcher toggle";
+              leftClickExec = "qs -c noctalia ipc call launcher toggle";
               leftClickUpdateText = false;
               maxTextLength = {
                 horizontal = 10;
