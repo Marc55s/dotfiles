@@ -10,6 +10,7 @@
     ../../modules/local.nix
     ../../modules/dh-certs.nix
     ../../modules/davinci.nix
+    ../../modules/tailscale.nix
   ];
 
   fileSystems."/mnt/nvme" = {

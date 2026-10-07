@@ -6,6 +6,7 @@
         ./k3s.nix
         ../../modules/local.nix
         ../../modules/ssh.nix
+        ../../modules/tailscale.nix
     ];
 
   boot.supportedFilesystems = [ "ntfs" ];

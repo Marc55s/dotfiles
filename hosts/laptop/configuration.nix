@@ -8,6 +8,7 @@
       ../../modules/nix.nix
       ../../modules/local.nix
       ../../modules/dh-certs.nix
+      ../../modules/tailscale.nix
     ];
     zramSwap.enable = true;
 

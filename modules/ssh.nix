@@ -7,11 +7,4 @@
     };
     allowSFTP = true; # Optional, disable file transfer if you don't need it
   };
-
-  networking.firewall.allowedTCPPorts = [ 22 41641 ];
-
-  services.tailscale = {
-    enable = true;
-  };
-
 }
