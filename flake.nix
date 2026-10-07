@@ -1,5 +1,5 @@
 {
-  description = "NixOS + home-manager configurations for pc, laptop, mainframe and monolith";
+  description = "NixOS + home-manager configurations for pc, laptop and monolith";
 
   inputs = {
     # --- nixpkgs channels -------------------------------------------------
@@ -115,8 +115,6 @@
             modules = [ inputs.sops-nix.nixosModules.sops inputs.agenix.nixosModules.default inputs.disko.nixosModules.disko ];
             users.monolith = ./home/monolith.nix;
         };
-
-        mainframe.modules = [ inputs.disko.nixosModules.disko ];
 
       };
 
