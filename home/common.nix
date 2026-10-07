@@ -23,6 +23,7 @@
     ];
 
     home.packages = with pkgs; [ 
+        # cli
         lazygit
         nitch
         tree
@@ -31,7 +32,10 @@
         jq
         nurl
         nix-init
+        dua
 
+        # Softare
+        rapidraw
         signal-desktop
         zapzap
         pkgs-unstable.obsidian
@@ -44,6 +48,7 @@
         onlyoffice-desktopeditors
         gimp
 
+        # dependencies for other programs
         imagemagick
         ghostscript
         nerd-fonts.jetbrains-mono

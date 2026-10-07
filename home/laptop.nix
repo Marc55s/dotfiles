@@ -1,14 +1,7 @@
 {config, pkgs, pkgs-unstable, inputs,  ... }: {
 
-    home.packages = with pkgs; [ 
-        hypridle
+    home.packages = with pkgs; [
         hyprshot
-        hyprpicker
-        hyprsunset
-        gnome-bluetooth
-        bluez
-        bluez-tools
-        upower
         remnote
         btop
         nemo
@@ -18,14 +11,9 @@
         wakafetch
         teamtype
         zotero
-        dua
-        vscode
-        rapidraw
         nomacs
         oculante
-
         wl-mirror
-        iamb
     ];
 
     imports = [
