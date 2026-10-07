@@ -24,14 +24,11 @@
 
     home.packages = with pkgs; [ 
         lazygit
-        lazydocker
-        lazysql
         nitch
         tree
         fd
         unzip
         jq
-        tdf # tui pdf viewer
         nurl
         nix-init
 
@@ -46,9 +43,7 @@
         libreoffice
         onlyoffice-desktopeditors
         gimp
-        postman
 
-        texliveFull
         imagemagick
         ghostscript
         nerd-fonts.jetbrains-mono
