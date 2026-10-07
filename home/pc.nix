@@ -18,6 +18,7 @@
         showmethekey
         immich-cli
         immich-go
+        sqlitebrowser
     ];
 
     imports = [
