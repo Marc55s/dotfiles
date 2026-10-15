@@ -11,6 +11,7 @@
     ../../modules/dh-certs.nix
     ../../modules/davinci.nix
     ../../modules/tailscale.nix
+    ../../modules/screen-record.nix
   ];
 
   fileSystems."/mnt/nvme" = {
