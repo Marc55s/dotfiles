@@ -3,6 +3,8 @@
     ./hardware-configuration.nix
     ./gaming.nix
     ./boot.nix
+    ./greeter.nix
+    ./disks.nix
     ../../modules/nix-ld.nix
     ../../modules/ssh.nix
     ../../modules/wireshark.nix
@@ -14,18 +16,9 @@
     ../../modules/screen-record.nix
   ];
 
-  fileSystems."/mnt/nvme" = {
-    device = "/dev/disk/by-uuid/6fd86718-7584-455a-9093-28881876a250";
-    fsType = "ext4";
-    options = [ "nofail" ];
-  };
 
-  fileSystems."/mnt/hdd" = {
-    device = "/dev/disk/by-uuid/a9ef4979-66c9-401b-a218-10cbbdb4bfe4";
-    fsType = "ext4";
-    options = [ "nofail" ];
-  };
-
+  # Enable networking
+  networking.networkmanager.enable = true;
   networking.hostName = "pc"; # Define your hostname.
   networking.interfaces.enp34s0.wakeOnLan = {
     enable = true;
@@ -33,46 +26,16 @@
   };
 
   services.xserver.videoDrivers = [ "amdgpu" ];
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   services.flatpak.enable = true;
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = ''
-          ${pkgs.tuigreet}/bin/tuigreet \
-            --time \
-            --remember \
-            --remember-user-session \
-            --asterisks \
-            --cmd startplasma-wayland
-        '';
-        user = "greeter";
-      };
-    };
-  };
 
-  systemd.services.greetd = {
-    unitConfig = { After = [ "multi-user.target" "display-manager.target" ]; };
-    serviceConfig = {
-      Type = "idle";
-      StandardInput = "tty";
-      StandardOutput = "tty";
-      StandardError = "journal";
-      TTYReset = true;
-      TTYVHangup = true;
-      TTYVTDisallocate = true;
-    };
-  };
   # Enable the KDE Plasma Desktop Environment.
-
   services.displayManager.sddm.enable = false;
   services.desktopManager.plasma6.enable = true;
+
   services.power-profiles-daemon.enable = true;
 
   # Enable CUPS to print documents.
