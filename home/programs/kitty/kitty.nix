@@ -24,18 +24,13 @@ in {
       disable_ligatures = "always";
     };
 
+    themeFile = if isLaptop then "Gruvbox" else "OneHalfDark";
+
     extraConfig = ''
       modify_font cell_height 95%
       # modify_font baseline 2
       modify_font cell_width 100%
-
-      include themes/${if isLaptop then "gruvbox" else "Tango_dark"}.conf
     '';
-  };
-
-  home.file.".config/kitty/themes" = {
-    source = ./themes;
-    recursive = true;
   };
 
   home.packages = with pkgs; [
