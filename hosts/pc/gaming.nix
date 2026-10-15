@@ -7,20 +7,11 @@
     extraPackages =
       [ pkgs.vulkan-loader pkgs.vulkan-tools pkgs.vulkan-validation-layers ];
   };
-  environment.systemPackages = [ pkgs.lact ];
-  # systemd.services.lactd = {
-  #   enable = true;
-  #   description = "AMDGPU Control Daemon";
-  #   after = [ "multi-user.target" ];
-  #   wantedBy = [ "multi-user.target" ];
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.lact}/bin/lact daemon";
-  #     Restart = "on-failure";
-  #   };
-  # };
 
   zramSwap.enable = true;
   zramSwap.priority = 100;
+
+  services.lact.enable = true;
 
   programs.steam = {
     enable = true;
@@ -48,12 +39,7 @@
   programs.gamemode.enable = true;
 
   environment.sessionVariables = {
-    # Force RADV (AMD) instead of LLVMPIPE
     RADV_PERFTEST = "aco,sam";
-    AMD_VULKAN_ICD = "RADV";
-    # VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json:/run/opengl-driver-32/share/vulkan/icd.d/radeon_icd.i686.json";
-    AMD_DEBUG = "high_performance,null_fifo";
-    vblank_mode = "0";
   };
 
   powerManagement = {
