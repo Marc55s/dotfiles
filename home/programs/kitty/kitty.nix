@@ -22,6 +22,13 @@ in {
       enable_audio_bell = "no";
      
       disable_ligatures = "always";
+      cursor = "#d4af37";
+      url_color = "#d4af37";
+      active_tab_background = "#d4af37";
+      active_tab_foreground = "#1e2127";
+      active_border_color = "#d4af37";
+      selection_background = "#d4af37";
+      selection_foreground = "#1e2127";
     };
 
     themeFile = if isLaptop then "Gruvbox" else "OneHalfDark";
