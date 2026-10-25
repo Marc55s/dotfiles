@@ -5,7 +5,6 @@
         remnote
         btop
         nemo
-        libresprite
         thunderbird
         systemctl-tui
         wakafetch

@@ -47,6 +47,7 @@
         libreoffice
         onlyoffice-desktopeditors
         gimp
+        aseprite
 
         # dependencies for other programs
         imagemagick

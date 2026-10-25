@@ -7,7 +7,6 @@
         easyeffects
         obs-studio
         gcc
-        libresprite
         pinta
         chatterino7
         # spotify
