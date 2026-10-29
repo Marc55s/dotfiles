@@ -8,10 +8,19 @@
       [ pkgs.vulkan-loader pkgs.vulkan-tools pkgs.vulkan-validation-layers ];
   };
 
-  zramSwap.enable = true;
-  zramSwap.priority = 100;
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16*1024; # 16 GB
+  }];
 
   services.lact.enable = true;
+
+  environment.sessionVariables = {
+    # RADV_PERFTEST = "aco,sam";
+    # AMD_VULKAN_ICD = "RADV";
+    # AMD_DEBUG = "high_performance,null_fifo"; 
+    # vblank_mode = "0";
+  };
 
   programs.steam = {
     enable = true;
@@ -38,9 +47,6 @@
 
   programs.gamemode.enable = true;
 
-  environment.sessionVariables = {
-    RADV_PERFTEST = "aco,sam";
-  };
 
   powerManagement = {
     enable = true;
