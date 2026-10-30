@@ -2,7 +2,7 @@
 {
   services.swayidle =
     let
-      lock = "${config.programs.noctalia.package}/bin/noctalia-shell ipc call lockScreen lock";
+      lock = "${config.programs.noctalia.package}/bin/noctalia msg session lock";
     in
     {
       enable = true;

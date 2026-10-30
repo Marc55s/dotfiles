@@ -35,7 +35,7 @@
         always-center-single-column = true;
         center-focused-column = "never";
         focus-ring.enable = true;
-        focus-ring.width = 2;
+        focus-ring.width = 1;
         focus-ring.active = { color = "#ffffff"; };
         focus-ring.inactive = { color = "#000000"; };
         focus-ring.urgent = { color = "#ffffff"; };
@@ -72,7 +72,7 @@
       binds = {
         "Mod+Q".action.spawn = "kitty";
         "Mod+Space".action.spawn = ["rofi" "-show" "drun"];
-        "Mod+L".action.spawn = ["noctalia" "ipc" "call" "lockScreen" "lock"];
+        "Mod+L".action.spawn = ["noctalia" "msg" "session" "lock"];
         "Mod+B".action.spawn = "firefox";
         "Mod+F12".action.spawn = [ "hyprshot" "-m" "window" ];
         "F12".action.spawn = [ "hyprshot" "-m" "region" ];
