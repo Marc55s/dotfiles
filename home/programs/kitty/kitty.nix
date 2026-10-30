@@ -31,7 +31,7 @@ in {
       selection_foreground = "#1e2127";
     };
 
-    themeFile = if isLaptop then "Gruvbox" else "OneHalfDark";
+    themeFile = "OneHalfDark";
 
     extraConfig = ''
       modify_font cell_height 95%
