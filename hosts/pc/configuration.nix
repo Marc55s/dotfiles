@@ -14,6 +14,7 @@
     ../../modules/davinci.nix
     ../../modules/tailscale.nix
     ../../modules/screen-record.nix
+    ../../modules/keyd.nix
   ];
 
 
