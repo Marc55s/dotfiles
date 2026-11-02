@@ -24,7 +24,7 @@
           -f 60 \
           -a "app-inverse:spotify|default_input" \
           -c mp4 \
-          -r 300 \
+          -r 120 \
           -replay-storage disk \
           -o %h/Videos/Replays
       '';
