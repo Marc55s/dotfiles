@@ -96,6 +96,7 @@ symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
+impure_msg = ""
 
 [nodejs]
 symbol = " "
