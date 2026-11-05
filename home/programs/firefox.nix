@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, osConfig,  ... }:
 
 let
   lock-false = {
@@ -14,6 +14,7 @@ in {
     enable = true;
     languagePacks = [ "de" "en-US" ];
     configPath = ".mozilla/firefox";
+    nativeMessagingHosts = [ osConfig.services.webhid.package ];
 
     # ---- 1. POLICIES (Global & Extensions) ----
     policies = {

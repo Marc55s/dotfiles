@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ lib, config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
     ./gaming.nix
@@ -15,8 +15,11 @@
     ../../modules/tailscale.nix
     ../../modules/screen-record.nix
     ../../modules/keyd.nix
+    ../../modules/webhid/module.nix
   ];
 
+  services.webhid.enable = true;
+  systemd.services.webhid-daemon.serviceConfig.User = lib.mkForce "marc";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -25,7 +28,6 @@
     enable = true;
     policy = [ "magic" ];
   };
-
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   services.flatpak.enable = true;
@@ -75,7 +77,7 @@
       "$6$KF5GV021S8V51Bfe$Rc3tnTNBwX46RNxdEORCsr64/DkVKbTIu2cS9837YEPsjJAj5EZwDUSYZ72zVOgqhZWGyvtYZ35jTDrwMhMiw1";
     isNormalUser = true;
     description = "Marc";
-    extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "tty" "dialout" "webhid"];
     shell = pkgs.zsh;
     packages = with pkgs; [ kdePackages.kate thunderbird ];
   };
