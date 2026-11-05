@@ -68,5 +68,6 @@
         clar = "clear";
         cler = "clear";
         claer = "clear";
+        cbb = "cmake --build build";
     };
 }
